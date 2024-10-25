@@ -12,6 +12,10 @@ Para usar o Eslint para verificar
 Para colocar na page do github
 
 - em package.json
+
+-- baixe 
+	npm install gh-pages --save-dev
+
 -- no primeiro componente
     homepage": "https://Douglas1705.github.io/<nome do repositorio>",
 
