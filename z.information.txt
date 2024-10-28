@@ -31,3 +31,41 @@ Para colocar na page do github
 - no github SETTINGS > PAGES > GH-PAGE ./ROOT
 
 /// FINAL PAGE GITHUB ///
+
+/// Git convenções ///
+
+    feat: Adição de uma nova funcionalidade.
+
+        Exemplo: git commit -m "feat: adiciona autenticação de usuário"
+
+    fix: Correção de um bug.
+
+        Exemplo: git commit -m "fix: corrige erro de autenticação"
+
+    docs: Mudanças na documentação.
+
+        Exemplo: git commit -m "docs: atualiza README com instruções de setup"
+
+    style: Mudanças que não afetam o significado do código (espaços em branco, formatação, ponto e vírgula faltando, etc.).
+
+        Exemplo: git commit -m "style: ajusta formatação do código"
+
+    refactor: Refatoração do código sem mudar sua funcionalidade.
+
+        Exemplo: git commit -m "refactor: melhora performance da função de login"
+
+    perf: Mudanças que melhoram a performance.
+
+        Exemplo: git commit -m "perf: otimiza carregamento de imagens"
+
+    test: Adição ou correção de testes.
+
+        Exemplo: git commit -m "test: adiciona testes unitários para componente de login"
+
+    chore: Atualizações de tarefas de build ou ferramentas auxiliares.
+
+        Exemplo: git commit -m "chore: atualiza dependências no package.json"
+
+    revert: Reversão de commits anteriores.
+
+        Exemplo: git commit -m "revert: desfaz commit x"
