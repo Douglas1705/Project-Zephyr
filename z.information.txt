@@ -44,3 +44,16 @@ Para usar o Eslint para verificar
     revert: Reversão de commits anteriores.
 
         Exemplo: git commit -m "revert: desfaz commit x"
+
+/// Media queryes do taiwind ///
+
+Breakpoints Padrão de Tailwind CSS
+sm: Telas pequenas e acima (640px)
+
+md: Telas médias e acima (768px)
+
+lg: Telas grandes e acima (1024px)
+
+xl: Telas extra grandes e acima (1280px)
+
+2xl: Telas de 2x extra grandes e acima (1536px)
