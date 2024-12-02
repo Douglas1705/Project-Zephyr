@@ -1,8 +1,22 @@
+import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
+import Cart from './pages/cart/Cart';
+import Contact from './pages/contact/Contact';
+import HomePage from './pages/homePage/HomePage';
+import ShopPage from './pages/shop/ShopPage';
+import SingleProducts from './pages/singleProduct/SingleProducts';
+
 function App() {
   return (
-    <div>
-      <h1 className="text-center text-3xl">Challenge 3 Compass Uol</h1>      
-    </div>
+    <>
+      <Header />
+      <HomePage />
+      <ShopPage />
+      <SingleProducts />
+      <Cart />
+      <Contact />
+      <Footer />
+    </>
   );
 }
 
