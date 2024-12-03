@@ -1,1 +1,1 @@
-esta pasta é destinada a configurações do Eslint
+esta pasta é destinada a configurações do Eslint e splide

@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
-      "composite": true,  // Necessário para referências de projeto
-      "typeRoots": ["./src/types", "./node_modules/@types"]
-    },
+    "composite": true,  // Necessário para referências de projeto
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "paths": {
+      "@splidejs/react-splide": ["./node_modules/@splidejs/react-splide/dist/types"]
+    }
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
