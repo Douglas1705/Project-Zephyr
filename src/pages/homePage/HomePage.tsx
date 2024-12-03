@@ -1,14 +1,16 @@
+import BeautifullSec from './BeautifullSec';
 import BrowseSec from './BrowseSec';
 import CapaSec from './CapaSec';
-import ProductHomePage from './ProductHomePage';
+import ProductHomePage from './ProductsHomeSec';
 
 function HomePage() {
   return (
-    <section>
+    <main>
       <CapaSec />
       <BrowseSec />
       <ProductHomePage />
-    </section>
+      <BeautifullSec />
+    </main>
   );
 }
 

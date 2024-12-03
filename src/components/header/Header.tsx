@@ -44,13 +44,7 @@ function Header() {
             `}
         >
           <ul
-            className="
-            flex flex-col gap-4  text-base font-medium p-4  border-2 items-center
-            
-            lg:flex-row lg:gap-20  lg:p-0 lg:border-0
-
-            xl:gap-24 xl:text-lg
-            "
+            className="flex flex-col gap-4  text-base font-medium p-4  border-2 items-center lg:flex-row lg:gap-20  lg:p-0 lg:border-0 xl:gap-24 xl:text-lg"
             onClick={handleLinkClick}
           >
             <li>

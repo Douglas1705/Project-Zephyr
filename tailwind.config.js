@@ -13,7 +13,8 @@ module.exports = {
       
       colors: { 
         'warm-cream': '#FFF3E3',
-        'Goldenrod' : '#B88E2F'
+        'Goldenrod' : '#B88E2F',
+        'WhisperWhite' : '#FCF8F3'
     },
   },
   plugins: [],

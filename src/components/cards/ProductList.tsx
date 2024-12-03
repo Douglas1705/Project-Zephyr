@@ -21,14 +21,7 @@ function ProductList() {
   }, []);
 
   return (
-    <div
-      className="
-    flex flex-col items-center
-
-    sm:flex-row flex-wrap w-11/12 mx-auto gap-5 justify-center 
-    
-    "
-    >
+    <div className="flex flex-col items-center sm:flex-row flex-wrap w-11/12 mx-auto gap-5 justify-center">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
