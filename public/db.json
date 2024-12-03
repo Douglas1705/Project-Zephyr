@@ -1,0 +1,77 @@
+{
+    "imagens": [
+      {
+        "id": 1,
+        "nome": "Syltherine",
+        "descricao": "Stylish cafe chair",
+        "valorTotal": 3500000,
+        "valorComDesconto": 2450000,
+        "desconto": 30,
+        "urlImagem": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-1.webp"
+      },
+      {
+        "id": 2,
+        "nome": "Leviosa",
+        "descricao": "Stylish cafe chair",
+        "valorTotal": 2500000,
+        "valorComDesconto": 0,
+        "desconto": 0,
+        "urlImagem": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-2.webp"
+      },
+      {
+        "id": 3,
+        "nome": "Lolito",
+        "descricao": "Luxury big sofa",
+        "valorTotal": 140000000,
+        "valorComDesconto": 70000000,
+        "desconto": 50,
+        "urlImagem": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-3.webp"
+      },
+      {
+        "id": 4,
+        "nome": "Respira",
+        "descricao": "Outdoor bar table and stool",
+        "valorTotal": 500000,
+        "valorComDesconto": 0,
+        "desconto": 0,
+        "urlImagem": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-4.webp"
+      },
+      {
+        "id": 5,
+        "nome": "Grifo",
+        "descricao": "Night lamp",
+        "valorTotal": 15000000,
+        "valorComDesconto": 0,
+        "desconto": 0,
+        "urlImagem": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-5.webp"
+      },
+      {
+        "id": 6,
+        "nome": "Muggo",
+        "descricao": "Small mug",
+        "valorTotal": 150000,
+        "valorComDesconto": 0,
+        "desconto": 0,
+        "urlImagem": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-6.webp"
+      },
+      {
+        "id": 7,
+        "nome": "Pingky",
+        "descricao": "Cute bed set",
+        "valorTotal": 14000000,
+        "valorComDesconto": 70000000,
+        "desconto": 50,
+        "urlImagem": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-7.webp"
+      },
+      {
+        "id": 8,
+        "nome": "Potty",
+        "descricao": "Minimalist flower pot",
+        "valorTotal": 500000,
+        "valorComDesconto": 0,
+        "desconto": 0,
+        "urlImagem": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-8.webp"
+      }
+    ]
+  }
+  
