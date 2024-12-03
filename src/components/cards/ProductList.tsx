@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ProductCard from '../cards/ProductCards';
 
 interface Product {
@@ -11,7 +11,7 @@ interface Product {
   imageUrl: string;
 }
 
-const ProductList: React.FC = () => {
+function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -21,12 +21,19 @@ const ProductList: React.FC = () => {
   }, []);
 
   return (
-    <div className="product-list">
+    <div
+      className="
+    flex flex-col items-center
+
+    sm:flex-row flex-wrap w-11/12 mx-auto gap-5 justify-center 
+    
+    "
+    >
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );
-};
+}
 
 export default ProductList;

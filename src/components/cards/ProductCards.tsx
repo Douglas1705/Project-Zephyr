@@ -1,44 +1,60 @@
-// src/components/ProductCard.tsx
-import React from 'react';
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  originalPrice: number;
-  discountedPrice: number;
-  discount: number;
-  imageUrl: string;
-}
-
 interface Props {
-  product: Product;
+  product: {
+    id: number;
+    name: string;
+    description: string;
+    originalPrice: number;
+    discountedPrice: number;
+    discount: number;
+    imageUrl: string;
+    new?: string;
+  };
 }
 
-const ProductCard: React.FC<Props> = ({ product }) => {
-  const {
-    name,
-    description,
-    originalPrice,
-    discountedPrice,
-    discount,
-    imageUrl,
-  } = product;
-
+function ProductCard({ product }: Props) {
   return (
-    <article>
-      <figure>
-        <img src={imageUrl} alt={name} />
-        {discount > 0 && <span>{discount}% off</span>}
-        <h2>{name}</h2>
-        <p>{description}</p>
-        <p>Original Price: RP {originalPrice.toLocaleString()}</p>
-        {discountedPrice > 0 && (
-          <p>Discounted Price: RP {discountedPrice.toLocaleString()}</p>
+    <article className="relative mb-10">
+      <figure className="relative bg-gray-100">
+        <img src={product.imageUrl} alt={product.name} />
+        {product.discount > 0 && (
+          <span className="absolute top-5 right-5 bg-red-400 px-2 py-4 rounded-full text-white">
+            -{product.discount}%
+          </span>
         )}
+        {product.new === 'New' && (
+          <span className="absolute top-5 right-5 bg-teal-500 px-3 py-4 rounded-full text-white">
+            New
+          </span>
+        )}
+        <div className="p-3 flex flex-col gap-3">
+          <h2 className="text-2xl font-semibold">{product.name}</h2>
+
+          <p className="text-sm text-gray-500">{product.description}</p>
+
+          <div className="flex justify-between">
+            {' '}
+            {product.discountedPrice > 0 ? (
+              <>
+                <p className="text-xl font-semibold">
+                  {' '}
+                  RP {product.discountedPrice.toLocaleString()}{' '}
+                </p>{' '}
+                <p className="text-gray-400 line-through">
+                  {' '}
+                  RP {product.originalPrice.toLocaleString()}{' '}
+                </p>{' '}
+              </>
+            ) : (
+              <p className="text-xl font-semibold">
+                {' '}
+                RP {product.originalPrice.toLocaleString()}{' '}
+              </p>
+            )}{' '}
+          </div>
+        </div>
       </figure>
     </article>
   );
-};
+}
 
 export default ProductCard;

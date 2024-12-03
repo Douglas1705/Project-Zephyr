@@ -7,7 +7,8 @@
         "originalPrice": 3500000,
         "discountedPrice": 2450000,
         "discount": 30,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-1.webp"
+        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-1.webp",
+        "new": "none"
       },
       {
         "id": 2,
@@ -16,16 +17,18 @@
         "originalPrice": 2500000,
         "discountedPrice": 0,
         "discount": 0,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-2.webp"
+        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-2.webp",
+        "new": "none"
       },
       {
         "id": 3,
         "name": "Lolito",
         "description": "Luxury big sofa",
-        "originalPrice": 140000000,
-        "discountedPrice": 70000000,
+        "originalPrice": 14000000,
+        "discountedPrice": 7000000,
         "discount": 50,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-3.webp"
+        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-3.webp",
+        "new": "none"
       },
       {
         "id": 4,
@@ -34,7 +37,8 @@
         "originalPrice": 500000,
         "discountedPrice": 0,
         "discount": 0,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-4.webp"
+        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-4.webp",
+        "new": "New"
       },
       {
         "id": 5,
@@ -43,7 +47,8 @@
         "originalPrice": 15000000,
         "discountedPrice": 0,
         "discount": 0,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-5.webp"
+        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-5.webp",
+        "new": "none"
       },
       {
         "id": 6,
@@ -52,16 +57,18 @@
         "originalPrice": 150000,
         "discountedPrice": 0,
         "discount": 0,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-6.webp"
+        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-6.webp",
+        "new": "New"
       },
       {
         "id": 7,
         "name": "Pingky",
         "description": "Cute bed set",
         "originalPrice": 14000000,
-        "discountedPrice": 70000000,
+        "discountedPrice": 7000000,
         "discount": 50,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-7.webp"
+        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-7.webp",
+        "new": "none"
       },
       {
         "id": 8,
@@ -70,7 +77,8 @@
         "originalPrice": 500000,
         "discountedPrice": 0,
         "discount": 0,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-8.webp"
+        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-8.webp",
+        "new": "New"
       }
     ]
   }
