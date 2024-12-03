@@ -1,4 +1,7 @@
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setProducts } from './redux/reducer';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Cart from './pages/cart/Cart';
@@ -9,7 +12,15 @@ import NotFound404 from './pages/404Notfound/NotFound404';
 import ShopPage from './pages/shop/ShopPage';
 import SingleProducts from './pages/singleProduct/SingleProducts';
 
-function App() {
+const App: React.FC = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetch('http://localhost:3001/products')
+      .then((response) => response.json())
+      .then((data) => dispatch(setProducts(data)));
+  }, [dispatch]);
+
   return (
     <Router>
       <Header />
@@ -20,11 +31,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/single-product" element={<SingleProducts />} />
-        <Route path="*" element={<NotFound404 />} /> {/* Rota 404 */}
+        <Route path="*" element={<NotFound404 />} /> {/* 404 Route */}
       </Routes>
       <Footer />
     </Router>
   );
-}
+};
 
 export default App;

@@ -1,8 +1,5 @@
-// src/pages/homePage/HomePage.tsx
 import React, { useEffect, useState } from 'react';
-import ProductCard from '../../components/cards/ProductCards';
-import BrowseSec from './BrowseSec';
-import CapaSec from './CapaSec';
+import ProductCard from '../cards/ProductCards';
 
 interface Product {
   id: number;
@@ -14,7 +11,7 @@ interface Product {
   imageUrl: string;
 }
 
-function HomePage() {
+const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -24,14 +21,12 @@ function HomePage() {
   }, []);
 
   return (
-    <section>
-      <CapaSec />
-      <BrowseSec />
+    <div className="product-list">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
-    </section>
+    </div>
   );
-}
+};
 
-export default HomePage;
+export default ProductList;
