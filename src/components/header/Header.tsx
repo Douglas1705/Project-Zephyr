@@ -13,30 +13,21 @@ function Header() {
   };
 
   return (
-    <header
-      className="
-    flex px-4 justify-between items-center h-20 w-auto
-
-    md:h-24
-
-    xl:px-16
-
-    border-2 border-red-500
-    "
-    >
-      {/* Container logo e titulo */}
+    <header className="flex justify-between items-center w-auto min-h-16 px-5 lg:min-h-24 lg:px-16">
       <div className="flex items-center gap-2">
         <img
           src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/logo-furniro.svg"
           alt="Image of two lines representing the Ovenmaker"
           title="Furniro-logo"
-          className="w-9 sm:w-14"
+          className="w-8 md:w-10 lg:w-14"
         />
-        <h1 className="text-2xl sm:text-4xl font-bold">Furniro</h1>
+        <h1 className="text-lg md:text-2xl lg:text-4xl font-semibold">
+          Furniro
+        </h1>
       </div>
 
       {/* Container nav icons */}
-      <div className="flex gap-5 border-2 lg:w-4/6 justify-between">
+      <div className="flex gap-5 md:justify-between lg:w-8/12">
         {/* Botão Hamburguer */}
         <button className="block lg:hidden" onClick={handleMenuToggle}>
           <div className="w-6 h-0.5 bg-black mb-1"></div>
@@ -47,18 +38,18 @@ function Header() {
         {/* Navbar */}
         <nav
           className={`lg:flex ${isMenuOpen ? 'block' : 'hidden'} 
-          
-          absolute  top-16 left-0 w-full  bg-white  z-10 items-center
+            absolute top-14 left-0 w-full  bg-white  z-10
             
-          lg:static lg:w-auto lg:bg-transparent
-          `}
+            lg:static lg:w-auto lg:bg-transparent
+            `}
         >
           <ul
             className="
+            flex flex-col gap-4  text-base font-medium p-4  border-2 items-center
             
-            flex flex-col  gap-4 lg:gap-24 text-base font-medium p-4  border-2 
-            
-            lg:flex-row md:p-0 md:border-0
+            lg:flex-row lg:gap-20  lg:p-0 lg:border-0
+
+            xl:gap-24 xl:text-lg
             "
             onClick={handleLinkClick}
           >
@@ -78,7 +69,7 @@ function Header() {
         </nav>
 
         {/* Icones do header */}
-        <div className="flex gap-4 xl:gap-8">
+        <div className="flex gap-3 lg:gap-8 ">
           <img
             src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/nav/Vector.svg"
             alt="icon representing a user"

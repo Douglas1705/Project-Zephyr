@@ -1,8 +1,10 @@
+import CapaSec from './CapaSec';
+
 function HomePage() {
   return (
-    <section>
-      <h2>Página da Home Page</h2>
-    </section>
+    <main>
+      <CapaSec />
+    </main>
   );
 }
 
