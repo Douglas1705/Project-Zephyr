@@ -1,5 +1,4 @@
 import AppButton from '../../components/buttons/AppButton';
-import salaIMG from '../../img/scandinavian-interior-mockup-wall-decal-background-1_1_.jpg';
 
 function CapaSec() {
   return (
@@ -7,7 +6,7 @@ function CapaSec() {
       {/* figure */}
       <figure className="md:hidden">
         <img
-          src={salaIMG}
+          src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/section-Cape/scandinavian-interior-mockup-wall-decal-background-mobile.jpg"
           alt="image of a living room with sofa, modern and conceptual style"
           title="living room image"
           className="w-full h-auto object-cover"
