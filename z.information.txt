@@ -60,3 +60,7 @@ lg: Telas grandes e acima (1024px)
 xl: Telas extra grandes e acima (1280px)
 
 2xl: Telas de 2x extra grandes e acima (1536px)
+
+https://incredible-den-592.notion.site/Desafio-3-Semana-12-14bfede4874b807bab06c1f76c6e14ce
+
+https://academy-compass.awsapps.com/start/#/?tab=accounts    
