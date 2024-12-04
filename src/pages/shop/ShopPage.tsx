@@ -3,19 +3,24 @@ import {
   AdjustmentsHorizontalIcon,
   Squares2X2Icon,
 } from '@heroicons/react/24/solid';
+
 import { CgDisplayFullwidth } from 'react-icons/cg';
+import ProductList from '../../components/cards/ProductList';
 function ShopPage() {
   const icons = 'w-10';
   return (
-    <section className="h-screen">
+    <section className="">
       <CapePages title="Shop" />
 
       <main>
-        <article className="flex h-28 bg-WhisperWhite justify-center items-center gap-4">
-          <div id="container-first" className="flex items-center gap-4">
+        <article className="flex h-28 bg-WhisperWhite justify-between gap-4">
+          <div
+            id="container-first"
+            className="flex items-center gap-4 justify-between"
+          >
             <div id="container-icons" className="flex">
               <AdjustmentsHorizontalIcon className={`${icons}`} />
-              <p>Filter</p>
+              <button>Filter</button>
               <Squares2X2Icon className={`${icons}`} />
               <CgDisplayFullwidth className={`${icons}`} />
             </div>
@@ -27,7 +32,7 @@ function ShopPage() {
             </div>
           </div>
 
-          <div id="container-second">
+          <div id="container-second" className="flex border-2 ">
             <p>Show</p>
             <input type="text" placeholder="16" />
 
@@ -35,6 +40,9 @@ function ShopPage() {
             <input type="text" placeholder="Default" />
           </div>
         </article>
+
+        <ProductList />
+
       </main>
     </section>
   );
