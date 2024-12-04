@@ -16,3 +16,81 @@ body, html {
     flex-direction: column;
     height: 100vh;    
 }
+
+
+
+/* Sobrescrever o CSS do Splide da section beautiful da home page para a paginação */
+@media (max-width: 1280px) {    
+.splide__arrow--next::after {
+    content: '>'; /* Adicionar o conteúdo customizado */
+    color: #B88E2F !important; /* Mudar a cor somente do '>' */
+    font-size: 2rem; /* Ajuste o tamanho conforme necessário */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .splide__arrow--prev::after { 
+    content: '<'; 
+    color: #B88E2F !important; 
+    font-size: 2rem; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: 
+    translate(-50%, -50%); 
+}
+
+  .splide__arrow--next, .splide__arrow--prev {
+    position: relative;
+    background: none !important; 
+    color: transparent !important; 
+    width: 30px !important;
+    height: 30px !important;
+    background-color: white !important;
+  }
+}
+
+@media (min-width: 1280px) {    
+    .splide__pagination.y-custom-pagination {
+      display: flex !important;
+      justify-content: flex-start !important; 
+      align-items: center !important;
+      margin-top: 1rem !important; 
+      padding-left: 0.5rem !important; 
+    }
+  
+    .splide__pagination.y-custom-pagination .splide__pagination__page {
+      margin: 0 0.5rem !important; 
+    }
+  
+    .splide__pagination.y-custom-pagination .splide__pagination__page.is-active {
+      background-color: #B88E2F !important;       
+    } 
+    
+    .splide__arrow--next {
+      position: relative;
+      background: none !important; 
+      color: transparent !important; 
+      width: 50px !important;
+      height: 50px !important;
+      background-color: white !important;
+    }
+  
+    .splide__arrow--next::after {
+      content: '>'; /* Adicionar o conteúdo customizado */
+      color: #B88E2F !important; /* Mudar a cor somente do '>' */
+      font-size: 2rem; /* Ajuste o tamanho conforme necessário */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    /* Remover a seta esquerda */
+    .splide__arrow--prev {
+      display: none !important;
+    }
+  }
+  
