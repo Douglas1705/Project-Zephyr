@@ -21,7 +21,7 @@ function Footer() {
       <div
         id="containter-footer"
         className="
-        text-center px-4 py-10 border-b-2 border-gray-300 flex flex-col gap-10 xl:flex-row xl:text-start xl:w-11/12 xl:mt-10 xl:mx-auto xl:items-start xl:py-0 xl:px-0 xl:justify-start xl:gap-24"
+        text-center px-4 py-10 border-b-2 border-gray-300 flex flex-col gap-10 xl:flex-row xl:text-start xl:w-11/12 xl:mt-10 xl:mx-auto xl:items-start xl:py-0 xl:px-0 xl:justify-start xl:gap-24 xl:pb-10"
       >
         <div
           id="container-Funiro"

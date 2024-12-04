@@ -7,6 +7,9 @@ Para usar o Prettier para formatar o projeto
 Para usar o Eslint para verificar
 - npm run lint
 
+Para começar o servido 
+- json-server --watch db.json --port 3001 
+
 /// Git convenções ///
 
     feat: Adição de uma nova funcionalidade.
