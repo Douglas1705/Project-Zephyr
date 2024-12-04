@@ -1,6 +1,7 @@
 import BeautifullSec from './BeautifullSec';
 import BrowseSec from './BrowseSec';
 import CapaSec from './CapaSec';
+import FurnitureSec from './FurnitureSec';
 import ProductHomePage from './ProductsHomeSec';
 
 function HomePage() {
@@ -10,6 +11,7 @@ function HomePage() {
       <BrowseSec />
       <ProductHomePage />
       <BeautifullSec />
+      <FurnitureSec />
     </main>
   );
 }

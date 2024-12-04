@@ -16,6 +16,10 @@ module.exports = {
         'Goldenrod' : '#B88E2F',
         'WhisperWhite' : '#FCF8F3'
     },
+
+    boxShadow: { 
+      'ShadowComplete': '0 -4px 12px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.08)', 
+    },
   },
   plugins: [],
 }

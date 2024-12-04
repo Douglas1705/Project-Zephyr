@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleMenuToggle = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const handleMenuToggle = useCallback(() => {
+    setIsMenuOpen((prevState) => !prevState);
+  }, []);
 
-  const handleLinkClick = () => {
+  const handleLinkClick = useCallback(() => {
     setIsMenuOpen(false);
-  };
+  }, []);
 
   return (
     <header className="flex justify-between items-center w-auto min-h-16 px-5 lg:min-h-24 lg:px-16">
@@ -38,13 +38,10 @@ function Header() {
         {/* Navbar */}
         <nav
           className={`lg:flex ${isMenuOpen ? 'block' : 'hidden'} 
-            absolute top-14 left-0 w-full  bg-white  z-10
-            
-            lg:static lg:w-auto lg:bg-transparent
-            `}
+            absolute top-14 left-0 w-full bg-white z-10 lg:static lg:w-auto lg:bg-transparent`}
         >
           <ul
-            className="flex flex-col gap-4  text-base font-medium p-4  border-2 items-center lg:flex-row lg:gap-20  lg:p-0 lg:border-0 xl:gap-24 xl:text-lg"
+            className="flex flex-col gap-4 text-base font-medium p-4 border-2 items-center lg:flex-row lg:gap-20 lg:p-0 lg:border-0 xl:gap-24 xl:text-lg"
             onClick={handleLinkClick}
           >
             <li>
@@ -63,7 +60,7 @@ function Header() {
         </nav>
 
         {/* Icones do header */}
-        <div className="flex gap-3 lg:gap-8 ">
+        <div className="flex gap-3 lg:gap-8">
           <img
             src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/nav/Vector.svg"
             alt="icon representing a user"
