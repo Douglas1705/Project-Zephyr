@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import ModalCard from './ModalCard';
+
 interface Props {
   product: {
     id: number;
@@ -12,9 +15,19 @@ interface Props {
 }
 
 function ProductCard({ product }: Props) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <article className="relative mb-10">
-      <figure className="relative bg-gray-100">
+      <figure className="relative bg-gray-100" onClick={handleOpenModal}>
         <img src={product.imageUrl} alt={product.name} />
         {product.discount > 0 && (
           <span className="absolute top-5 right-5 bg-red-400 px-2 py-4 rounded-full text-white">
@@ -28,31 +41,30 @@ function ProductCard({ product }: Props) {
         )}
         <div className="p-3 flex flex-col gap-3">
           <h2 className="text-2xl font-semibold">{product.name}</h2>
-
           <p className="text-sm text-gray-500">{product.description}</p>
-
           <div className="flex justify-between">
-            {' '}
             {product.discountedPrice > 0 ? (
               <>
                 <p className="text-xl font-semibold">
-                  {' '}
-                  RP {product.discountedPrice.toLocaleString()}{' '}
-                </p>{' '}
+                  RP {product.discountedPrice.toLocaleString()}
+                </p>
                 <p className="text-gray-400 line-through">
-                  {' '}
-                  RP {product.originalPrice.toLocaleString()}{' '}
-                </p>{' '}
+                  RP {product.originalPrice.toLocaleString()}
+                </p>
               </>
             ) : (
               <p className="text-xl font-semibold">
-                {' '}
-                RP {product.originalPrice.toLocaleString()}{' '}
+                RP {product.originalPrice.toLocaleString()}
               </p>
-            )}{' '}
+            )}
           </div>
         </div>
       </figure>
+      <ModalCard
+        product={product}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </article>
   );
 }
