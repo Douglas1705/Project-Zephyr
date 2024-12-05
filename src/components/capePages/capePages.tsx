@@ -3,7 +3,7 @@ interface CapePagesProps {
 }
 function CapePages({ title }: CapePagesProps) {
   return (
-    <header className="h-[310px] bg-capePages bg-cover flex flex-col justify-center items-center gap-5">
+    <header className="h-[310px] bg-capePages bg-cover bg-right flex flex-col justify-center items-center gap-5">
       <img
         src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/logo-furniro.svg"
         alt="Image of two lines representing the Ovenmaker"

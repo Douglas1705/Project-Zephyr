@@ -17,14 +17,59 @@ body, html {
     height: 100vh;    
 }
 
+/* Custom Checkbox Style */
+.custom-checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: 1px solid #B88E2F;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+  background-color: #B88E2F;
+}
+
+.custom-checkbox input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
 
 
-/* Sobrescrever o CSS do Splide da section beautiful da home page para a paginação */
+
+/* css to remove arrows from input shop show */
+/* Remove arrows from input type="number" in Chrome, Safari, Edge and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove arrows from input type="number" in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+/* Override the Splide CSS of the home page's beautiful section for pagination */
 @media (max-width: 1280px) {    
 .splide__arrow--next::after {
-    content: '>'; /* Adicionar o conteúdo customizado */
-    color: #B88E2F !important; /* Mudar a cor somente do '>' */
-    font-size: 2rem; /* Ajuste o tamanho conforme necessário */
+    content: '>'; 
+    color: #B88E2F !important; 
+    font-size: 2rem; 
     position: absolute;
     top: 50%;
     left: 50%;
@@ -79,16 +124,16 @@ body, html {
     }
   
     .splide__arrow--next::after {
-      content: '>'; /* Adicionar o conteúdo customizado */
-      color: #B88E2F !important; /* Mudar a cor somente do '>' */
-      font-size: 2rem; /* Ajuste o tamanho conforme necessário */
+      content: '>'; 
+      color: #B88E2F !important; 
+      font-size: 2rem; 
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
   
-    /* Remover a seta esquerda */
+    /* Remove the left arrow */
     .splide__arrow--prev {
       display: none !important;
     }

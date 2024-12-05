@@ -54,56 +54,80 @@ function FilterModal({ isOpen, onClose, onApply, filters }: FilterModalProps) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white p-6 rounded shadow-md max-w-md w-full">
-        <h2 className="text-xl font-bold mb-4">Filter Products</h2>
-        <label className="block mb-2">
-          <input
-            type="checkbox"
-            name="price"
-            checked={localFilters.price}
-            {...checkboxProps}
+      <div className="bg-white bg-opacity-80 p-8 rounded-xl shadow-2xl max-w-lg w-10/12 mx-auto my-8 md:w-full">
+        <div className="flex justify-center mb-0">
+          <img
+            src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/logo-furniro.svg"
+            alt="Logo"
+            className="w-24 h-24"
           />
-          Price
-        </label>
-        <label className="block mb-2">
-          <input
-            type="checkbox"
-            name="discount"
-            checked={localFilters.discount}
-            {...checkboxProps}
-          />
-          Discount
-        </label>
-        <label className="block mb-2">
-          <input
-            type="checkbox"
-            name="name"
-            checked={localFilters.name}
-            {...checkboxProps}
-          />
-          Name
-        </label>
-        <label className="block mb-2">
-          <input
-            type="checkbox"
-            name="new"
-            checked={localFilters.new}
-            {...checkboxProps}
-          />
-          New
-        </label>
-        <label className="block mb-4">
-          <input
-            type="checkbox"
-            name="all"
-            checked={localFilters.all}
-            {...checkboxProps}
-          />
-          All
-        </label>
-        <div className="flex justify-end space-x-2">
-          <button {...applyButtonProps}>Apply</button>
-          <button {...closeButtonProps}>Close</button>
+        </div>
+        <h2 className="text-3xl text-center font-bold mb-10 text-Goldenrod">
+          Filter Properties
+        </h2>
+        <div className="space-y-4">
+          <label className="flex items-center custom-checkbox">
+            <input
+              type="checkbox"
+              name="price"
+              checked={localFilters.price}
+              {...checkboxProps}
+            />
+            <span className="text-gray-800 font-semibold text-xl">Price</span>
+          </label>
+          <label className="flex items-center custom-checkbox">
+            <input
+              type="checkbox"
+              name="discount"
+              checked={localFilters.discount}
+              {...checkboxProps}
+            />
+            <span className="text-gray-800 font-semibold text-xl">
+              Discount
+            </span>
+          </label>
+          <label className="flex items-center custom-checkbox">
+            <input
+              type="checkbox"
+              name="name"
+              checked={localFilters.name}
+              {...checkboxProps}
+            />
+            <span className="text-gray-800 font-semibold text-xl">Name</span>
+          </label>
+          <label className="flex items-center custom-checkbox">
+            <input
+              type="checkbox"
+              name="new"
+              checked={localFilters.new}
+              {...checkboxProps}
+            />
+            <span className="text-gray-800 font-semibold text-xl">New</span>
+          </label>
+          <label className="flex items-center custom-checkbox">
+            <input
+              type="checkbox"
+              name="all"
+              checked={localFilters.all}
+              {...checkboxProps}
+            />
+            <span className="text-gray-800 font-semibold text-xl">All</span>
+          </label>
+        </div>
+        <div className="flex justify-end mt-6 space-x-3">
+          <button
+            {...applyButtonProps}
+            className="bg-white text-black px-6 py-3 rounded-md hover:bg-Goldenrod
+      hover:text-white transition duration-200 shadow-md"
+          >
+            Apply
+          </button>
+          <button
+            {...closeButtonProps}
+            className="bg-gray-300 text-gray-800 px-6 py-3 rounded-md hover:bg-gray-400 transition duration-200 shadow-md"
+          >
+            Close
+          </button>
         </div>
       </div>
     </div>

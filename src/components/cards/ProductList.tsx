@@ -47,7 +47,11 @@ function ProductList({ products }: ProductListProps) {
   }, [products]);
 
   if (!localProducts || localProducts.length === 0) {
-    return <div>No products available</div>;
+    return (
+      <div className="flex items-center justify-center text-center h-96">
+        <div className="text-4xl font-bold">No products available :(</div>
+      </div>
+    );
   }
 
   return (
