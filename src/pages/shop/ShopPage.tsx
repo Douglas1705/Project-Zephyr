@@ -7,6 +7,7 @@ import {
 import { CgDisplayFullwidth } from 'react-icons/cg';
 import FilteredProductList from '../../components/filters/FilteredProductList';
 import FilterModal from '../../components/filters/FilterModal';
+import SectionQuality from '../../components/SectionQuality/SectionQuality';
 
 interface Filters {
   price: boolean;
@@ -149,6 +150,7 @@ function ShopPage() {
           </button>
         ))}
       </div>
+      <SectionQuality />
     </section>
   );
 }
