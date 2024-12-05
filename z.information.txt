@@ -11,6 +11,7 @@ Para começar o servidor
 Instalar json.server
 npm install json-server --save-dev
 
+cd C:\Users\Usuário\Desktop\Nova pasta\CompassUOL-Challenge3-Furniro\public
 - json-server --watch db.json --port 3001 
 
 /// Git convenções ///
