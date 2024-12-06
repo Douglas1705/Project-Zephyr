@@ -3,9 +3,14 @@ import { useState, useCallback } from 'react';
 interface CounterCardsProps {
   initialCount: number;
   onCountChange: (_count: number) => void;
+  className?: string;
 }
 
-function CounterCards({ initialCount, onCountChange }: CounterCardsProps) {
+function CounterCards({
+  initialCount,
+  onCountChange,
+  className = '',
+}: CounterCardsProps) {
   const [count, setCount] = useState(initialCount);
   const [error, setError] = useState('');
 
@@ -56,8 +61,10 @@ function CounterCards({ initialCount, onCountChange }: CounterCardsProps) {
   );
 
   return (
-    <div className="w-auto h-32">
-      <div className="flex w-36 px-3 py-5 border-2 border-gray-400 text-center justify-between gap-4 rounded-xl text-base mx-auto">
+    <div
+      className={`w-auto ${className} py-4 border-2 border-gray-400 rounded-xl`}
+    >
+      <div className="flex w-36 px-3 text-center justify-between gap-4  text-base mx-auto">
         <button onClick={handleDecrement}>-</button>
         <input
           type="text"
