@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import ModalCard from './ModalCard';
 
 interface Props {
@@ -17,13 +17,13 @@ interface Props {
 function ProductCard({ product }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleOpenModal = () => {
+  const handleOpenModal = useCallback(() => {
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
-  };
+  }, []);
 
   return (
     <article className="relative mb-10">

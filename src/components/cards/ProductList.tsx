@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import ProductCard from './ProductCards';
+import ProductCard from '../cards/ProductCards';
 
 interface Product {
   id: number;
@@ -21,7 +21,7 @@ function ProductList({ products }: ProductListProps) {
   const [localProducts, setLocalProducts] = useState<Product[]>(products || []);
 
   useEffect(() => {
-    let isMounted = true; // Adicionar uma flag para verificar se o componente está montado
+    let isMounted = true;
 
     const fetchProducts = async () => {
       try {
@@ -42,7 +42,7 @@ function ProductList({ products }: ProductListProps) {
     }
 
     return () => {
-      isMounted = false; // Atualizar a flag quando o componente for desmontado
+      isMounted = false;
     };
   }, [products]);
 

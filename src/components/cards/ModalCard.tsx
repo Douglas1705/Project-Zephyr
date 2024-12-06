@@ -1,8 +1,5 @@
-import { useState } from 'react';
-import {
-  saveToLocalStorage,
-  loadFromLocalStorage,
-} from '../../utils/localStorageUtils';
+import { useState, useCallback } from 'react';
+import { addToCart } from '../../utils/localStorageUtils';
 import ConfirmationMessage from './ConfirmationMessage';
 
 interface Props {
@@ -23,19 +20,18 @@ interface Props {
 function ModalCard({ product, isOpen, onClose }: Props) {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const handleAddToCart = () => {
-    const cartItems = loadFromLocalStorage('cartItems') || [];
-    saveToLocalStorage('cartItems', [...cartItems, product]);
+  const handleAddToCart = useCallback(() => {
+    addToCart(product, 1);
     setShowConfirmation(true);
-  };
+  }, [product]);
 
-  const handleClose = () => {
-    onClose();
-  };
+  const handleClose = useCallback(() => {
+    setShowConfirmation(false);
+  }, []);
 
-  const handleViewProduct = () => {
+  const handleViewProduct = useCallback(() => {
     window.location.href = `/single-product/${product.id}`;
-  };
+  }, [product.id]);
 
   if (!isOpen) return null;
 
@@ -44,7 +40,7 @@ function ModalCard({ product, isOpen, onClose }: Props) {
       <div className="relative bg-black p-6 rounded-lg shadow-lg w-full h-full flex flex-col justify-center items-center">
         <button
           className="absolute top-0 right-0 mt-4 mr-4 text-white"
-          onClick={handleClose}
+          onClick={onClose}
         >
           &times;
         </button>
@@ -65,7 +61,7 @@ function ModalCard({ product, isOpen, onClose }: Props) {
         {showConfirmation && (
           <ConfirmationMessage
             message="Produto adicionado ao carrinho!"
-            onClose={() => setShowConfirmation(false)}
+            onClose={handleClose}
           />
         )}
       </div>

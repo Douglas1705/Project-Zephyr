@@ -1,6 +1,42 @@
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 import ProductDescription from './ProductDescription';
+import { useEffect, useState } from 'react';
+
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  originalPrice: number;
+  discountedPrice: number;
+  discount: number;
+  imageUrl: string;
+  price: number;
+}
 
 function SingleProducts() {
+  const { id } = useParams<{ id: string }>();
+  const products = useSelector((state: RootState) => state.products.products);
+  const [product, setProduct] = useState<Product | null>(null);
+
+  useEffect(() => {
+    if (products.length > 0) {
+      const foundProduct = products.find(
+        (product) => product.id === id || product.id === parseInt(id, 10),
+      );
+      setProduct(foundProduct || null);
+    }
+  }, [products, id]);
+
+  if (products.length === 0) {
+    return <div>Carregando...</div>;
+  }
+
+  if (!product) {
+    return <div>Produto não encontrado</div>;
+  }
+
   return (
     <section>
       <div className="h-24 bg-warm-cream flex gap-4 items-center justify-center">
@@ -8,10 +44,9 @@ function SingleProducts() {
           Home <span className="text-black">&gt;</span> Shop{' '}
           <span className="text-black">&gt;</span>
         </p>
-        <span> &gt; nome do produto</span>
+        <span> &gt; {product.name}</span>
       </div>
-
-      <ProductDescription />
+      <ProductDescription product={product} />
     </section>
   );
 }
