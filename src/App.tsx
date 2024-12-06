@@ -1,5 +1,5 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { RedirectToSignIn, SignedIn, SignedOut } from '@clerk/clerk-react';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Cart from './pages/cart/Cart';
@@ -11,7 +11,7 @@ import ShopPage from './pages/shop/ShopPage';
 import SingleProduct from './pages/singleProduct/SingleProducts';
 import useFetchProducts from './hooks/UseFetchProducts';
 
-const App: React.FC = () => {
+function App() {
   useFetchProducts();
 
   return (
@@ -20,15 +20,30 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route
+          path="/checkout"
+          element={
+            <SignedIn>
+              <CheckoutPage />
+            </SignedIn>
+          }
+        />
+        <Route
+          path="/sign-in"
+          element={
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+          }
+        />
         <Route path="/contact" element={<Contact />} />
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/single-product/:id" element={<SingleProduct />} />
-        <Route path="*" element={<NotFound404 />} /> {/* 404 Route */}
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
       <Footer />
     </Router>
   );
-};
+}
 
 export default App;

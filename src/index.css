@@ -138,4 +138,15 @@ input[type="number"] {
       display: none !important;
     }
   }
+
+  /* Adicione isso ao seu arquivo CSS personalizado */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
   
