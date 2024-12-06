@@ -17,7 +17,7 @@ function CounterCards({ initialCount, onCountChange }: CounterCardsProps) {
         setError('');
         return newCount;
       } else {
-        setError('O valor deve ser entre 1 e 10.');
+        setError('values ​​from 1 to 10');
         return prevCount;
       }
     });
@@ -31,7 +31,7 @@ function CounterCards({ initialCount, onCountChange }: CounterCardsProps) {
         setError('');
         return newCount;
       } else {
-        setError('O valor deve ser entre 1 e 10.');
+        setError('values ​​from 1 to 10');
         return prevCount;
       }
     });
@@ -56,8 +56,8 @@ function CounterCards({ initialCount, onCountChange }: CounterCardsProps) {
   );
 
   return (
-    <div className="w-auto">
-      <div className="flex w-36 px-3 py-4 border-2 border-gray-400 text-center justify-between gap-4 rounded-xl text-base mx-auto">
+    <div className="w-auto h-32">
+      <div className="flex w-36 px-3 py-5 border-2 border-gray-400 text-center justify-between gap-4 rounded-xl text-base mx-auto">
         <button onClick={handleDecrement}>-</button>
         <input
           type="text"

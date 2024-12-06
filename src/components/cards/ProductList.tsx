@@ -15,9 +15,10 @@ interface Product {
 
 interface ProductListProps {
   products?: Product[];
+  limit?: number;
 }
 
-function ProductList({ products }: ProductListProps) {
+function ProductList({ products, limit }: ProductListProps) {
   const [localProducts, setLocalProducts] = useState<Product[]>(products || []);
 
   useEffect(() => {
@@ -46,6 +47,10 @@ function ProductList({ products }: ProductListProps) {
     };
   }, [products]);
 
+  const displayedProducts = limit
+    ? localProducts.slice(0, limit)
+    : localProducts;
+
   if (!localProducts || localProducts.length === 0) {
     return (
       <div className="flex items-center justify-center text-center h-96">
@@ -56,7 +61,7 @@ function ProductList({ products }: ProductListProps) {
 
   return (
     <div className="flex flex-col items-center sm:flex-row flex-wrap w-11/12 mx-auto gap-5 justify-center">
-      {localProducts.map((product) =>
+      {displayedProducts.map((product) =>
         product ? (
           <ProductCard key={product.key || product.id} product={product} />
         ) : null,
