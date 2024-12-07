@@ -12,7 +12,14 @@ Instalar json.server
 npm install json-server --save-dev
 
 cd C:\Users\Usuário\Desktop\Nova pasta\CompassUOL-Challenge3-Furniro\public
+
+C:\Users\berto\Desktop\Desafio-Compass\furniro-challenge3-compass\public
+
 - json-server --watch db.json --port 3001 
+
+npm install @clerk/clerk-react
+
+npm install react-modal
 
 /// Git convenções ///
 

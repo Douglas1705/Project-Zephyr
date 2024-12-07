@@ -1,5 +1,5 @@
-import { useState, ChangeEvent, useMemo } from 'react';
-import CapePages from '../../components/capePages/capePages';
+import { useState, ChangeEvent, useMemo, useCallback } from 'react';
+import CapePages from '../../components/capePages/PagesCape';
 import {
   AdjustmentsHorizontalIcon,
   Squares2X2Icon,
@@ -32,27 +32,30 @@ function ShopPage() {
   });
   const [activeButton, setActiveButton] = useState<number | string>(1);
 
-  const handleShowCountChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    if (
-      value === '' ||
-      (/^\d+$/.test(value) && Number(value) >= 0 && Number(value) <= 32)
-    ) {
-      setShowCount(value);
-    }
-  };
+  const handleShowCountChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const value = event.target.value;
+      if (
+        value === '' ||
+        (/^\d+$/.test(value) && Number(value) >= 0 && Number(value) <= 32)
+      ) {
+        setShowCount(value);
+      }
+    },
+    [],
+  );
 
-  const openModal = () => {
+  const openModal = useCallback(() => {
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsModalOpen(false);
-  };
+  }, []);
 
-  const applyFilters = (newFilters: Filters) => {
+  const applyFilters = useCallback((newFilters: Filters) => {
     setFilters(newFilters);
-  };
+  }, []);
 
   const memoizedFilteredProductList = useMemo(
     () => (
@@ -64,28 +67,25 @@ function ShopPage() {
     [showCount, filters],
   );
 
-  const handleButtonClick = (label: number | string) => () => {
-    setActiveButton(label);
-  };
+  const handleButtonClick = useCallback(
+    (label: number | string) => () => {
+      setActiveButton(label);
+    },
+    [],
+  );
 
   return (
     <section>
       <CapePages title="Shop" />
       <main>
-        <article
-          className="
-        flex flex-col bg-WhisperWhite mb-12 lg:flex-row lg:h-28  lg:gap-4 lg:mb-0 lg:justify-between lg:px-2 xl:px-28"
-        >
+        <article className="flex flex-col bg-WhisperWhite mb-12 lg:flex-row lg:h-28 lg:gap-4 lg:mb-0 lg:justify-between lg:px-2 xl:px-28">
           <div
             id="container-first"
-            className="
-            flex flex-col items-center py-5 gap-8 lg:flex-row lg:items-center lg:justify-between"
+            className="flex flex-col items-center py-5 gap-8 lg:flex-row lg:items-center lg:justify-between"
           >
             <div
               id="container-icons"
-              className="
-            flex gap-5 items-center border-b-4 border-gray-400 pb-5 lg:border-b-0
-            lg:border-r-2 lg:h-10 lg:overflow-hidden lg:pr-7 lg:pb-0"
+              className="flex gap-5 items-center border-b-4 border-gray-400 pb-5 lg:border-b-0 lg:border-r-2 lg:h-10 lg:overflow-hidden lg:pr-7 lg:pb-0"
             >
               <AdjustmentsHorizontalIcon className={icons} />
               <button onClick={openModal} className="text-2xl font-medium">
@@ -104,8 +104,7 @@ function ShopPage() {
 
           <div
             id="container-second"
-            className="
-          flex flex-col text-center items-center gap-6 pt-2 pb-7 lg:flex-row lg:pt-5"
+            className="flex flex-col text-center items-center gap-6 pt-2 pb-7 lg:flex-row lg:pt-5"
           >
             <div className="flex items-center gap-6">
               <p className="text-2xl lg:text-xl">Show</p>

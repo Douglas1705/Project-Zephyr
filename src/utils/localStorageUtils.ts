@@ -21,3 +21,7 @@ export function addToCart(product: any, quantity: number) {
 
   saveToLocalStorage('cartItems', cart);
 }
+
+export function clearCart(key: string) {
+  localStorage.removeItem(key);
+}

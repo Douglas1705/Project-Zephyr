@@ -48,22 +48,27 @@ function ProductsCheck() {
   };
 
   return (
-    <article>
+    <article className="h-auto py-8 border-b-2 mx-auto w-11/12 md:w-6/12 lg:w-11/12 lg:borde-2 pl-0 lg:pl-0 xl:w-full xl:pl-10 ">
       <thead>
         <tr>
-          <th>Product</th>
-          <th>Subtotal</th>
+          <th className="w-36 text-start text-2xl font-medium pb-4 md:w-7/12 lg:w-8/12 ">
+            Product
+          </th>
+          <th className="text-right pb-4 text-2xl font-medium w-48">
+            Subtotal
+          </th>
         </tr>
       </thead>
       <tbody>
         {cartItems.map((item) => (
           <tr key={item.id}>
-            <th>
+            <th className="text-start text-gray-400 pb-4 font-normal">
               <p>
-                {item.name} x {item.quantity}
+                {item.name}{' '}
+                <span className="text-black">x {item.quantity} </span>
               </p>
             </th>
-            <td>
+            <td className="text-right pb-5">
               <p>
                 {formatCurrency(
                   (item.discountedPrice > 0
@@ -75,15 +80,17 @@ function ProductsCheck() {
           </tr>
         ))}
         <tr>
-          <th>Subtotal</th>
-          <td>
-            <p>{formatCurrency(subtotal)}</p>
+          <th className="text-left font-normal">Subtotal</th>
+          <td className="">
+            <p className="text-right">{formatCurrency(subtotal)}</p>
           </td>
         </tr>
         <tr>
-          <th>Total</th>
+          <th className="text-left font-normal pt-4">Total</th>
           <td>
-            <p>{formatCurrency(total)}</p>
+            <p className="pt-4 font-bold  text-lg text-Goldenrod text-right">
+              {formatCurrency(total)}
+            </p>
           </td>
         </tr>
       </tbody>

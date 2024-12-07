@@ -149,4 +149,11 @@ input[type="number"] {
   scrollbar-width: none;     /* Firefox */
 }
 
+
+/* Adicione este CSS no seu arquivo de estilos */
+input[type="radio"]:checked {
+  background-color: black;
+  border-color: black;
+}
+
   

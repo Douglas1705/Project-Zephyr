@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@clerk/clerk-react';
 import { TbTrashFilled } from 'react-icons/tb';
 import AppButton from '../../components/buttons/AppButton';
-import CapePages from '../../components/capePages/CapePages';
+import CapePages from '../../components/capePages/PagesCape';
 import CounterCards from '../../components/counter/CounterCards';
 import {
   loadFromLocalStorage,
@@ -27,11 +27,20 @@ function Cart() {
   const navigate = useNavigate();
   const { isSignedIn } = useAuth();
 
+  const calculateSubtotal = useCallback((items: Product[]) => {
+    const total = items.reduce(
+      (acc, item) =>
+        acc + item.quantity * (item.discountedPrice || item.originalPrice),
+      0,
+    );
+    setSubtotal(total);
+  }, []);
+
   useEffect(() => {
     const items = loadFromLocalStorage('cartItems') || [];
     setCartItems(items);
     calculateSubtotal(items);
-  }, []);
+  }, [calculateSubtotal]);
 
   const updateQuantity = useCallback(
     (id: number, quantity: number) => {
@@ -42,17 +51,8 @@ function Cart() {
       saveToLocalStorage('cartItems', updatedItems);
       calculateSubtotal(updatedItems);
     },
-    [cartItems],
+    [cartItems, calculateSubtotal],
   );
-
-  const calculateSubtotal = useCallback((items: Product[]) => {
-    const total = items.reduce(
-      (acc, item) =>
-        acc + item.quantity * (item.discountedPrice || item.originalPrice),
-      0,
-    );
-    setSubtotal(total);
-  }, []);
 
   const removeItem = useCallback(
     (id: number) => {
@@ -64,20 +64,37 @@ function Cart() {
     [cartItems, calculateSubtotal],
   );
 
-  const formatCurrency = (value: number) =>
-    new Intl.NumberFormat('en-US', {
-      style: 'decimal',
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(value);
+  const formatCurrency = useCallback(
+    (value: number) =>
+      new Intl.NumberFormat('en-US', {
+        style: 'decimal',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(value),
+    [],
+  );
 
-  const handleCheckout = () => {
+  const handleCheckout = useCallback(() => {
     if (isSignedIn) {
       navigate('/checkout');
     } else {
       navigate('/sign-in');
     }
-  };
+  }, [isSignedIn, navigate]);
+
+  const handleCountChange = useCallback(
+    (id: number, quantity: number) => {
+      updateQuantity(id, quantity);
+    },
+    [updateQuantity],
+  );
+
+  const handleRemoveItem = useCallback(
+    (id: number) => {
+      removeItem(id);
+    },
+    [removeItem],
+  );
 
   return (
     <section>
@@ -123,7 +140,7 @@ function Cart() {
                       className="xl:py-1"
                       initialCount={item.quantity}
                       onCountChange={(quantity) =>
-                        updateQuantity(item.id, quantity)
+                        handleCountChange(item.id, quantity)
                       }
                     />
 
@@ -136,7 +153,7 @@ function Cart() {
                   </div>
 
                   <TbTrashFilled
-                    onClick={() => removeItem(item.id)}
+                    onClick={() => handleRemoveItem(item.id)}
                     className="cursor-pointer text-4xl text-yellow-700 md:w-full xl:w-auto"
                   />
                 </div>

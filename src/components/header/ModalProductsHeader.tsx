@@ -16,12 +16,6 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
   const [cartItems, setCartItems] = useState<any[]>([]);
   const [subtotal, setSubtotal] = useState(0);
 
-  useEffect(() => {
-    const items = loadFromLocalStorage('cartItems') || [];
-    setCartItems(items);
-    calculateSubtotal(items);
-  }, []);
-
   const calculateSubtotal = useCallback((items: any[]) => {
     const total = items.reduce(
       (acc, item) =>
@@ -30,6 +24,12 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
     );
     setSubtotal(total);
   }, []);
+
+  useEffect(() => {
+    const items = loadFromLocalStorage('cartItems') || [];
+    setCartItems(items);
+    calculateSubtotal(items);
+  }, [calculateSubtotal]);
 
   const handleRemoveItem = useCallback(
     (id: number) => {
@@ -42,7 +42,7 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
   );
 
   return (
-    <div className="px-6 r-52 bg-white z-40 ">
+    <div className="px-6 r-52 bg-white z-40">
       <div className="flex items-center border-b-2 border-gray-200 justify-between py-6">
         <h3 className="text-2xl font-semibold bg-white">Shopping Cart</h3>
         <div className="flex gap-2">
@@ -58,12 +58,12 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 pt-10 ">
+      <div className="flex flex-col gap-5 pt-10">
         <div className="max-h-60 overflow-y-auto overflow-x-hidden no-scrollbar">
           {cartItems.map((item) => (
             <div
               key={item.id}
-              className="flex items-center  mb-5 flex-col gap-5 md:flex-row"
+              className="flex items-center mb-5 flex-col gap-5 md:flex-row"
             >
               <img
                 src={item.imageUrl}
@@ -71,26 +71,27 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
                 className="h-32 md:w-24 md:h-24 md:mr-10"
               />
               <div className="flex flex-row items-center gap-16">
-                <div className="flex border-y-2 pb-2">
-                  <h4 className="text-base ">{item.name}</h4>
-
-                  <p className="  ">
+                <div className="flex border-y-2 py-2">
+                  <h4 className="text-base mr-4">{item.name}</h4>
+                  
+                  <p>
                     <span className="pr-2">{item.quantity}</span> x{' '}
-                    <span className="text-Goldenrod text-Goldenrod pl-2">
+                    <span className="text-Goldenrod pl-2">
                       {item.discountedPrice || item.originalPrice}
                     </span>
                   </p>
+                  
                 </div>
                 <TbXboxXFilled
                   onClick={() => handleRemoveItem(item.id)}
-                  className="cursor-pointer text-md text-gray-400 "
+                  className="cursor-pointer text-md text-gray-400 hover:text-red-800"
                 />
               </div>
             </div>
           ))}
         </div>
 
-        <div className="flex gap-20 border-b-2 border-gray-400 md:mt-44 pb-8">
+        <div className="flex gap-20 border-b-2 border-gray-400 pb-8">
           <p>Subtotal</p>
           <p className="text-base font-semibold text-Goldenrod">
             Rs. {subtotal}

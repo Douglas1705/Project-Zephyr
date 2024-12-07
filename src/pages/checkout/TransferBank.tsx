@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState, ChangeEvent, useCallback } from 'react';
 
 function TransferBank() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-  const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOptionChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(e.target.value);
-  };
+  }, []);
 
   const getTextForSelectedOption = (option: string) => {
     switch (option) {
@@ -21,7 +21,7 @@ function TransferBank() {
   };
 
   return (
-    <article>
+    <article className="py-10 space-y-5 lg:w-11/12lg:pr-14 xl:w-full xl:pl-7">
       <div>
         <input
           type="radio"
@@ -30,17 +30,21 @@ function TransferBank() {
           value="bankTransfer1"
           checked={selectedOption === 'bankTransfer1'}
           onChange={handleOptionChange}
+          className="form-radio accent-black"
         />
         <label
           htmlFor="bankTransfer1"
-          style={{
-            color: selectedOption === 'bankTransfer1' ? 'black' : 'inherit',
-          }}
+          className={`ml-2 ${selectedOption === 'bankTransfer1' ? 'text-black' : 'text-gray-400'}`}
         >
           Direct Bank Transfer
         </label>
         {selectedOption === 'bankTransfer1' && (
-          <p id="text-selected">{getTextForSelectedOption('bankTransfer1')}</p>
+          <p
+            className="text-gray-400 text-justify w-10/12 mt-3 lg:w-full"
+            id="text-selected"
+          >
+            {getTextForSelectedOption('bankTransfer1')}
+          </p>
         )}
       </div>
 
@@ -52,17 +56,21 @@ function TransferBank() {
           value="bankTransfer2"
           checked={selectedOption === 'bankTransfer2'}
           onChange={handleOptionChange}
+          className="form-radio accent-black"
         />
         <label
           htmlFor="bankTransfer2"
-          style={{
-            color: selectedOption === 'bankTransfer2' ? 'black' : 'inherit',
-          }}
+          className={`ml-2 ${selectedOption === 'bankTransfer2' ? 'text-black' : 'text-gray-400'}`}
         >
           Direct Bank Transfer
         </label>
         {selectedOption === 'bankTransfer2' && (
-          <p id="text-selected">{getTextForSelectedOption('bankTransfer2')}</p>
+          <p
+            className="text-gray-400 text-justify w-8/12 mt-3 lg:w-full"
+            id="text-selected"
+          >
+            {getTextForSelectedOption('bankTransfer2')}
+          </p>
         )}
       </div>
 
@@ -74,24 +82,28 @@ function TransferBank() {
           value="cashOnDelivery"
           checked={selectedOption === 'cashOnDelivery'}
           onChange={handleOptionChange}
+          className="form-radio accent-black"
         />
         <label
           htmlFor="cashOnDelivery"
-          style={{
-            color: selectedOption === 'cashOnDelivery' ? 'black' : 'inherit',
-          }}
+          className={`ml-2 text-justify ${selectedOption === 'cashOnDelivery' ? 'text-black' : 'text-gray-400'}`}
         >
           Cash On Delivery
         </label>
         {selectedOption === 'cashOnDelivery' && (
-          <p id="text-selected">{getTextForSelectedOption('cashOnDelivery')}</p>
+          <p
+            className="text-gray-400 text-justify w-8/12 mt-3 lg:w-full"
+            id="text-selected"
+          >
+            {getTextForSelectedOption('cashOnDelivery')}
+          </p>
         )}
       </div>
 
-      <p>
+      <p className="text-justify md:w-10/12 md:mx-auto lg:w-full">
         Your personal data will be used to support your experience throughout
         this website, to manage access to your account, and for other purposes
-        described in our <span>privacy policy.</span>
+        described in our <span className="font-semibold">privacy policy.</span>
       </p>
     </article>
   );

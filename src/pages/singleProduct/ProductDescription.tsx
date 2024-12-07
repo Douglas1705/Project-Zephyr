@@ -5,7 +5,6 @@ import CounterCards from '../../components/counter/CounterCards';
 import AppButton from '../../components/buttons/AppButton';
 import { addToCart } from '../../utils/localStorageUtils';
 import ConfirmationMessage from '../../components/cards/ConfirmationMessage';
-import ProductList from '../../components/cards/ProductList';
 
 interface Product {
   id: number;
@@ -15,7 +14,7 @@ interface Product {
   discountedPrice: number;
   discount: number;
   imageUrl: string;
-  new: string;
+  new: boolean;
 }
 
 interface ProductDescriptionProps {

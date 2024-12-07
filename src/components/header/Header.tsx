@@ -52,7 +52,7 @@ function Header() {
   const isModalActive = isModalOpen || isCartModalOpen;
 
   return (
-    <header className="flex justify-between items-center w-auto min-h-16 px-5 lg:min-h-24 lg:px-16">
+    <header className="flex justify-between items-center w-auto min-h-16 px-5 lg:min-h-24 lg:px-4 xl:px-16 xl:max-w-screen-2xl xl:mx-auto xl:w-full">
       <div className="flex items-center gap-2">
         <img
           src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/logo-furniro.svg"
@@ -65,12 +65,12 @@ function Header() {
         </h1>
       </div>
 
-      <div className="flex gap-5 md:justify-between lg:w-8/12">
+      <div className="flex gap-5 md:justify-between lg:w-9/12 xl:w-8/12">
         <button className="block lg:hidden" onClick={handleMenuToggle}>
           <div className="w-6 h-0.5 bg-black mb-1"></div>
           <div className="w-6 h-0.5 bg-black mb-1"></div>
           <div className="w-6 h-0.5 bg-black"></div>
-        </button>
+        </button> 
 
         <nav
           className={`lg:flex ${isMenuOpen && !isModalActive ? 'block' : 'hidden'} 
@@ -80,16 +80,16 @@ function Header() {
             className={`flex flex-col gap-4 text-base font-medium p-4 border-2 items-center lg:flex-row lg:gap-20 lg:p-0 lg:border-0 xl:gap-24 xl:text-lg ${isModalActive ? 'hidden' : ''}`}
             onClick={handleLinkClick}
           >
-            <li>
+            <li className='hover:text-Goldenrod hover:border-b-4 hover:border-black'>
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className='hover:text-Goldenrod hover:border-b-4 hover:border-black'>
               <Link to="/shop">Shop</Link>
             </li>
-            <li>
+            <li className='hover:text-Goldenrod hover:border-b-4 hover:border-black'>
               <Link to="#">About</Link>
             </li>
-            <li>
+            <li className='hover:text-Goldenrod hover:border-b-4 hover:border-black'>
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
@@ -101,14 +101,14 @@ function Header() {
             src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/nav/Vector.svg"
             alt="icon representing a user"
             title="user-icon"
-            className="w-6 lg:w-7 cursor-pointer"
+            className="w-6 lg:w-7 cursor-pointer hover:w-8 "
             onClick={handleUserIconClick}
           />
           <img
             src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/nav/ant-design_shopping-cart-outlined.svg"
             alt="icon representing a shopping affection"
             title="shopping-affection-icon"
-            className="w-6 lg:w-7 cursor-pointer"
+            className="w-6 lg:w-7 cursor-pointer hover:w-8"
             onClick={handleCartIconClick}
           />
         </div>
@@ -124,7 +124,7 @@ function Header() {
         {user ? (
           <button
             onClick={handleLogout}
-            className="block w-full text-center text-white py-2 px-4 hover:text-black"
+            className="w-full bg-Goldenrod text-center text-white py-2 px-4 flex flex-col items-center hover:text-black hover:bg-white"
           >
             <IoIosUnlock />
             Logout
