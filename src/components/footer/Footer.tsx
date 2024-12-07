@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   const iconsCustom =
-    'p-3 rounded-full shadow-ShadowComplete text-2xl xl:text-sm';
+    'p-3 rounded-full shadow-ShadowComplete text-2xl xl:text-sm hover:bg-Goldenrod hover:text-white';
 
   const containersLinks = 'flex flex-col gap-5 xl:gap-8';
 
@@ -64,7 +64,7 @@ function Footer() {
             </a>
 
             <a
-              className={`${iconsCustom}`}
+              className={`${iconsCustom} `}
               href="https://www.linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -78,10 +78,18 @@ function Footer() {
           <h3 className="text-lg font-medium text-gray-400">Links</h3>
 
           <nav className={`${subContainerLinks}`}>
-            <Link to="/">Home</Link>
-            <Link to="/shop">Shop</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
+            <Link className="hover:text-Goldenrod" to="/">
+              Home
+            </Link>
+            <Link className="hover:text-Goldenrod" to="/shop">
+              Shop
+            </Link>
+            <Link className="hover:text-Goldenrod" to="/about">
+              About
+            </Link>
+            <Link className="hover:text-Goldenrod" to="/contact">
+              Contact
+            </Link>
           </nav>
         </div>
 
@@ -89,15 +97,27 @@ function Footer() {
           <h3 className={`${h3custom}`}>Help</h3>
 
           <div className={`${subContainerLinks}`}>
-            <a href="https://www.exemplo.com/payment-options" target="_blank">
+            <a
+              href="https://www.exemplo.com/payment-options"
+              target="_blank"
+              className="hover:text-Goldenrod"
+            >
               Payment Options
             </a>
 
-            <a href="https://www.exemplo.com/returns" target="_blank">
+            <a
+              href="https://www.exemplo.com/returns"
+              target="_blank"
+              className="hover:text-Goldenrod"
+            >
               Returns
             </a>
 
-            <a href="https://www.exemplo.com/privacy-policies" target="_blank">
+            <a
+              href="https://www.exemplo.com/privacy-policies"
+              target="_blank"
+              className="hover:text-Goldenrod"
+            >
               Privacy Policies
             </a>
           </div>

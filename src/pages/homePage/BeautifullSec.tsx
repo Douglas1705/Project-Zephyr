@@ -40,7 +40,7 @@ function BeautifullSec() {
           Our designer already made a lot of beautiful prototipe of rooms that
           inspire you
         </p>
-        <AppButton className="bg-Goldenrod text-white w-10/12 mx-auto lg:w-52 lg:ml-0">
+        <AppButton className="bg-Goldenrod text-white w-10/12 mx-auto lg:w-44 lg:ml-0 py-4 hover-gold-custom">
           Explore More
         </AppButton>
       </article>
@@ -59,7 +59,7 @@ function BeautifullSec() {
             <h3 className="text-3xl font-semibold">Inner Peace</h3>
           </div>
           <button>
-            <ArrowRightIcon className="absolute bottom-5 right-28 bg-Goldenrod p-4 z-20 w-14 text-white hover:bg-white hover:text-black" />
+            <ArrowRightIcon className="absolute bottom-5 right-28 bg-Goldenrod p-4 z-20 w-14 text-white hover-gold-custom" />
           </button>
         </div>
         <div className="w-full md:w-10/12 md:mx-auto xl:mr-0 xl:w-[450px]">

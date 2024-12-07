@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { addToCart } from '../../utils/localStorageUtils';
 import ConfirmationMessage from './ConfirmationMessage';
+import { FaShareAlt } from 'react-icons/fa';
 
 interface Props {
   product: {
@@ -37,26 +38,52 @@ function ModalCard({ product, isOpen, onClose }: Props) {
 
   return (
     <div className="absolute inset-0 z-50 flex items-center justify-center">
-      <div className="relative bg-black p-6 rounded-lg shadow-lg w-full h-full flex flex-col justify-center items-center">
+      <div className="relative bg-gray-900 bg-opacity-55 p-6 rounded-lg shadow-lg w-full h-full flex flex-col justify-center items-center">
         <button
-          className="absolute top-0 right-0 mt-4 mr-4 text-white"
+          className="absolute top-0 right-0 mt-4 mr-4 text-white text-4xl hover:text-red-400"
           onClick={onClose}
         >
           &times;
         </button>
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-6 items-center">
           <button
             onClick={handleAddToCart}
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-white text-Goldenrod  hover:bg-Goldenrod hover:text-white py-3 w-10/12 font-semibold"
           >
-            Adicionar ao carrinho
+            Add to cart
           </button>
           <button
             onClick={handleViewProduct}
-            className="bg-green-500 text-white px-4 py-2 rounded"
+            className="bg-white text-Goldenrod w-10/12 py-3 hover:bg-Goldenrod hover:text-white font-semibold"
           >
             Visualizar
           </button>
+          <div className="flex gap-4">
+            <div className="flex items-center gap-1 hover:border-b-2 hover:border-white">
+              <img
+                src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/gridicons_share.svg"
+                alt=""
+                width={16}
+              />
+              <p className="text-white cursor-pointer ">Share</p>
+            </div>
+            <div className="flex gap-1 hover:border-b-2 hover:border-white">
+              <img
+                src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/Vector-compare.svg"
+                alt=""
+                width={16}
+              />
+              <p className="text-white">Compare</p>
+            </div>
+            <div className="flex gap-1 hover:border-b-2 hover:border-white">
+              <img
+                src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/Heart.svg"
+                alt=""
+                width={16}
+              />
+              <p className="text-white">Like</p>
+            </div>
+          </div>
         </div>
         {showConfirmation && (
           <ConfirmationMessage

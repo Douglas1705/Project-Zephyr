@@ -132,14 +132,14 @@ input[type="number"] {
       left: 50%;
       transform: translate(-50%, -50%);
     }
-  
+        
     /* Remove the left arrow */
     .splide__arrow--prev {
       display: none !important;
     }
   }
 
-  /* Adicione isso ao seu arquivo CSS personalizado */
+  /* Scroll */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -154,6 +154,22 @@ input[type="number"] {
 input[type="radio"]:checked {
   background-color: black;
   border-color: black;
+}
+
+/* Hover buttons */
+@layer utilities {
+  .hover-gold-custom:hover {
+    background-color: #f9c748; 
+    color: white; 
+  }
+  .hover-white-custom:hover {
+    background-color: black; 
+    color: white; 
+  }  
+  .hover-white-gold-custom:hover {
+    background-color: rgb(218, 168, 17); 
+    color: white; 
+  }  
 }
 
   

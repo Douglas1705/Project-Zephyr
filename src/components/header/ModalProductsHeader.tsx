@@ -43,7 +43,7 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
 
   return (
     <div className="px-6 r-52 bg-white z-40">
-      <div className="flex items-center border-b-2 border-gray-200 justify-between py-6">
+      <div className="flex items-center border-b-2 border-gray-300 justify-between py-6">
         <h3 className="text-2xl font-semibold bg-white">Shopping Cart</h3>
         <div className="flex gap-2">
           {cartItems.length === 0 ? (
@@ -68,30 +68,29 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
               <img
                 src={item.imageUrl}
                 alt={item.name}
-                className="h-32 md:w-24 md:h-24 md:mr-10"
+                className="h-32 md:w-24 md:h-24 md:mr-10 rounded-xl xl:w-28 xl:mr-4"
               />
-              <div className="flex flex-row items-center gap-16">
-                <div className="flex border-y-2 py-2">
+              <div className="flex flex-row items-center gap-16 md:justify-between  md:w-full">
+                <div className="flex border-y-2 py-2  lg:flex-col lg:gap-3 xl:border-none">
                   <h4 className="text-base mr-4">{item.name}</h4>
-                  
+
                   <p>
                     <span className="pr-2">{item.quantity}</span> x{' '}
                     <span className="text-Goldenrod pl-2">
                       {item.discountedPrice || item.originalPrice}
                     </span>
                   </p>
-                  
                 </div>
                 <TbXboxXFilled
                   onClick={() => handleRemoveItem(item.id)}
-                  className="cursor-pointer text-md text-gray-400 hover:text-red-800"
+                  className="cursor-pointer text-md text-gray-400 hover:text-red-800 text-2xl"
                 />
               </div>
             </div>
           ))}
         </div>
 
-        <div className="flex gap-20 border-b-2 border-gray-400 pb-8">
+        <div className="flex gap-20 border-b-2 border-gray-300 pb-8 lg:mt-14">
           <p>Subtotal</p>
           <p className="text-base font-semibold text-Goldenrod">
             Rs. {subtotal}
@@ -102,20 +101,20 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
           <Link
             to="/cart"
             onClick={onClose}
-            className="border-2 border-black h-9 px-8 rounded-3xl text-xs flex items-center justify-center"
+            className="border-2 border-black h-9 px-8 rounded-3xl text-xs flex items-center justify-center hover-white-custom"
           >
             Cart
           </Link>
           <Link
             to="/checkout"
             onClick={onClose}
-            className="border-2 border-black h-9 px-8 rounded-3xl text-xs flex items-center justify-center"
+            className="border-2 border-black h-9 px-8 rounded-3xl text-xs flex items-center justify-center hover-white-custom"
           >
             Checkout
           </Link>
           <button
             disabled
-            className="border-2 border-black h-9 px-8 rounded-3xl text-xs flex items-center justify-center"
+            className="border-2 border-black h-9 px-8 rounded-3xl text-xs flex items-center justify-center hover-white-custom"
           >
             Comparison
           </button>

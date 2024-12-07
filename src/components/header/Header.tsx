@@ -70,7 +70,7 @@ function Header() {
           <div className="w-6 h-0.5 bg-black mb-1"></div>
           <div className="w-6 h-0.5 bg-black mb-1"></div>
           <div className="w-6 h-0.5 bg-black"></div>
-        </button> 
+        </button>
 
         <nav
           className={`lg:flex ${isMenuOpen && !isModalActive ? 'block' : 'hidden'} 
@@ -80,16 +80,16 @@ function Header() {
             className={`flex flex-col gap-4 text-base font-medium p-4 border-2 items-center lg:flex-row lg:gap-20 lg:p-0 lg:border-0 xl:gap-24 xl:text-lg ${isModalActive ? 'hidden' : ''}`}
             onClick={handleLinkClick}
           >
-            <li className='hover:text-Goldenrod hover:border-b-4 hover:border-black'>
+            <li className="hover:text-Goldenrod hover:border-b-4 hover:border-black">
               <Link to="/">Home</Link>
             </li>
-            <li className='hover:text-Goldenrod hover:border-b-4 hover:border-black'>
+            <li className="hover:text-Goldenrod hover:border-b-4 hover:border-black">
               <Link to="/shop">Shop</Link>
             </li>
-            <li className='hover:text-Goldenrod hover:border-b-4 hover:border-black'>
+            <li className="hover:text-Goldenrod hover:border-b-4 hover:border-black">
               <Link to="#">About</Link>
             </li>
-            <li className='hover:text-Goldenrod hover:border-b-4 hover:border-black'>
+            <li className="hover:text-Goldenrod hover:border-b-4 hover:border-black">
               <Link to="/contact">Contact</Link>
             </li>
           </ul>

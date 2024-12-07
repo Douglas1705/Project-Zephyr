@@ -6,7 +6,7 @@ import ProductHomePage from './ProductsHomeSec';
 
 function HomePage() {
   return (
-    <main>
+    <main className="max-w-screen-2xl xl:mx-auto">
       <CapaSec />
       <BrowseSec />
       <ProductHomePage />
