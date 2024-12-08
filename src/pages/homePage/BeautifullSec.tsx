@@ -18,6 +18,7 @@ function BeautifullSec() {
   const handleSlideChange = useCallback(() => {
     setLargeImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, [images.length]);
+
   useEffect(() => {
     const splide = splideRef.current?.splide;
     if (splide) {
@@ -29,6 +30,16 @@ function BeautifullSec() {
       }
     };
   }, [handleSlideChange]);
+
+  const CustomSlide = ({ src }: { src: string }) => (
+    <SplideSlide>
+      <img
+        src={src}
+        alt="Room"
+        className="w-full h-full md:h-450px xl:h-[450px]"
+      />
+    </SplideSlide>
+  );
 
   return (
     <section className="bg-WhisperWhite gap-10 flex flex-col mt-10 lg:min-h-[670px] lg:flex-row lg:items-center xl:justify-between">
@@ -59,7 +70,7 @@ function BeautifullSec() {
             <h3 className="text-3xl font-semibold">Inner Peace</h3>
           </div>
           <button>
-            <ArrowRightIcon className="absolute bottom-5 right-28 bg-Goldenrod p-4 z-20 w-14 text-white hover-gold-custom" />
+            <ArrowRightIcon className="absolute bottom-5 right-28 bg-Goldenrod p-4 z-20 w-14 text-white" />
           </button>
         </div>
         <div className="w-full md:w-10/12 md:mx-auto xl:mr-0 xl:w-[450px]">
@@ -112,14 +123,8 @@ function BeautifullSec() {
             }}
             aria-label="Beautiful Room Inspirations"
           >
-            {images.map((image, index) => (
-              <SplideSlide key={index}>
-                <img
-                  src={image}
-                  alt={`Room ${index + 1}`}
-                  className="w-full h-full md:h-450px xl:h-[450px]"
-                />
-              </SplideSlide>
+            {images.map((src, index) => (
+              <CustomSlide key={`slide-${index}`} src={src} />
             ))}
           </Splide>
         </div>

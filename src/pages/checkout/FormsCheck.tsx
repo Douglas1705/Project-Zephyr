@@ -22,7 +22,7 @@ interface FormsCheckHandle {
   validate: () => boolean;
 }
 
-function FormsCheck(props: {}, ref: React.Ref<FormsCheckHandle>) {
+function FormsCheck({}, ref: React.Ref<FormsCheckHandle>) {
   const [formValues, setFormValues] = useState<FormValues>({
     firstName: '',
     lastName: '',
@@ -110,7 +110,7 @@ function FormsCheck(props: {}, ref: React.Ref<FormsCheckHandle>) {
     'border-2 border-gray-300 h-16 rounded-lg text-gray-700 pl-6';
 
   return (
-    <div className="lg:w-9/12  lg:px-5 xl:w-5/12 xl:mr-24 xl:px-0 xl:pr-0">
+    <div className="lg:w-9/12 lg:px-5 xl:w-5/12 xl:mr-24 xl:px-0 xl:pr-0">
       <form className="flex flex-col gap-8 py-10">
         <div className="xl:flex xl:flex-row">
           <div

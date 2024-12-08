@@ -31,6 +31,15 @@ function ProductDescription({ product }: ProductDescriptionProps) {
       : product.originalPrice;
   }, [product.discountedPrice, product.originalPrice]);
 
+  const formatCurrency = (value: number) => {
+    return value
+      .toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      })
+      .replace('$', 'Rs. ');
+  };
+
   const handleAddToCart = useCallback(() => {
     addToCart(product, quantity);
     setShowConfirmation(true);
@@ -76,8 +85,10 @@ function ProductDescription({ product }: ProductDescriptionProps) {
             className="flex flex-col gap-3 py-5"
           >
             <div className="space-y-5">
-              <h1 className="text-2xl font-bold xl:text-5xl">{product.name}</h1>
-              <p className="text-base text-gray-500 xl:text-3xl">Rs. {price}</p>
+              <h1 className="text-2xl xl:text-5xl">{product.name}</h1>
+              <p className="text-base text-gray-500 xl:text-3xl">
+                {formatCurrency(price)}
+              </p>
             </div>
 
             <div className="flex gap-4">

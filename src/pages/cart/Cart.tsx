@@ -64,15 +64,12 @@ function Cart() {
     [cartItems, calculateSubtotal],
   );
 
-  const formatCurrency = useCallback(
-    (value: number) =>
-      new Intl.NumberFormat('en-US', {
-        style: 'decimal',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      }).format(value),
-    [],
-  );
+  const formatCurrency = (value: number) => {
+    return value.toLocaleString('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  };
 
   const handleCheckout = useCallback(() => {
     if (isSignedIn) {

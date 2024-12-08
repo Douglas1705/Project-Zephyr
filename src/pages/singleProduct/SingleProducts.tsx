@@ -16,6 +16,7 @@ interface Product {
   discount: number;
   imageUrl: string;
   price: number;
+  new: boolean;
 }
 
 function SingleProducts() {
@@ -25,11 +26,16 @@ function SingleProducts() {
   const [displayedProducts, setDisplayedProducts] = useState<number>(4);
 
   useEffect(() => {
-    if (products.length > 0) {
+    if (products.length > 0 && id) {
+      const numericId = Number(id);
       const foundProduct = products.find(
-        (product) => product.id === id || product.id === parseInt(id, 10),
+        (product) => Number(product.id) === numericId,
       );
-      setProduct(foundProduct || null);
+      if (foundProduct) {
+        setProduct(foundProduct);
+      } else {
+        setProduct(null);
+      }
     }
   }, [products, id]);
 

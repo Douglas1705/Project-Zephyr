@@ -48,6 +48,15 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
     [handleRemoveItem],
   );
 
+  const formatCurrency = (value: number) => {
+    return value
+      .toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      })
+      .replace('$', 'Rs. ');
+  };
+
   return (
     <div className="px-6 r-52 bg-white z-40">
       <div className="flex items-center border-b-2 border-gray-300 justify-between py-6">
@@ -84,7 +93,9 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
                   <p>
                     <span className="pr-2">{item.quantity}</span> x{' '}
                     <span className="text-Goldenrod pl-2">
-                      {item.discountedPrice || item.originalPrice}
+                      {formatCurrency(
+                        item.discountedPrice || item.originalPrice,
+                      )}
                     </span>
                   </p>
                 </div>
@@ -100,7 +111,7 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
         <div className="flex gap-20 border-b-2 border-gray-300 pb-8 lg:mt-14">
           <p>Subtotal</p>
           <p className="text-base font-semibold text-Goldenrod">
-            Rs. {subtotal}
+            {formatCurrency(subtotal)}
           </p>
         </div>
 
