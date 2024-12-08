@@ -38,19 +38,33 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
           content: {
             color: 'black',
             maxWidth: '500px',
+            height: '400px',
             margin: 'auto',
             textAlign: 'center',
+            background:
+              'linear-gradient(225deg, rgba(255,243,227,1) 0%, rgba(184,142,47,1) 49%, rgba(236,237,237,0.9847161572052402) 100%)',
+            borderRadius: '10px',
           },
         }}
       >
-        <h2>Form is Valid!</h2>
-        <p>Congratulations! The form has been successfully validated.</p>
-        <button
-          className="bg-blue-500 text-white py-2 px-4 "
-          onClick={closeModal}
-        >
-          Close
-        </button>
+        <div className="bg-Goldenrod bg-opacity-50 rounded-xl">
+          <h2 className="text-2xl mb-4 font-bold xl:text-4xl text-rose-800">
+            Congratulations{' '}
+          </h2>
+          <p className="text-xl mb-4 text-white font-bold xl:text-4xl">
+            {'Nome do usuario'}
+          </p>
+          <p className="text-white text-2xl mb-10">
+            We are happy to know that we left your space with more style and
+            refinement.
+          </p>
+          <button
+            className="bg-white text-black py-4 px-4 w-8/12 mb-10 text-2xl rounded-lg hover:bg-black hover:text-white"
+            onClick={closeModal}
+          >
+            Close
+          </button>
+        </div>
       </Modal>
     </>
   );

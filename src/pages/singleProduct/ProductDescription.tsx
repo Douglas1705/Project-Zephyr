@@ -166,14 +166,17 @@ function ProductDescription({ product }: ProductDescriptionProps) {
               </div>
 
               <div className="flex gap-4">
-                <a href="https://web.facebook.com/?locale=pt_BR&_rdc=1&_rdr" target="_blank">
-                <FaFacebook className="text-2xl text-black hover:text-Goldenrod" />
+                <a
+                  href="https://web.facebook.com/?locale=pt_BR&_rdc=1&_rdr"
+                  target="_blank"
+                >
+                  <FaFacebook className="text-2xl text-black hover:text-Goldenrod" />
                 </a>
                 <a href="https://br.linkedin.com/" target="_blank">
-                <FaLinkedin className="text-2xl text-black hover:text-Goldenrod" />
+                  <FaLinkedin className="text-2xl text-black hover:text-Goldenrod" />
                 </a>
                 <a href="https://x.com/?lang=pt-br" target="_blank">
-                <AiFillTwitterCircle className="text-2xl text-black hover:text-Goldenrod" />
+                  <AiFillTwitterCircle className="text-2xl text-black hover:text-Goldenrod" />
                 </a>
               </div>
             </div>
