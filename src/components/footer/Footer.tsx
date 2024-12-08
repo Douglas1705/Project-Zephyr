@@ -116,27 +116,15 @@ function Footer() {
           <h3 className={`${h3custom}`}>Help</h3>
 
           <div className={`${subContainerLinks}`}>
-            <a
-              href="#"
-              target="_blank"
-              className="hover:text-Goldenrod"
-            >
+            <a href="#" target="_blank" className="hover:text-Goldenrod">
               Payment Options
             </a>
 
-            <a
-              href="#"
-              target="_blank"
-              className="hover:text-Goldenrod"
-            >
+            <a href="#" target="_blank" className="hover:text-Goldenrod">
               Returns
             </a>
 
-            <a
-              href="#"
-              target="_blank"
-              className="hover:text-Goldenrod"
-            >
+            <a href="#" target="_blank" className="hover:text-Goldenrod">
               Privacy Policies
             </a>
           </div>
@@ -173,8 +161,12 @@ function Footer() {
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg">
-            <img src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/logo-furniro.svg" alt="" className='mx-auto' />
-            <p className='text-center text-2xl font-bold mb-10'>Furniro.</p>
+            <img
+              src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/logo-furniro.svg"
+              alt=""
+              className="mx-auto"
+            />
+            <p className="text-center text-2xl font-bold mb-10">Furniro.</p>
             <h3 className="text-2xl font-bold mb-4">
               Thank You for Subscribing!
             </h3>

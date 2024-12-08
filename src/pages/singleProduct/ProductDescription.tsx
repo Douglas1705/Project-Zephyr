@@ -127,7 +127,7 @@ function ProductDescription({ product }: ProductDescriptionProps) {
             <CounterCards initialCount={1} onCountChange={handleCountChange} />
             <AppButton
               type="button"
-              className="border-2 border-black rounded-xl px-4 w-full sm:w-[215px] xl:text-xl xl:py-6 xl:px-8 "
+              className="border-2 border-black rounded-xl px-4 w-full sm:w-[215px] xl:text-xl xl:py-6 xl:px-8 hover-white-custom"
               onClick={handleAddToCart}
             >
               Add To Cart
@@ -166,9 +166,15 @@ function ProductDescription({ product }: ProductDescriptionProps) {
               </div>
 
               <div className="flex gap-4">
-                <FaFacebook className="text-2xl text-black" />
-                <FaLinkedin className="text-2xl text-black" />
-                <AiFillTwitterCircle className="text-2xl text-black" />
+                <a href="https://web.facebook.com/?locale=pt_BR&_rdc=1&_rdr" target="_blank">
+                <FaFacebook className="text-2xl text-black hover:text-Goldenrod" />
+                </a>
+                <a href="https://br.linkedin.com/" target="_blank">
+                <FaLinkedin className="text-2xl text-black hover:text-Goldenrod" />
+                </a>
+                <a href="https://x.com/?lang=pt-br" target="_blank">
+                <AiFillTwitterCircle className="text-2xl text-black hover:text-Goldenrod" />
+                </a>
               </div>
             </div>
           </section>

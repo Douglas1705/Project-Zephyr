@@ -22,7 +22,7 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
   return (
     <>
       <button
-        className="w-full mx-auto border-2 border-black py-3 rounded-2xl text-xl mb-14 md:w-80 md:mr-52 lg:mx-auto"
+        className="w-full mx-auto border-2 border-black py-4 rounded-2xl text-xl mb-14 md:w-80 md:mr-52 lg:mx-auto hover-white-custom"
         onClick={handlePlaceOrder}
       >
         Place Older
@@ -46,7 +46,7 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
         <h2>Form is Valid!</h2>
         <p>Congratulations! The form has been successfully validated.</p>
         <button
-          className="bg-blue-500 text-white py-2 px-4"
+          className="bg-blue-500 text-white py-2 px-4 "
           onClick={closeModal}
         >
           Close

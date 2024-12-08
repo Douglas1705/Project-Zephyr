@@ -106,7 +106,7 @@ function FormsCheck(props: {}, ref: React.Ref<FormsCheckHandle>) {
   const divFormInput = 'flex flex-col gap-4';
   const labelCustom = 'font-bold text-base';
   const inputCustom =
-    'border-2 border-gray-300 h-16 rounded-lg text-gray-400 pl-6';
+    'border-2 border-gray-300 h-16 rounded-lg text-gray-700 pl-6';
 
   return (
     <div className="lg:w-9/12  lg:px-5 xl:w-5/12 xl:mr-24 xl:px-0 xl:pr-0">

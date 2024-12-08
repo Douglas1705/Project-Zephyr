@@ -56,7 +56,7 @@ function Contact() {
     (e: React.FormEvent) => {
       e.preventDefault();
       if (validate()) {
-        console.log('Form is valid');
+        <span></span>;
       }
     },
     [validate],
@@ -65,7 +65,7 @@ function Contact() {
   const divFormInput = 'flex flex-col gap-4';
   const labelCustom = 'font-bold text-base';
   const inputCustom =
-    'border-2 border-gray-300 h-20 rounded-lg text-gray-400 pl-6';
+    'border-2 border-gray-300 h-20 rounded-lg text-gray-700 pl-6';
 
   const divsAdress =
     'flex flex-col items-center text-center gap-5 lg:text-start lg:flex lg:flex-row lg:w-72 space-x-3';
@@ -164,7 +164,7 @@ function Contact() {
 
             <AppButton
               type="submit"
-              className="bg-Goldenrod text-white w-full py-3 rounded-md md:w-56"
+              className="bg-Goldenrod text-white w-full py-3 rounded-md md:w-56 hover-gold-custom"
             >
               Submit
             </AppButton>

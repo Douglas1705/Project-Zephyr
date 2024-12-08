@@ -45,7 +45,7 @@ function ModalCard({ product, isOpen, onClose }: Props) {
         >
           &times;
         </button>
-        <div className="flex flex-col space-y-6 items-center">
+        <div className="flex flex-col space-y-8  items-center">
           <button
             onClick={handleAddToCart}
             className="bg-white text-Goldenrod  hover:bg-Goldenrod hover:text-white py-3 w-10/12 font-semibold"

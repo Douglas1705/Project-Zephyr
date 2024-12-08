@@ -154,7 +154,7 @@ function Cart() {
 
                   <TbTrashFilled
                     onClick={() => handleRemoveItem(item.id)}
-                    className="cursor-pointer text-4xl text-yellow-700 md:w-full xl:w-auto"
+                    className="cursor-pointer text-4xl text-yellow-700 md:w-full xl:w-auto hover:text-red-600"
                   />
                 </div>
               ))
@@ -176,7 +176,7 @@ function Cart() {
           </div>
           <AppButton
             onClick={handleCheckout}
-            className="border-2 border-black rounded-xl py-4 w-full md:w-[222px]"
+            className="border-2 border-black rounded-xl py-4 w-full md:w-[222px] hover-white-custom"
           >
             Check Out
           </AppButton>

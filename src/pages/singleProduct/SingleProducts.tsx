@@ -63,7 +63,7 @@ function SingleProducts() {
           {' '}
           <AppButton
             onClick={handleShowMore}
-            className="w-10/12 py-4 md:w-[245px] border-2 border-Goldenrod text-Goldenrod"
+            className="w-10/12 py-4 md:w-[245px] border-2 border-Goldenrod text-Goldenrod hover-white-gold-custom"
           >
             {' '}
             Show More{' '}

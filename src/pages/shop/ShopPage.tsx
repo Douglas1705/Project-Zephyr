@@ -88,7 +88,10 @@ function ShopPage() {
               className="flex gap-5 items-center border-b-4 border-gray-400 pb-5 lg:border-b-0 lg:border-r-2 lg:h-10 lg:overflow-hidden lg:pr-7 lg:pb-0"
             >
               <AdjustmentsHorizontalIcon className={icons} />
-              <button onClick={openModal} className="text-2xl font-medium">
+              <button
+                onClick={openModal}
+                className="text-2xl font-medium hover:text-Goldenrod"
+              >
                 Filter
               </button>
               <Squares2X2Icon className={icons} />
