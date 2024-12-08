@@ -1,20 +1,39 @@
+import { useState, ChangeEvent, useCallback } from 'react';
 import { TiSocialFacebook } from 'react-icons/ti';
 import { SlSocialInstagram } from 'react-icons/sl';
 import { FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
-// {`${iconsCustom}`}
+import AppButton from '../../components/buttons/AppButton';
 
 function Footer() {
+  const [email, setEmail] = useState('');
+  const [emailValid, setEmailValid] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+
   const iconsCustom =
     'p-3 rounded-full shadow-ShadowComplete text-2xl xl:text-sm hover:bg-Goldenrod hover:text-white';
-
   const containersLinks = 'flex flex-col gap-5 xl:gap-8';
-
   const h3custom = 'text-lg font-medium text-gray-400 xl:text-base';
-
   const subContainerLinks =
-    'flex flex-row gap-4 font-medium justify-center flex-wrap text-lg xl:flex-col xl:text-base xl:gap-12 ';
+    'flex flex-row gap-4 font-medium justify-center flex-wrap text-lg xl:flex-col xl:text-base xl:gap-12';
+
+  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  }, []);
+
+  const handleSubscribe = () => {
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
+    if (emailRegex.test(email)) {
+      setEmailValid(true);
+      setShowModal(true);
+    } else {
+      setEmailValid(false);
+    }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <footer className="border-t-2 border-gray-300">
@@ -64,7 +83,7 @@ function Footer() {
             </a>
 
             <a
-              className={`${iconsCustom} `}
+              className={`${iconsCustom}`}
               href="https://www.linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -74,7 +93,7 @@ function Footer() {
           </div>
         </div>
 
-        <div id="container-links" className={`${containersLinks} `}>
+        <div id="container-links" className={`${containersLinks}`}>
           <h3 className="text-lg font-medium text-gray-400">Links</h3>
 
           <nav className={`${subContainerLinks}`}>
@@ -84,7 +103,7 @@ function Footer() {
             <Link className="hover:text-Goldenrod" to="/shop">
               Shop
             </Link>
-            <Link className="hover:text-Goldenrod" to="/about">
+            <Link className="hover:text-Goldenrod" to="#">
               About
             </Link>
             <Link className="hover:text-Goldenrod" to="/contact">
@@ -93,12 +112,12 @@ function Footer() {
           </nav>
         </div>
 
-        <div id="container-help" className={`${containersLinks} `}>
+        <div id="container-help" className={`${containersLinks}`}>
           <h3 className={`${h3custom}`}>Help</h3>
 
           <div className={`${subContainerLinks}`}>
             <a
-              href="https://www.exemplo.com/payment-options"
+              href="#"
               target="_blank"
               className="hover:text-Goldenrod"
             >
@@ -106,7 +125,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://www.exemplo.com/returns"
+              href="#"
               target="_blank"
               className="hover:text-Goldenrod"
             >
@@ -114,7 +133,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://www.exemplo.com/privacy-policies"
+              href="#"
               target="_blank"
               className="hover:text-Goldenrod"
             >
@@ -123,27 +142,54 @@ function Footer() {
           </div>
         </div>
 
-        <div id="container-Newsletter" className={`${containersLinks} `}>
+        <div id="container-Newsletter" className={`${containersLinks}`}>
           <h3 className={`${h3custom}`}>Newsletter</h3>
 
-          <div className="flex flex-col gap-8 xl:flex-row xl:gap-2 xl:items-center">
-            <input
-              type="text"
-              placeholder="Enter Your Email Address"
-              className="border-b-2 border-black text-center text-lg md:w-8/12 md:mx-auto xl:text-sm xl:text-start xl:w-6/12  xl:ml-0 xl:mx-0"
-            />
-
-            <a
-              href="#"
-              className="text-2xl border-b-2 border-black cursor-pointer font-medium w-32 mx-auto xl:text-sm xl:ml-0 xl:mx-0"
+          <div className="flex flex-col xl:flex-row xl:gap-0  ">
+            <div className="flex flex-col">
+              <input
+                type="text"
+                placeholder="Enter Your Email Address"
+                value={email}
+                onChange={handleChange}
+                className={`border-b-2 text-center text-lg md:w-8/12 md:mx-auto xl:text-sm xl:text-start xl:w-full xl:ml-0 xl:mx-0 h-7 outline-none ${
+                  emailValid ? 'border-black' : 'border-red-500'
+                }`}
+              />
+              {!emailValid && (
+                <p className="text-red-500 text-sm">Email Invalid</p>
+              )}
+            </div>
+            <AppButton
+              onClick={handleSubscribe}
+              className="text-2xl border-b-2 border-black cursor-pointer font-medium w-36 mx-auto xl:text-sm xl:ml-4 xl:h-7 xl:px-0 xl:w-auto xl:py-0"
             >
               SUBSCRIBE
-            </a>
+            </AppButton>
           </div>
         </div>
       </div>
 
-      <p className="pl-16 py-8 text-base">2023 furino. All rights reverved</p>
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg">
+            <img src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/logo-furniro.svg" alt="" className='mx-auto' />
+            <p className='text-center text-2xl font-bold mb-10'>Furniro.</p>
+            <h3 className="text-2xl font-bold mb-4">
+              Thank You for Subscribing!
+            </h3>
+            <p className="mb-4">Your subscription has been confirmed.</p>
+            <button
+              onClick={closeModal}
+              className="px-4 py-2 bg-Goldenrod text-white rounded"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      <p className="pl-16 py-8 text-base">2023 furino. All rights reserved</p>
     </footer>
   );
 }
