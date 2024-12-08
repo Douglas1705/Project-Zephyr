@@ -1,7 +1,6 @@
 import { useState, useCallback } from 'react';
 import { addToCart } from '../../utils/localStorageUtils';
 import ConfirmationMessage from './ConfirmationMessage';
-import { FaShareAlt } from 'react-icons/fa';
 
 interface Props {
   product: {

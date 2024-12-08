@@ -21,7 +21,7 @@ function Footer() {
     setEmail(e.target.value);
   }, []);
 
-  const handleSubscribe = () => {
+  const handleSubscribe = useCallback(() => {
     const emailRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     if (emailRegex.test(email)) {
@@ -30,11 +30,11 @@ function Footer() {
     } else {
       setEmailValid(false);
     }
-  };
+  }, [email]);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setShowModal(false);
-  };
+  }, []);
 
   return (
     <footer className="border-t-2 border-gray-300 xl:pl-12">

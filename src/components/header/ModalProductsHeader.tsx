@@ -41,6 +41,13 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
     [cartItems, calculateSubtotal],
   );
 
+  const handleRemoveItemClick = useCallback(
+    (id: number) => () => {
+      handleRemoveItem(id);
+    },
+    [handleRemoveItem],
+  );
+
   return (
     <div className="px-6 r-52 bg-white z-40">
       <div className="flex items-center border-b-2 border-gray-300 justify-between py-6">
@@ -82,7 +89,7 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
                   </p>
                 </div>
                 <TbXboxXFilled
-                  onClick={() => handleRemoveItem(item.id)}
+                  onClick={handleRemoveItemClick(item.id)}
                   className="cursor-pointer text-md text-gray-400 hover:text-red-800 text-2xl"
                 />
               </div>

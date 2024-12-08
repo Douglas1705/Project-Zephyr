@@ -83,7 +83,7 @@ function Cart() {
   }, [isSignedIn, navigate]);
 
   const handleCountChange = useCallback(
-    (id: number, quantity: number) => {
+    (id: number) => (quantity: number) => {
       updateQuantity(id, quantity);
     },
     [updateQuantity],
@@ -94,6 +94,13 @@ function Cart() {
       removeItem(id);
     },
     [removeItem],
+  );
+
+  const handleRemoveItemClick = useCallback(
+    (id: number) => (_event: React.MouseEvent<SVGElement, MouseEvent>) => {
+      handleRemoveItem(id);
+    },
+    [handleRemoveItem],
   );
 
   return (
@@ -121,7 +128,7 @@ function Cart() {
                   <img
                     src={item.imageUrl}
                     alt={item.name}
-                    className="md:w-28 lg:border-4 w-[111px]"
+                    className="md:w-28 w-[111px] rounded-xl"
                   />
 
                   <p className="text-4xl text-gray-500 md:w-[100px] md:text-base lg:w-[100px] lg:flex-wrap ">
@@ -139,9 +146,7 @@ function Cart() {
                     <CounterCards
                       className="xl:py-1"
                       initialCount={item.quantity}
-                      onCountChange={(quantity) =>
-                        handleCountChange(item.id, quantity)
-                      }
+                      onCountChange={handleCountChange(item.id)}
                     />
 
                     <p className="text-2xl mx-auto md:text-base w-auto h-auto ">
@@ -153,7 +158,7 @@ function Cart() {
                   </div>
 
                   <TbTrashFilled
-                    onClick={() => handleRemoveItem(item.id)}
+                    onClick={handleRemoveItemClick(item.id)}
                     className="cursor-pointer text-4xl text-yellow-700 md:w-full xl:w-auto hover:text-red-600"
                   />
                 </div>
