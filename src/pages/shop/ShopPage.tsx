@@ -156,5 +156,4 @@ function ShopPage() {
     </section>
   );
 }
-
 export default ShopPage;

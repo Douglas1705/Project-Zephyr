@@ -1,5 +1,8 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
+import { useUser } from '@clerk/clerk-react';
+import { clearCart, loadFromLocalStorage } from '../../utils/localStorageUtils';
 
 interface PlaceOrderButtonProps {
   validateForm: () => boolean;
@@ -7,26 +10,42 @@ interface PlaceOrderButtonProps {
 
 function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [cartIsEmpty, setCartIsEmpty] = useState(false);
+  const { user } = useUser();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const cart = loadFromLocalStorage('cartItems');
+    setCartIsEmpty(!cart || cart.length === 0);
+  }, []);
 
   const handlePlaceOrder = useCallback(() => {
     const isValid = validateForm();
     if (isValid) {
       setModalIsOpen(true);
+      clearCart('cartItems');
     }
   }, [validateForm]);
 
   const closeModal = useCallback(() => {
     setModalIsOpen(false);
-  }, []);
+    navigate('/');
+  }, [navigate]);
 
   return (
     <>
       <button
-        className="w-full mx-auto border-2 border-black py-4 rounded-2xl text-xl mb-14 md:w-80 md:mr-52 lg:mx-auto hover-white-custom"
+        className="w-full mx-auto border-2 border-black py-4 rounded-2xl text-xl mb-4 md:w-80 md:mr-52 lg:mx-auto hover-white-custom"
         onClick={handlePlaceOrder}
+        disabled={cartIsEmpty}
       >
-        Place Older
+        Place Order
       </button>
+      {cartIsEmpty && (
+        <p className="text-red-600 text-center mb-14 md:mr-52 lg:mx-auto">
+          O carrinho está vazio.
+        </p>
+      )}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -49,10 +68,10 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
       >
         <div className="bg-Goldenrod bg-opacity-50 rounded-xl">
           <h2 className="text-2xl mb-4 font-bold xl:text-4xl text-rose-800">
-            Congratulations{' '}
+            Congratulations
           </h2>
           <p className="text-xl mb-4 text-white font-bold xl:text-4xl">
-            {'Nome do usuario'}
+            {user ? user.firstName : 'Guest'}
           </p>
           <p className="text-white text-2xl mb-10">
             We are happy to know that we left your space with more style and

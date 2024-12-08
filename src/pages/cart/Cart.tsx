@@ -100,7 +100,7 @@ function Cart() {
     <section>
       <CapePages title="Cart" />
 
-      <article className="xl:flex xl py-10 xl:px-20 xl:gap-10">
+      <article className="xl:flex xl py-10 xl:px-20 xl:gap-10 max-w-screen-2xl xl:mx-auto">
         <div>
           <div className="flex flex-row gap-6 items-center justify-center h-14 bg-warm-cream md:gap-16 lg:gap-18 xl:w-[817px] xl:gap-24">
             <p>Product</p>

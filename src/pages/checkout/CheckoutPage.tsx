@@ -5,7 +5,6 @@ import PlaceOrderButton from './PlaceOrderButton';
 import ProductsCheck from './ProductsCheck';
 import TransferBank from './TransferBank';
 import SectionQuality from '../../components/SectionQuality/SectionQuality';
-import ProductList from '../../components/cards/ProductList';
 
 interface FormsCheckHandle {
   validate: () => boolean;
@@ -25,8 +24,8 @@ function CheckoutPage() {
     <section>
       <CapePages title="Checkout" />
       <main>
-        <article className="flex flex-col pt-5 max-w-screen-2xl">
-          <h3 className="text-4xl font-semibold text-center py-5 xl:text-left xl:ml-32 mt-10 border-2">
+        <article className="flex flex-col pt-5 max-w-screen-2xl xl:mx-auto">
+          <h3 className="text-4xl font-semibold text-center py-5 xl:text-left xl:ml-32 mt-10">
             Billing details
           </h3>
           <main className="px-4 lg:px-10 flex flex-col xl:w-10/12 xl:px-0 xl:mx-auto">
@@ -40,8 +39,8 @@ function CheckoutPage() {
               </div>
             </div>
           </main>
-          <SectionQuality />
         </article>
+        <SectionQuality />
       </main>
     </section>
   );

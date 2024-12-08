@@ -6,13 +6,15 @@ import ProductHomePage from './ProductsHomeSec';
 
 function HomePage() {
   return (
-    <main className="max-w-screen-2xl xl:mx-auto">
+    <>
       <CapaSec />
-      <BrowseSec />
-      <ProductHomePage />
-      <BeautifullSec />
+      <main className="max-w-screen-2xl xl:mx-auto">
+        <BrowseSec />
+        <ProductHomePage />
+        <BeautifullSec />
+      </main>
       <FurnitureSec />
-    </main>
+    </>
   );
 }
 

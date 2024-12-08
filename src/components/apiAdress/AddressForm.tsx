@@ -36,7 +36,7 @@ export function useAddress(zipCode: string) {
           });
         }
       } catch (error) {
-        console.error('Error fetching address:', error);
+        error;
         setAddress({
           street: '',
           city: '',

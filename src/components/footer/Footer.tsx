@@ -22,7 +22,8 @@ function Footer() {
   }, []);
 
   const handleSubscribe = () => {
-    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
+    const emailRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     if (emailRegex.test(email)) {
       setEmailValid(true);
       setShowModal(true);
@@ -36,11 +37,11 @@ function Footer() {
   };
 
   return (
-    <footer className="border-t-2 border-gray-300">
+    <footer className="border-t-2 border-gray-300 xl:pl-12">
       <div
         id="containter-footer"
         className="
-        text-center px-4 py-10 border-b-2 border-gray-300 flex flex-col gap-10 xl:flex-row xl:text-start xl:w-11/12 xl:mt-10 xl:mx-auto xl:items-start xl:py-0 xl:px-0 xl:justify-start xl:gap-24 xl:pb-10"
+        text-center px-4 py-10 border-b-2 border-gray-300 flex flex-col gap-10 xl:flex-row xl:text-start xl:w-10/12 xl:mt-10 xl:ml-14 xl:items-start xl:py-0 xl:px-0 xl:justify-start xl:gap-20 xl:pb-10"
       >
         <div
           id="container-Funiro"
@@ -48,7 +49,7 @@ function Footer() {
         >
           <h2 className="text-3xl font-bold xl:text-2xl">Funiro.</h2>
           <div className="text-gray-400">
-            <p className="mb-2 xl:text-base w-5/6">
+            <p className="mb-2 xl:text-base w-5/6 mx-auto lg:mx-0">
               400 University Drive Suite 200 Coral Gables,
             </p>
             <p>FL 33134 USA</p>
@@ -93,7 +94,7 @@ function Footer() {
           </div>
         </div>
 
-        <div id="container-links" className={`${containersLinks}`}>
+        <div id="container-links" className={`${containersLinks} xl:mr-4`}>
           <h3 className="text-lg font-medium text-gray-400">Links</h3>
 
           <nav className={`${subContainerLinks}`}>
@@ -133,7 +134,7 @@ function Footer() {
         <div id="container-Newsletter" className={`${containersLinks}`}>
           <h3 className={`${h3custom}`}>Newsletter</h3>
 
-          <div className="flex flex-col xl:flex-row xl:gap-0  ">
+          <div className="flex flex-col gap-10 xl:flex-row xl:gap-0  ">
             <div className="flex flex-col">
               <input
                 type="text"
@@ -150,7 +151,7 @@ function Footer() {
             </div>
             <AppButton
               onClick={handleSubscribe}
-              className="text-2xl border-b-2 border-black cursor-pointer font-medium w-36 mx-auto xl:text-sm xl:ml-4 xl:h-7 xl:px-0 xl:w-auto xl:py-0"
+              className="text-2xl border-b-2 border-black cursor-pointer font-medium w-36 mx-auto pl-2 xl:text-sm xl:ml-4 xl:h-7 xl:px-0 xl:w-auto xl:py-0"
             >
               SUBSCRIBE
             </AppButton>
@@ -159,7 +160,7 @@ function Footer() {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center text-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg">
             <img
               src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/logo-furniro.svg"

@@ -36,8 +36,8 @@ function Contact() {
     let isValid = true;
 
     const nameRegex = /^[A-Za-z\s]{2,}$/;
-    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
-
+    const emailRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     if (!nameRegex.test(formValues.firstName)) {
       newErrors.firstName = 'This name is not valid';
       isValid = false;
