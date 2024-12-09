@@ -1,19 +1,19 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { RxLockClosed, RxLockOpen2 } from 'react-icons/rx';
 import { TbXboxXFilled } from 'react-icons/tb';
 import { MdOutlineClose } from 'react-icons/md';
-import {
-  loadFromLocalStorage,
-  saveToLocalStorage,
-} from '../../utils/localStorageUtils';
+import { RootState } from '../../redux/store';
+import { setCartItems, removeItemFromCart } from '../../redux/cartSlice';
 
 interface ModalProductsHeaderProps {
   onClose: () => void;
 }
 
 function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
-  const [cartItems, setCartItems] = useState<any[]>([]);
+  const cartItems = useSelector((state: RootState) => state.cart.cartItems);
+  const dispatch = useDispatch();
   const [subtotal, setSubtotal] = useState(0);
 
   const calculateSubtotal = useCallback((items: any[]) => {
@@ -26,19 +26,32 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
   }, []);
 
   useEffect(() => {
-    const items = loadFromLocalStorage('cartItems') || [];
-    setCartItems(items);
-    calculateSubtotal(items);
-  }, [calculateSubtotal]);
+    fetch('http://localhost:3001/cart')
+      .then((response) => response.json())
+      .then((items) => {
+        dispatch(setCartItems(items));
+        calculateSubtotal(items);
+      })
+      .catch((error) => {
+        console.error('Error loading cart items:', error);
+      });
+  }, [dispatch, calculateSubtotal]);
 
   const handleRemoveItem = useCallback(
     (id: number) => {
-      const updatedItems = cartItems.filter((item) => item.id !== id);
-      setCartItems(updatedItems);
-      saveToLocalStorage('cartItems', updatedItems);
-      calculateSubtotal(updatedItems);
+      fetch(`http://localhost:3001/cart/${id}`, {
+        method: 'DELETE',
+      })
+        .then(() => {
+          dispatch(removeItemFromCart(id));
+          const updatedItems = cartItems.filter((item) => item.id !== id);
+          calculateSubtotal(updatedItems);
+        })
+        .catch((error) => {
+          console.error('Error removing item from cart:', error);
+        });
     },
-    [cartItems, calculateSubtotal],
+    [cartItems, calculateSubtotal, dispatch],
   );
 
   const handleRemoveItemClick = useCallback(
@@ -86,8 +99,8 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
                 alt={item.name}
                 className="h-32 md:w-24 md:h-24 md:mr-10 rounded-xl xl:w-28 xl:mr-4"
               />
-              <div className="flex flex-row items-center gap-16 md:justify-between  md:w-full">
-                <div className="flex border-y-2 py-2  lg:flex-col lg:gap-3 xl:border-none">
+              <div className="flex flex-row items-center gap-16 md:justify-between md:w-full">
+                <div className="flex border-y-2 py-2 lg:flex-col lg:gap-3 xl:border-none">
                   <h4 className="text-base mr-4">{item.name}</h4>
 
                   <p>

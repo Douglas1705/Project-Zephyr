@@ -2,7 +2,6 @@ import { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import { useUser } from '@clerk/clerk-react';
-import { clearCart, loadFromLocalStorage } from '../../utils/localStorageUtils';
 
 interface PlaceOrderButtonProps {
   validateForm: () => boolean;
@@ -15,22 +14,40 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const cart = loadFromLocalStorage('cartItems');
-    setCartIsEmpty(!cart || cart.length === 0);
+    fetch('http://localhost:3001/cart')
+      .then((response) => response.json())
+      .then((cartItems) => setCartIsEmpty(cartItems.length === 0));
   }, []);
 
   const handlePlaceOrder = useCallback(() => {
-    const isValid = validateForm();
-    if (isValid) {
+    if (validateForm()) {
       setModalIsOpen(true);
-      clearCart('cartItems');
     }
   }, [validateForm]);
 
+  const clearCart = useCallback(() => {
+    fetch('http://localhost:3001/cart')
+      .then((response) => response.json())
+      .then((cartItems) => {
+        if (cartItems.length > 0) {
+          const deleteRequests = cartItems.map((item) =>
+            fetch(`http://localhost:3001/cart/${item.id}`, {
+              method: 'DELETE',
+            }),
+          );
+          return Promise.all(deleteRequests);
+        }
+      })
+      .catch((error) => {
+        console.error('Error loading cart items:', error);
+      });
+  }, []);
+
   const closeModal = useCallback(() => {
+    clearCart();
     setModalIsOpen(false);
     navigate('/');
-  }, [navigate]);
+  }, [clearCart, navigate]);
 
   return (
     <>
@@ -42,8 +59,8 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
         Place Order
       </button>
       {cartIsEmpty && (
-        <p className="text-red-600 text-center mb-14 md:mr-52 lg:mx-auto">
-          O carrinho está vazio.
+        <p className="text-red-600 text-center mb-14 lg:mx-auto">
+          The cart is empty.
         </p>
       )}
       <Modal

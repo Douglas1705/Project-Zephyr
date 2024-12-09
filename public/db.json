@@ -1,85 +1,98 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Syltherine",
-        "description": "Stylish cafe chair",
-        "originalPrice": 3500000,
-        "discountedPrice": 2450000,
-        "discount": 30,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-1.webp",
-        "new": "none"
-      },
-      {
-        "id": 2,
-        "name": "Leviosa",
-        "description": "Stylish cafe chair",
-        "originalPrice": 2500000,
-        "discountedPrice": 0,
-        "discount": 0,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-2.webp",
-        "new": "none"
-      },
-      {
-        "id": 3,
-        "name": "Lolito",
-        "description": "Luxury big sofa",
-        "originalPrice": 14000000,
-        "discountedPrice": 7000000,
-        "discount": 50,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-3.webp",
-        "new": "none"
-      },
-      {
-        "id": 4,
-        "name": "Respira",
-        "description": "Outdoor bar table and stool",
-        "originalPrice": 500000,
-        "discountedPrice": 0,
-        "discount": 0,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-4.webp",
-        "new": "New"
-      },
-      {
-        "id": 5,
-        "name": "Grifo",
-        "description": "Night lamp",
-        "originalPrice": 15000000,
-        "discountedPrice": 0,
-        "discount": 0,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-5.webp",
-        "new": "none"
-      },
-      {
-        "id": 6,
-        "name": "Muggo",
-        "description": "Small mug",
-        "originalPrice": 150000,
-        "discountedPrice": 0,
-        "discount": 0,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-6.webp",
-        "new": "New"
-      },
-      {
-        "id": 7,
-        "name": "Pingky",
-        "description": "Cute bed set",
-        "originalPrice": 14000000,
-        "discountedPrice": 7000000,
-        "discount": 50,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-7.webp",
-        "new": "none"
-      },
-      {
-        "id": 8,
-        "name": "Potty",
-        "description": "Minimalist flower pot",
-        "originalPrice": 500000,
-        "discountedPrice": 0,
-        "discount": 0,
-        "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-8.webp",
-        "new": "New"
-      }
-    ]
-  }
-  
+  "products": [
+    {
+      "id": "1",
+      "name": "Syltherine",
+      "description": "Stylish cafe chair",
+      "originalPrice": 3500000,
+      "discountedPrice": 2450000,
+      "discount": 30,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-1.webp",
+      "new": "none"
+    },
+    {
+      "id": "2",
+      "name": "Leviosa",
+      "description": "Stylish cafe chair",
+      "originalPrice": 2500000,
+      "discountedPrice": 0,
+      "discount": 0,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-2.webp",
+      "new": "none"
+    },
+    {
+      "id": "3",
+      "name": "Lolito",
+      "description": "Luxury big sofa",
+      "originalPrice": 14000000,
+      "discountedPrice": 7000000,
+      "discount": 50,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-3.webp",
+      "new": "none"
+    },
+    {
+      "id": "4",
+      "name": "Respira",
+      "description": "Outdoor bar table and stool",
+      "originalPrice": 500000,
+      "discountedPrice": 0,
+      "discount": 0,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-4.webp",
+      "new": "New"
+    },
+    {
+      "id": "5",
+      "name": "Grifo",
+      "description": "Night lamp",
+      "originalPrice": 15000000,
+      "discountedPrice": 0,
+      "discount": 0,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-5.webp",
+      "new": "none"
+    },
+    {
+      "id": "6",
+      "name": "Muggo",
+      "description": "Small mug",
+      "originalPrice": 150000,
+      "discountedPrice": 0,
+      "discount": 0,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-6.webp",
+      "new": "New"
+    },
+    {
+      "id": "7",
+      "name": "Pingky",
+      "description": "Cute bed set",
+      "originalPrice": 14000000,
+      "discountedPrice": 7000000,
+      "discount": 50,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-7.webp",
+      "new": "none"
+    },
+    {
+      "id": "8",
+      "name": "Potty",
+      "description": "Minimalist flower pot",
+      "originalPrice": 500000,
+      "discountedPrice": 0,
+      "discount": 0,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-8.webp",
+      "new": "New"
+    }
+  ],
+  "cart": [
+    {
+      "id": "2",
+      "name": "Leviosa",
+      "description": "Stylish cafe chair",
+      "originalPrice": 2500000,
+      "discountedPrice": 0,
+      "discount": 0,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-2.webp",
+      "new": "none",
+      "key": "2-1",
+      "quantity": 1
+    }
+  ]
+}

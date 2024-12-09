@@ -5,10 +5,6 @@ import { TbTrashFilled } from 'react-icons/tb';
 import AppButton from '../../components/buttons/AppButton';
 import CapePages from '../../components/capePages/PagesCape';
 import CounterCards from '../../components/counter/CounterCards';
-import {
-  loadFromLocalStorage,
-  saveToLocalStorage,
-} from '../../utils/localStorageUtils';
 import SectionQuality from '../../components/SectionQuality/SectionQuality';
 
 interface Product {
@@ -37,9 +33,15 @@ function Cart() {
   }, []);
 
   useEffect(() => {
-    const items = loadFromLocalStorage('cartItems') || [];
-    setCartItems(items);
-    calculateSubtotal(items);
+    fetch('http://localhost:3001/cart')
+      .then((response) => response.json())
+      .then((items) => {
+        setCartItems(items);
+        calculateSubtotal(items);
+      })
+      .catch((error) => {
+        console.error('Error loading cart items:', error);
+      });
   }, [calculateSubtotal]);
 
   const updateQuantity = useCallback(
@@ -48,7 +50,20 @@ function Cart() {
         item.id === id ? { ...item, quantity } : item,
       );
       setCartItems(updatedItems);
-      saveToLocalStorage('cartItems', updatedItems);
+
+      fetch(`http://localhost:3001/cart/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...cartItems.find((item) => item.id === id),
+          quantity,
+        }),
+      }).catch((error) => {
+        console.error('Error updating item quantity:', error);
+      });
+
       calculateSubtotal(updatedItems);
     },
     [cartItems, calculateSubtotal],
@@ -58,7 +73,13 @@ function Cart() {
     (id: number) => {
       const updatedItems = cartItems.filter((item) => item.id !== id);
       setCartItems(updatedItems);
-      saveToLocalStorage('cartItems', updatedItems);
+
+      fetch(`http://localhost:3001/cart/${id}`, {
+        method: 'DELETE',
+      }).catch((error) => {
+        console.error('Error removing item from cart:', error);
+      });
+
       calculateSubtotal(updatedItems);
     },
     [cartItems, calculateSubtotal],

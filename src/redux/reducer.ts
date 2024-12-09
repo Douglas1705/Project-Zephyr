@@ -40,7 +40,6 @@ const initialState: State = {
       price: 120,
       new: false,
     },
-    // Outros produtos...
   ],
 };
 

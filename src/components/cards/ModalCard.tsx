@@ -1,5 +1,7 @@
 import { useState, useCallback } from 'react';
-import { addToCart } from '../../utils/localStorageUtils';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
+import { addItemToCart } from '../../redux/cartSlice';
 import ConfirmationMessage from './ConfirmationMessage';
 
 interface Props {
@@ -19,11 +21,37 @@ interface Props {
 
 function ModalCard({ product, isOpen, onClose }: Props) {
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [confirmationMessage, setConfirmationMessage] = useState('');
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state: RootState) => state.cart.cartItems);
 
   const handleAddToCart = useCallback(() => {
-    addToCart(product, 1);
-    setShowConfirmation(true);
-  }, [product]);
+    const existingItem = cartItems.find((item) => item.id === product.id);
+
+    if (existingItem) {
+      setConfirmationMessage('Product already added to cart!');
+      setShowConfirmation(true);
+    } else {
+      const cartItem = {
+        ...product,
+        quantity: 1,
+      };
+
+      dispatch(addItemToCart(cartItem));
+      setConfirmationMessage('Product added to cart!');
+      setShowConfirmation(true);
+
+      fetch('http://localhost:3001/cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(cartItem),
+      }).catch((error) => {
+        console.error('Error adding product to cart on JSON server:', error);
+      });
+    }
+  }, [product, cartItems, dispatch]);
 
   const handleClose = useCallback(() => {
     setShowConfirmation(false);
@@ -44,10 +72,10 @@ function ModalCard({ product, isOpen, onClose }: Props) {
         >
           &times;
         </button>
-        <div className="flex flex-col space-y-8  items-center">
+        <div className="flex flex-col space-y-8 items-center">
           <button
             onClick={handleAddToCart}
-            className="bg-white text-Goldenrod  hover:bg-Goldenrod hover:text-white py-3 w-10/12 font-semibold"
+            className="bg-white text-Goldenrod hover:bg-Goldenrod hover:text-white py-3 w-10/12 font-semibold"
           >
             Add to cart
           </button>
@@ -55,21 +83,21 @@ function ModalCard({ product, isOpen, onClose }: Props) {
             onClick={handleViewProduct}
             className="bg-white text-Goldenrod w-10/12 py-3 hover:bg-Goldenrod hover:text-white font-semibold"
           >
-            Visualizar
+            View Product
           </button>
           <div className="flex gap-4">
             <div className="flex items-center gap-1 hover:border-b-2 hover:border-white">
               <img
                 src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/gridicons_share.svg"
-                alt=""
+                alt="Share icon"
                 width={16}
               />
-              <p className="text-white cursor-pointer ">Share</p>
+              <p className="text-white cursor-pointer">Share</p>
             </div>
             <div className="flex gap-1 hover:border-b-2 hover:border-white">
               <img
                 src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/Vector-compare.svg"
-                alt=""
+                alt="Compare icon"
                 width={16}
               />
               <p className="text-white">Compare</p>
@@ -77,7 +105,7 @@ function ModalCard({ product, isOpen, onClose }: Props) {
             <div className="flex gap-1 hover:border-b-2 hover:border-white">
               <img
                 src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/Heart.svg"
-                alt=""
+                alt="Like icon"
                 width={16}
               />
               <p className="text-white">Like</p>
@@ -86,7 +114,7 @@ function ModalCard({ product, isOpen, onClose }: Props) {
         </div>
         {showConfirmation && (
           <ConfirmationMessage
-            message="Produto adicionado ao carrinho!"
+            message={confirmationMessage}
             onClose={handleClose}
           />
         )}
