@@ -481,17 +481,5 @@
       "new": "New"
     }
   ],
-  "cart": [
-    {
-      "id": "8",
-      "name": "Potty",
-      "description": "Minimalist flower pot",
-      "originalPrice": 500000,
-      "discountedPrice": 0,
-      "discount": 0,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-8.webp",
-      "new": "New",
-      "quantity": 1
-    }
-  ]
+  "cart": []
 }

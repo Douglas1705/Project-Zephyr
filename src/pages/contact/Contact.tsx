@@ -16,6 +16,7 @@ function Contact() {
     firstName: '',
     email: '',
   });
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -56,11 +57,15 @@ function Contact() {
     (e: React.FormEvent) => {
       e.preventDefault();
       if (validate()) {
-        <span></span>;
+        setShowModal(true);
       }
     },
     [validate],
   );
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   const divFormInput = 'flex flex-col gap-4';
   const labelCustom = 'font-bold text-base';
@@ -76,7 +81,7 @@ function Contact() {
     <section id="container-title">
       <CapePages title="Contact" />
 
-      <main className="flex flex-col gap-10 gap-10 py-10 px-5">
+      <main className="flex flex-col gap-10 py-10 px-5">
         <article className="space-y-4 text-center lg:space-y-2 xl:py-14">
           <h1 className="text-2xl font-semibold lg:text-4xl">
             Get In Touch With Us
@@ -88,14 +93,14 @@ function Contact() {
           </p>
         </article>
 
-        <div className="flex flex-col  gap-10 py-10 px-5 lg:flex-row-reverse lg:px-6 lg:justify-center xl:gap-40">
+        <div className="flex flex-col gap-10 py-10 px-5 lg:flex-row-reverse lg:px-6 lg:justify-center xl:gap-40">
           <form
             id="container-form"
             onSubmit={handleSubmit}
             className="space-y-10 lg:w-2/4 xl:w-[530px] xl:mt-6"
           >
-            <div id="container-form-name" className={`${divFormInput}`}>
-              <label htmlFor="firstName" className={`${labelCustom}`}>
+            <div id="container-form-name" className={divFormInput}>
+              <label htmlFor="firstName" className={labelCustom}>
                 Your Name
               </label>
               <div id="container-warning" className="flex flex-col">
@@ -106,7 +111,7 @@ function Contact() {
                   value={formValues.firstName}
                   onChange={handleChange}
                   placeholder="Abc"
-                  className={`${inputCustom}`}
+                  className={inputCustom}
                 />
                 {errors.firstName && (
                   <span className="text-red-500">{errors.firstName}</span>
@@ -114,7 +119,7 @@ function Contact() {
               </div>
             </div>
 
-            <div className={`${divFormInput}`}>
+            <div className={divFormInput}>
               <label htmlFor="email" className={labelCustom}>
                 Email Address
               </label>
@@ -134,7 +139,7 @@ function Contact() {
               </div>
             </div>
 
-            <div className={`${divFormInput}`}>
+            <div className={divFormInput}>
               <label htmlFor="addOnAddress" className={labelCustom}>
                 Subject
               </label>
@@ -142,13 +147,13 @@ function Contact() {
                 type="text"
                 id="addOnAddress"
                 name="addOnAddress"
-                value=""
+                value={formValues.addOnAddress}
                 onChange={handleChange}
                 className={inputCustom}
               />
             </div>
 
-            <div className={`${divFormInput}`}>
+            <div className={divFormInput}>
               <label htmlFor="additionalInfo" className={labelCustom}>
                 Message
               </label>
@@ -171,35 +176,58 @@ function Contact() {
           </form>
 
           <article id="container-addrees" className="flex flex-col gap-14">
-            <div id="container-address" className={`${divsAdress}`}>
+            <div id="container-address" className={divsAdress}>
               <FaLocationDot className="text-4xl lg:mb-24 lg:text-4xl" />
               <div>
-                <h3 className={`${h3Adress}`}>Address</h3>
-                <p className={`${pAdress}`}>
+                <h3 className={h3Adress}>Address</h3>
+                <p className={pAdress}>
                   236 5th SE Avenue, New York NY10000, United States
                 </p>
               </div>
             </div>
 
-            <div className={`${divsAdress}`}>
+            <div className={divsAdress}>
               <FaPhoneAlt className="text-4xl lg:mb-14 lg:text-2xl" />
               <div>
-                <h3 className={`${h3Adress}`}>Phone</h3>
-                <p className={`${pAdress}`}>Mobile: +(84) 546-6789</p>
-                <p className={`${pAdress}`}>Hotline: +(84) 456-6789</p>
+                <h3 className={h3Adress}>Phone</h3>
+                <p className={pAdress}>Mobile: +(84) 546-6789</p>
+                <p className={pAdress}>Hotline: +(84) 456-6789</p>
               </div>
             </div>
-            <div className={`${divsAdress}`}>
+            <div className={divsAdress}>
               <MdAccessTimeFilled className="text-4xl lg:mb-28 lg:text-4xl" />
               <div>
-                <h3 className={`${h3Adress}`}>Working Time</h3>
-                <p className={`${pAdress}`}>Monday-Friday: 9:00 - 22:00</p>
-                <p className={`${pAdress}`}>Saturday-Sunday: 9:00 - 21:00</p>
+                <h3 className={h3Adress}>Working Time</h3>
+                <p className={pAdress}>Monday-Friday: 9:00 - 22:00</p>
+                <p className={pAdress}>Saturday-Sunday: 9:00 - 21:00</p>
               </div>
             </div>
           </article>
         </div>
       </main>
+
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center text-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg">
+            <img
+              src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/logo-furniro.svg"
+              alt=""
+              className="mx-auto"
+            />
+            <p className="text-center text-2xl font-bold mb-10">Furniro.</p>
+            <h3 className="text-2xl font-bold mb-4">
+              Thank You for Subscribing!
+            </h3>
+            <p className="mb-4">Your subscription has been confirmed.</p>
+            <button
+              onClick={closeModal}
+              className="px-4 py-2 bg-Goldenrod text-white rounded"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
