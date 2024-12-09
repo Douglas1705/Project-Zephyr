@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState, useCallback, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useUser, useAuth } from '@clerk/clerk-react';
 import Modal from 'react-modal';
 import { IoIosUnlock, IoIosLock } from 'react-icons/io';
@@ -11,9 +11,16 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-  const { user } = useUser();
+  const { user, isSignedIn } = useUser();
   const { signOut } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (isSignedIn && location.pathname === '/sign-in') {
+      navigate('/');
+    }
+  }, [isSignedIn, location.pathname, navigate]);
 
   const handleMenuToggle = useCallback(() => {
     setIsMenuOpen((prevState) => !prevState);
@@ -101,7 +108,7 @@ function Header() {
             src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/nav/Vector.svg"
             alt="icon representing a user"
             title="user-icon"
-            className="w-6 lg:w-7 cursor-pointer hover:w-8 "
+            className="w-6 lg:w-7 cursor-pointer hover:w-8"
             onClick={handleUserIconClick}
           />
           <img
