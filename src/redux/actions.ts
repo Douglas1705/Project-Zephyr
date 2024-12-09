@@ -1,21 +1,10 @@
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  originalPrice: number;
-  discountedPrice: number;
-  discount: number;
-  imageUrl: string;
-}
+import { AppThunk, Product } from '../types/types';
+import { setProducts, setLoading } from './reducer';
 
-export const setProducts = (products: Product[]) => ({
-  type: 'SET_PRODUCTS',
-  payload: products,
-});
-
-export interface SetProductsAction {
-  type: 'SET_PRODUCTS';
-  payload: Product[];
-}
-
-export type ProductsActionTypes = SetProductsAction;
+export const fetchProducts = (): AppThunk => async (dispatch) => {
+  dispatch(setLoading(true));
+  const response = await fetch('http://localhost:3001/products');
+  const data: Product[] = await response.json();
+  dispatch(setProducts(data));
+  dispatch(setLoading(false));
+};

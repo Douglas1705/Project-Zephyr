@@ -21,6 +21,9 @@ npm install @clerk/clerk-react
 
 npm install react-modal
 
+
+npm install redux-thunk
+
 /// Git convenções ///
 
     feat: Adição de uma nova funcionalidade.

@@ -32,7 +32,7 @@ function GridForniture() {
         <img
           src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/images-home-grid/Rectangle+40.webp"
           alt="Imagem 5"
-          className="w-[18.438rem] h-[24.5rem]"
+          className="w-[14.438rem] h-[24.5rem] "
         />
       </figure>
 

@@ -1,6 +1,6 @@
 function SectionQuality() {
   const figureCustom =
-    'flex flex-col text-center mx-auto gap-2 text-2xl font-semibold lg:w-4/12 lg:text-start lg:text-start lg:flex-row lg:text-start md:w-5/12 lg:w-[455px] lg:gap-0 lg:mx-0 xl:w-auto xl:gap-4 ';
+    'flex flex-col text-center mx-auto gap-2 text-2xl font-semibold lg:w-4/12 lg:text-start lg:text-start lg:flex-row lg:text-start md:w-5/12 lg:w-[455px] lg:gap-0 lg:mx-0 xl:w-auto xl:gap-5 ';
 
   const pCustom = 'text-xl text-gray-500 font-medium';
 

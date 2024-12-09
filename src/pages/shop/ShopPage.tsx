@@ -8,6 +8,10 @@ import { CgDisplayFullwidth } from 'react-icons/cg';
 import ProductList from '../../components/cards/ProductList';
 import FilterModal from './FilterModal';
 import SectionQuality from '../../components/SectionQuality/SectionQuality';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { fetchProducts } from '../../redux/actions';
+import { RootState } from '../../redux/store';
+import { Product } from '../../types/types';
 
 interface Filters {
   price: boolean;
@@ -15,17 +19,6 @@ interface Filters {
   name: boolean;
   new: boolean;
   all: boolean;
-}
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  originalPrice: number;
-  discountedPrice: number;
-  discount: number;
-  imageUrl: string;
-  new: string;
 }
 
 function ShopPage() {
@@ -42,15 +35,20 @@ function ShopPage() {
     all: false,
   });
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [products, setProducts] = useState<Product[]>([]);
+
+  const dispatch = useAppDispatch();
+  const products = useAppSelector(
+    (state: RootState) => state.products.products,
+  );
+  const loading = useAppSelector((state: RootState) => state.products.loading);
   const [displayedProducts, setDisplayedProducts] = useState<Product[]>([]);
 
   const applyFilters = useCallback(
     (products: Product[], filters: Filters): Product[] => {
-      let filteredProducts = products;
+      let filteredProducts = [...products];
 
       if (filters.all) {
-        return [...products].sort((a, b) => a.id - b.id);
+        return filteredProducts.sort((a, b) => a.id - b.id);
       }
       if (filters.name) {
         filteredProducts = filteredProducts.sort((a, b) =>
@@ -78,24 +76,13 @@ function ShopPage() {
     [],
   );
 
-  const fetchProducts = useCallback(async () => {
-    try {
-      const response = await fetch('http://localhost:3001/products');
-      const data = await response.json();
-      setProducts(data);
-      setDisplayedProducts(data.slice(0, 16));
-    } catch (error) {
-      console.error('Error fetching products:', error);
-    }
-  }, []);
-
   useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [showCount]);
+  }, [showCount, products]);
 
   useEffect(() => {
     function updateDisplayedProducts() {
@@ -149,14 +136,8 @@ function ShopPage() {
       <CapePages title="Shop" />
       <main>
         <article className="flex flex-col bg-WhisperWhite mb-12 lg:flex-row lg:h-28 lg:gap-4 lg:mb-0 lg:justify-between lg:px-2 xl:px-28">
-          <div
-            id="container-first"
-            className="flex flex-col items-center py-5 gap-8 lg:flex-row lg:items-center lg:justify-between"
-          >
-            <div
-              id="container-icons"
-              className="flex gap-5 items-center border-b-4 border-gray-400 pb-5 lg:border-b-0 lg:border-r-2 lg:h-10 lg:overflow-hidden lg:pr-7 lg:pb-0"
-            >
+          <div className="flex flex-col items-center py-5 gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex gap-5 items-center border-b-4 border-gray-400 pb-5 lg:border-b-0 lg:border-r-2 lg:h-10 lg:overflow-hidden lg:pr-7 lg:pb-0">
               <AdjustmentsHorizontalIcon className={iconClasses} />
               <button
                 onClick={openModal}
@@ -167,7 +148,7 @@ function ShopPage() {
               <Squares2X2Icon className={iconClasses} />
               <CgDisplayFullwidth className="w-14 h-9 xl:w-7" />
             </div>
-            <div id="container-result" className="flex">
+            <div className="flex">
               <p>
                 Showing <span>1 - {Number(showCount) || 0}</span> of{' '}
                 <span>48</span> results
@@ -175,10 +156,7 @@ function ShopPage() {
             </div>
           </div>
 
-          <div
-            id="container-second"
-            className="flex flex-col text-center items-center gap-6 pt-2 pb-7 lg:flex-row lg:pt-5"
-          >
+          <div className="flex flex-col text-center items-center gap-6 pt-2 pb-7 lg:flex-row lg:pt-5">
             <div className="flex items-center gap-6">
               <p className="text-2xl lg:text-xl">Show</p>
               <input
@@ -199,7 +177,27 @@ function ShopPage() {
             />
           </div>
         </article>
-        <ProductList products={displayedProducts} />
+        {loading ? (
+          <div className="flex justify-center items-center h-96">
+            <div
+              className="tenor-gif-embed"
+              data-postid="14029580"
+              data-share-method="host"
+              data-aspect-ratio="1"
+              data-width="100%"
+            >
+              <a href="https://tenor.com/view/loading-spinning-round-and-round-please-wait-gif-14029580">
+                Loading Spinning Sticker
+              </a>
+              from{' '}
+              <a href="https://tenor.com/search/loading-stickers">
+                Loading Stickers
+              </a>
+            </div>
+          </div>
+        ) : (
+          <ProductList products={displayedProducts} />
+        )}
         <FilterModal
           isOpen={isModalOpen}
           onClose={closeModal}
@@ -212,7 +210,11 @@ function ShopPage() {
           <button
             key={label}
             onClick={handlePageChange(label)}
-            className={`${buttonClasses} ${currentPage === label ? 'bg-Goldenrod text-white' : 'bg-warm-cream text-black border-2 border-gray-100'}`}
+            className={`${buttonClasses} ${
+              currentPage === label
+                ? 'bg-Goldenrod text-white'
+                : 'bg-warm-cream text-black border-2 border-gray-100'
+            }`}
             disabled={
               (label === 2 && showCount < 17) || (label === 3 && showCount < 25)
             }
