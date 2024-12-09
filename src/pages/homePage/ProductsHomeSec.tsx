@@ -15,7 +15,7 @@ function ProductHomePage() {
         Our Products
       </h2>
       {lists.map((list) => (
-        <ProductList key={list} />
+        <ProductList key={list} limit={8} />
       ))}
       <AppButton
         onClick={handleShowMore}

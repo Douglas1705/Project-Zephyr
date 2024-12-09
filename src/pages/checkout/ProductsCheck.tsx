@@ -56,7 +56,7 @@ function ProductsCheck() {
     <article className="h-auto py-8 border-b-2 mx-auto w-11/12 md:w-6/12 lg:w-11/12 lg:borde-2 pl-0 lg:pl-0 xl:w-full xl:pl-10">
       <thead>
         <tr>
-          <th className="w-36 text-start text-2xl font-medium pb-4 md:w-7/12 lg:w-8/12">
+          <th className="w-36 text-start text-2xl font-medium pb-4 md:w-7/12 lg:w-8/12 ">
             Product
           </th>
           <th className="text-right pb-4 text-2xl font-medium w-48">
@@ -77,7 +77,8 @@ function ProductsCheck() {
               <th className="text-start text-gray-400 pb-4 font-normal">
                 <p>
                   {item.name}
-                  <span className="text-black">x {item.quantity} </span>
+                  <span className="text-black mx-2"> x </span>
+                  <span className="text-black">{item.quantity}</span>
                 </p>
               </th>
               <td className="text-right pb-5">
@@ -101,7 +102,7 @@ function ProductsCheck() {
         <tr>
           <th className="text-left font-normal pt-4">Total</th>
           <td>
-            <p className="pt-4 font-bold text-lg text-Goldenrod text-right">
+            <p className="pt-4 font-bold text-lg text-Goldenrod text-right xl:text-2xl xl:w-80">
               {formatCurrency(total)}
             </p>
           </td>

@@ -59,7 +59,7 @@ function Header() {
   const isModalActive = isModalOpen || isCartModalOpen;
 
   return (
-    <header className="flex justify-between items-center w-auto min-h-16 px-5 lg:min-h-24 lg:px-4 xl:px-16 xl:max-w-screen-2xl xl:mx-auto xl:w-full">
+    <header className="flex justify-between items-center w-auto min-h-20 px-5 lg:min-h-24 lg:px-4 xl:px-16 xl:max-w-screen-2xl xl:mx-auto xl:w-full">
       <div className="flex items-center gap-2">
         <img
           src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/logo-furniro.svg"
@@ -67,7 +67,7 @@ function Header() {
           title="Furniro-logo"
           className="w-8 md:w-10 lg:w-14"
         />
-        <h1 className="text-lg md:text-2xl lg:text-4xl font-semibold">
+        <h1 className="text- font-semibold md:text-2xl lg:text-4xl ">
           Furniro
         </h1>
       </div>
@@ -103,7 +103,9 @@ function Header() {
         </nav>
 
         <div className="relative flex gap-3 items-center lg:gap-8">
-          <span>{user ? `Olá, ${user.firstName}` : ''}</span>
+          <span className="hidden md:block xl:text-xl">
+            {user ? `Olá, ${user.firstName}` : ''}
+          </span>
           <img
             src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/nav/Vector.svg"
             alt="icon representing a user"

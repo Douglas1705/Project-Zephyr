@@ -26,9 +26,12 @@ function ModalCard({ product, isOpen, onClose }: Props) {
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
 
   const handleAddToCart = useCallback(() => {
-    const existingItem = cartItems.find((item) => item.id === product.id);
+    const existingItemById = cartItems.find((item) => item.id === product.id);
+    const existingItemByName = cartItems.find(
+      (item) => item.name === product.name,
+    );
 
-    if (existingItem) {
+    if (existingItemById || existingItemByName) {
       setConfirmationMessage('Product already added to cart!');
       setShowConfirmation(true);
     } else {

@@ -185,7 +185,7 @@ function Cart() {
           </div>
         </div>
 
-        <div className="bg-warm-cream w-[393px] h-[390px] px-20 font-medium">
+        <div className="bg-warm-cream mx-auto w-[393px] h-[390px] px-20 font-medium xl:mx-0">
           <h3 className="font-semibold text-3xl text-center mb-20 pt-4">
             Cart Totals
           </h3>

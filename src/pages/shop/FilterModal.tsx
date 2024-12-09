@@ -23,11 +23,16 @@ function FilterModal({ isOpen, onClose, onApply, filters }: FilterModalProps) {
   }, [filters]);
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target;
-    setLocalFilters((prevFilters) => ({
-      ...prevFilters,
-      [name]: checked,
-    }));
+    const { name } = e.target;
+    const updatedFilters = {
+      price: false,
+      discount: false,
+      name: false,
+      new: false,
+      all: false,
+      [name]: e.target.checked,
+    };
+    setLocalFilters(updatedFilters);
   };
 
   const handleApplyFilters = () => {
@@ -117,8 +122,7 @@ function FilterModal({ isOpen, onClose, onApply, filters }: FilterModalProps) {
         <div className="flex justify-end mt-6 space-x-3">
           <button
             {...applyButtonProps}
-            className="bg-white text-black px-6 py-3 rounded-md hover:bg-Goldenrod
-      hover:text-white transition duration-200 shadow-md"
+            className="bg-white text-black px-6 py-3 rounded-md hover:bg-Goldenrod hover:text-white transition duration-200 shadow-md"
           >
             Apply
           </button>
@@ -133,5 +137,7 @@ function FilterModal({ isOpen, onClose, onApply, filters }: FilterModalProps) {
     </div>
   );
 }
-
+{
+  ('codigo funcionando');
+}
 export default FilterModal;

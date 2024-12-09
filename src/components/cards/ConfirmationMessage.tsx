@@ -7,7 +7,7 @@ interface ConfirmationMessageProps {
 
 function ConfirmationMessage({ message, onClose }: ConfirmationMessageProps) {
   useEffect(() => {
-    const timer = setTimeout(onClose, 10000);
+    const timer = setTimeout(onClose, 3000);
     return () => clearTimeout(timer);
   }, [onClose]);
 

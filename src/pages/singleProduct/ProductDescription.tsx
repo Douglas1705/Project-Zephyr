@@ -3,7 +3,6 @@ import { FaFacebook, FaLinkedin, FaStar, FaStarHalf } from 'react-icons/fa';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import CounterCards from '../../components/counter/CounterCards';
 import AppButton from '../../components/buttons/AppButton';
-import { addToCart } from '../../utils/localStorageUtils';
 import ConfirmationMessage from '../../components/cards/ConfirmationMessage';
 
 interface Product {
@@ -24,6 +23,7 @@ interface ProductDescriptionProps {
 function ProductDescription({ product }: ProductDescriptionProps) {
   const [quantity, setQuantity] = useState(1);
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [confirmationMessage, setConfirmationMessage] = useState('');
 
   const price = useMemo(() => {
     return product.discountedPrice > 0
@@ -41,9 +41,66 @@ function ProductDescription({ product }: ProductDescriptionProps) {
   };
 
   const handleAddToCart = useCallback(() => {
-    addToCart(product, quantity);
-    setShowConfirmation(true);
-    setTimeout(() => setShowConfirmation(false), 3000);
+    fetch('http://localhost:3001/cart')
+      .then((response) => response.json())
+      .then((cartItems) => {
+        const existingItem = cartItems.find(
+          (item: Product) => item.name === product.name,
+        );
+
+        if (existingItem) {
+          const updatedItem = {
+            ...existingItem,
+            quantity: existingItem.quantity + quantity,
+          };
+
+          fetch(`http://localhost:3001/cart/${existingItem.id}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedItem),
+          })
+            .then(() => {
+              setConfirmationMessage('Product quantity updated in cart!');
+              setShowConfirmation(true);
+              setTimeout(() => setShowConfirmation(false), 3000);
+            })
+            .catch((error) => {
+              console.error(
+                'Error updating product in cart on JSON server:',
+                error,
+              );
+            });
+        } else {
+          const cartItem = {
+            ...product,
+            quantity,
+          };
+
+          fetch('http://localhost:3001/cart', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(cartItem),
+          })
+            .then(() => {
+              setConfirmationMessage('Product added to cart!');
+              setShowConfirmation(true);
+              setTimeout(() => setShowConfirmation(false), 3000);
+            })
+            .catch((error) => {
+              console.error(
+                'Error adding product to cart on JSON server:',
+                error,
+              );
+            });
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching cart items from JSON server:', error);
+      });
   }, [product, quantity]);
 
   const handleCloseConfirmation = useCallback(() => {
@@ -145,7 +202,7 @@ function ProductDescription({ product }: ProductDescriptionProps) {
             </AppButton>
             {showConfirmation && (
               <ConfirmationMessage
-                message="Produto adicionado ao carrinho!"
+                message={confirmationMessage}
                 onClose={handleCloseConfirmation}
               />
             )}
