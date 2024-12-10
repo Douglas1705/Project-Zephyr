@@ -23,7 +23,7 @@ interface Filters {
 
 function ShopPage() {
   const iconClasses = 'w-10 xl:w-7';
-  const buttonClasses = 'px-7 py-3 rounded-md text-base';
+  const buttonClasses = 'px-5 py-3 rounded-lg text-base';
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showCount, setShowCount] = useState<number>(16);
@@ -40,7 +40,6 @@ function ShopPage() {
   const products = useAppSelector(
     (state: RootState) => state.products.products,
   );
-  const loading = useAppSelector((state: RootState) => state.products.loading);
   const [displayedProducts, setDisplayedProducts] = useState<Product[]>([]);
 
   const applyFilters = useCallback(
@@ -103,7 +102,9 @@ function ShopPage() {
 
   const handleShowCountChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
-      const value = Number(event.target.value);
+      let value = Number(event.target.value);
+      if (value < 1) value = 1;
+      if (value > 48) value = 48;
       setShowCount(value);
       setCurrentPage(1);
       const orderedProducts = [...products].sort((a, b) => a.id - b.id);
@@ -135,7 +136,7 @@ function ShopPage() {
     <section>
       <CapePages title="Shop" />
       <main>
-        <article className="flex flex-col bg-WhisperWhite mb-12 lg:flex-row lg:h-28 lg:gap-4 lg:mb-0 lg:justify-between lg:px-2 xl:px-28">
+        <article className="flex flex-col bg-WhisperWhite mb-12 lg:flex-row lg:h-28 lg:gap-4 lg:mb-10 lg:justify-between lg:px-2 xl:px-28">
           <div className="flex flex-col items-center py-5 gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex gap-5 items-center border-b-4 border-gray-400 pb-5 lg:border-b-0 lg:border-r-2 lg:h-10 lg:overflow-hidden lg:pr-7 lg:pb-0">
               <AdjustmentsHorizontalIcon className={iconClasses} />
@@ -177,27 +178,7 @@ function ShopPage() {
             />
           </div>
         </article>
-        {loading ? (
-          <div className="flex justify-center items-center h-96">
-            <div
-              className="tenor-gif-embed"
-              data-postid="14029580"
-              data-share-method="host"
-              data-aspect-ratio="1"
-              data-width="100%"
-            >
-              <a href="https://tenor.com/view/loading-spinning-round-and-round-please-wait-gif-14029580">
-                Loading Spinning Sticker
-              </a>
-              from{' '}
-              <a href="https://tenor.com/search/loading-stickers">
-                Loading Stickers
-              </a>
-            </div>
-          </div>
-        ) : (
-          <ProductList products={displayedProducts} />
-        )}
+        <ProductList products={displayedProducts} />
         <FilterModal
           isOpen={isModalOpen}
           onClose={closeModal}
@@ -212,8 +193,8 @@ function ShopPage() {
             onClick={handlePageChange(label)}
             className={`${buttonClasses} ${
               currentPage === label
-                ? 'bg-Goldenrod text-white'
-                : 'bg-warm-cream text-black border-2 border-gray-100'
+                ? 'bg-Goldenrod text-white hover:bg-yellow-400'
+                : 'bg-warm-cream text-black hover:bg-amber-400'
             }`}
             disabled={
               (label === 2 && showCount < 17) || (label === 3 && showCount < 25)
@@ -223,7 +204,7 @@ function ShopPage() {
           </button>
         ))}
         <button
-          className={`${buttonClasses} bg-gray-200 text-gray-500`}
+          className={`${buttonClasses} bg-warm-cream text-black hover:bg-amber-400`}
           disabled
         >
           Next

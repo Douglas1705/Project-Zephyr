@@ -71,9 +71,11 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
   };
 
   return (
-    <div className="px-6 r-52 bg-white z-40">
+    <div className="px-6 r-52 bg-white">
       <div className="flex items-center border-b-2 border-gray-300 justify-between py-6">
-        <h3 className="text-2xl font-semibold bg-white">Shopping Cart</h3>
+        <h3 className="text-base md:text-2xl font-semibold bg-white">
+          Shopping Cart
+        </h3>
         <div className="flex gap-2">
           {cartItems.length === 0 ? (
             <RxLockClosed className="" />
@@ -88,37 +90,41 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
       </div>
 
       <div className="flex flex-col gap-5 pt-10">
-        <div className="max-h-60 overflow-y-auto overflow-x-hidden no-scrollbar">
-          {cartItems.map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center mb-5 flex-col gap-5 md:flex-row"
-            >
-              <img
-                src={item.imageUrl}
-                alt={item.name}
-                className="h-32 md:w-24 md:h-24 md:mr-10 rounded-xl xl:w-28 xl:mr-4"
-              />
-              <div className="flex flex-row items-center gap-16 md:justify-between md:w-full">
-                <div className="flex border-y-2 py-2 lg:flex-col lg:gap-3 xl:border-none">
-                  <h4 className="text-base mr-4">{item.name}</h4>
-
-                  <p>
-                    <span className="pr-2">{item.quantity}</span> x{' '}
-                    <span className="text-Goldenrod pl-2">
-                      {formatCurrency(
-                        item.discountedPrice || item.originalPrice,
-                      )}
-                    </span>
-                  </p>
-                </div>
-                <TbXboxXFilled
-                  onClick={handleRemoveItemClick(item.id)}
-                  className="cursor-pointer text-md text-gray-400 hover:text-red-800 text-2xl"
+        <div className="max-h-[175px] md:max-h-72 lg:max-h-60 overflow-y-auto overflow-x-hidden no-scrollbar">
+          {cartItems.length === 0 ? (
+            <p className="text-center text-gray-500">Affection without items</p>
+          ) : (
+            cartItems.map((item) => (
+              <div
+                key={item.id}
+                className="flex items-center mb-5 flex-col gap-5 md:flex-row"
+              >
+                <img
+                  src={item.imageUrl}
+                  alt={item.name}
+                  className="h-10 md:w-24 md:h-24 md:mr-10 rounded-xl xl:w-28 xl:mr-4"
                 />
+                <div className="flex flex-row items-center gap-16 md:justify-between md:w-full">
+                  <div className="flex flex-col border-y-2 py-2 lg:flex-col lg:gap-3 xl:border-none">
+                    <h4 className="text-base mr-4">{item.name}</h4>
+
+                    <p>
+                      <span className="pr-2">{item.quantity}</span> x{' '}
+                      <span className="text-Goldenrod pl-2">
+                        {formatCurrency(
+                          item.discountedPrice || item.originalPrice,
+                        )}
+                      </span>
+                    </p>
+                  </div>
+                  <TbXboxXFilled
+                    onClick={handleRemoveItemClick(item.id)}
+                    className="cursor-pointer text-md text-gray-400 hover:text-red-800 text-2xl"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
 
         <div className="flex gap-20 border-b-2 border-gray-300 pb-8 lg:mt-14">

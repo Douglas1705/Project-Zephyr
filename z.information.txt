@@ -21,6 +21,7 @@ npm install @clerk/clerk-react
 
 npm install react-modal
 
+https://youtu.be/sp_3i4331Lw
 
 npm install redux-thunk
 

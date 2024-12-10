@@ -1,6 +1,6 @@
 function GridForniture() {
   return (
-    <section className="flex flex-row gap-4 mx-auto">
+    <section className="flex flex-row gap-4 mx-auto w-full ">
       <div id="container-col-1" className="flex flex-col gap-4">
         <figure id="container-1" className="flex items-end gap-4">
           <img

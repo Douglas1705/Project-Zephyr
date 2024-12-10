@@ -481,5 +481,17 @@
       "new": "New"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "2",
+      "name": "Leviosa",
+      "description": "Stylish cafe chair",
+      "originalPrice": 2500000,
+      "discountedPrice": 0,
+      "discount": 0,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-2.webp",
+      "new": "none",
+      "quantity": 12
+    }
+  ]
 }

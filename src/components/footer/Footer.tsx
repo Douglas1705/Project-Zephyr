@@ -49,7 +49,7 @@ function Footer() {
         >
           <h2 className="text-3xl font-bold xl:text-2xl">Funiro.</h2>
           <div className="text-gray-400">
-            <p className="mb-2 xl:text-base w-5/6 mx-auto lg:mx-0">
+            <p className="mb-2 xl:text-base w-5/6 mx-auto xl:mx-0">
               400 University Drive Suite 200 Coral Gables,
             </p>
             <p>FL 33134 USA</p>

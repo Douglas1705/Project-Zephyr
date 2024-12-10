@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useUser, useAuth } from '@clerk/clerk-react';
 import Modal from 'react-modal';
-import { IoIosUnlock, IoIosLock } from 'react-icons/io';
+import { IoIosUnlock } from 'react-icons/io';
 import ModalProductsHeader from './ModalProductsHeader';
 
 Modal.setAppElement('#root');
@@ -31,17 +31,16 @@ function Header() {
   }, []);
 
   const handleUserIconClick = useCallback(() => {
-    setIsModalOpen((prevState) => !prevState);
-  }, []);
+    if (isSignedIn) {
+      setIsModalOpen((prevState) => !prevState);
+    } else {
+      navigate('/sign-in');
+    }
+  }, [isSignedIn, navigate]);
 
   const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
   }, []);
-
-  const handleLogin = useCallback(() => {
-    navigate('/sign-in');
-    handleCloseModal();
-  }, [navigate, handleCloseModal]);
 
   const handleLogout = useCallback(() => {
     signOut();
@@ -57,6 +56,9 @@ function Header() {
   }, []);
 
   const isModalActive = isModalOpen || isCartModalOpen;
+
+  const liCustom =
+    'hover:text-Goldenrod px-5 hover:border-l-2 hover:border-black lg:hover:border-b-4 lg:hover:border-black lg:hover:border-l-0 lg:px-0';
 
   return (
     <header className="flex justify-between items-center w-auto min-h-20 px-5 lg:min-h-24 lg:px-4 xl:px-16 xl:max-w-screen-2xl xl:mx-auto xl:w-full">
@@ -87,16 +89,16 @@ function Header() {
             className={`flex flex-col gap-4 text-base font-medium p-4 border-2 items-center lg:flex-row lg:gap-20 lg:p-0 lg:border-0 xl:gap-24 xl:text-lg ${isModalActive ? 'hidden' : ''}`}
             onClick={handleLinkClick}
           >
-            <li className="hover:text-Goldenrod hover:border-b-4 hover:border-black">
+            <li className={`${liCustom}`}>
               <Link to="/">Home</Link>
             </li>
-            <li className="hover:text-Goldenrod hover:border-b-4 hover:border-black">
+            <li className={`${liCustom}`}>
               <Link to="/shop">Shop</Link>
             </li>
-            <li className="hover:text-Goldenrod hover:border-b-4 hover:border-black">
+            <li className={`${liCustom}`}>
               <Link to="#">About</Link>
             </li>
-            <li className="hover:text-Goldenrod hover:border-b-4 hover:border-black">
+            <li className={`${liCustom}`}>
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
@@ -130,23 +132,13 @@ function Header() {
         className="absolute top-20 right-10 mt-2 rounded-XL shadow-lg z-50 w-48 outline-none hover:bg-white hover:text-black"
         overlayClassName="fixed inset-0 bg-black bg-opacity-50"
       >
-        {user ? (
-          <button
-            onClick={handleLogout}
-            className="w-full bg-Goldenrod text-center text-white py-2 px-4 flex flex-col items-center hover:text-black hover:bg-white"
-          >
-            <IoIosUnlock />
-            Logout
-          </button>
-        ) : (
-          <button
-            onClick={handleLogin}
-            className="w-full bg-Goldenrod text-center text-white py-2 px-4 flex flex-col items-center hover:text-black hover:bg-white"
-          >
-            <IoIosLock className="text-3xl" />
-            LOGIN
-          </button>
-        )}
+        <button
+          onClick={handleLogout}
+          className="w-full bg-Goldenrod text-center text-white py-2 px-4 flex flex-col items-center hover:text-black hover:bg-white"
+        >
+          <IoIosUnlock />
+          Logout
+        </button>
       </Modal>
 
       <Modal

@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { addItemToCart } from '../../redux/cartSlice';
@@ -24,6 +24,7 @@ function ModalCard({ product, isOpen, onClose }: Props) {
   const [confirmationMessage, setConfirmationMessage] = useState('');
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const handleAddToCart = useCallback(() => {
     const existingItemById = cartItems.find((item) => item.id === product.id);
@@ -50,32 +51,50 @@ function ModalCard({ product, isOpen, onClose }: Props) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(cartItem),
-      }).catch((error) => {
-        console.error('Error adding product to cart on JSON server:', error);
-      });
+      }).catch(() => {});
     }
   }, [product, cartItems, dispatch]);
 
   const handleClose = useCallback(() => {
     setShowConfirmation(false);
-  }, []);
+    onClose();
+  }, [onClose]);
 
   const handleViewProduct = useCallback(() => {
     window.location.href = `/single-product/${product.id}`;
   }, [product.id]);
 
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="absolute inset-0 z-50 flex items-center justify-center">
-      <div className="relative bg-gray-900 bg-opacity-55 p-6 rounded-lg shadow-lg w-full h-full flex flex-col justify-center items-center">
+    <div className="absolute inset-0 z-30 flex items-center justify-center">
+      <div
+        ref={modalRef}
+        className="relative bg-gray-900 bg-opacity-55 p-6 rounded-lg shadow-lg w-full h-full flex flex-col justify-center items-center"
+      >
         <button
           className="absolute top-0 right-0 mt-4 mr-4 text-white text-4xl hover:text-red-400"
           onClick={onClose}
         >
           &times;
         </button>
-        <div className="flex flex-col space-y-8 items-center">
+        <div className="flex flex-col space-y-8 items-center z-0">
           <button
             onClick={handleAddToCart}
             className="bg-white text-Goldenrod hover:bg-Goldenrod hover:text-white py-3 w-10/12 font-semibold"

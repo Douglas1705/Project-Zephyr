@@ -1,7 +1,9 @@
 function NotFound404() {
   return (
-    <section>
-      <h2>Pagina não encontrada</h2>
+    <section className="h-screen flex text-center justify-center">
+      <h2 className="text-base lg:text-4xl text-red-500">
+        Pagina não encontrada:(
+      </h2>
     </section>
   );
 }

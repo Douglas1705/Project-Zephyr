@@ -38,9 +38,7 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
           return Promise.all(deleteRequests);
         }
       })
-      .catch((error) => {
-        console.error('Error loading cart items:', error);
-      });
+      .catch(() => {});
   }, []);
 
   const closeModal = useCallback(() => {
@@ -52,7 +50,7 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
   return (
     <>
       <button
-        className="w-full mx-auto border-2 border-black py-4 rounded-2xl text-xl mb-4 md:w-80 md:mr-52 lg:mx-auto hover-white-custom"
+        className="w-full mx-auto border-2 border-black py-4 rounded-2xl text-xl mb-16 md:w-80 md:mr-52 lg:mx-auto hover-white-custom"
         onClick={handlePlaceOrder}
         disabled={cartIsEmpty}
       >
@@ -83,19 +81,19 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
           },
         }}
       >
-        <div className="bg-Goldenrod bg-opacity-50 rounded-xl">
-          <h2 className="text-2xl mb-4 font-bold xl:text-4xl text-rose-800">
+        <div className="bg-white rounded-xl">
+          <h2 className="text-4xl mb-4 font-bold xl:text-4xl text-rose-800">
             Congratulations
           </h2>
-          <p className="text-xl mb-4 text-white font-bold xl:text-4xl">
+          <p className="text-4xl mb-4 text-black font-semibold ">
             {user ? user.firstName : 'Guest'}
           </p>
-          <p className="text-white text-2xl mb-10">
+          <p className="text-blac text-2xl mb-10">
             We are happy to know that we left your space with more style and
             refinement.
           </p>
           <button
-            className="bg-white text-black py-4 px-4 w-8/12 mb-10 text-2xl rounded-lg hover:bg-black hover:text-white"
+            className="bg-white text-black py-4 px-4 w-8/12 mb-10 text-2xl rounded-lg hover:bg-black hover:text-white border-2 border-black"
             onClick={closeModal}
           >
             Close

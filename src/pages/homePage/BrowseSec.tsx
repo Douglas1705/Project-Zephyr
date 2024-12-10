@@ -25,7 +25,7 @@ function BrowseSec() {
               640: {
                 type: 'loop',
                 autoplay: true,
-                interval: 3000,
+                interval: 2000,
                 perPage: 1,
                 arrows: false,
                 padding: '3rem',

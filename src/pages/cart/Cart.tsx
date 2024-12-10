@@ -39,9 +39,7 @@ function Cart() {
         setCartItems(items);
         calculateSubtotal(items);
       })
-      .catch((error) => {
-        console.error('Error loading cart items:', error);
-      });
+      .catch(() => {});
   }, [calculateSubtotal]);
 
   const updateQuantity = useCallback(
@@ -60,9 +58,7 @@ function Cart() {
           ...cartItems.find((item) => item.id === id),
           quantity,
         }),
-      }).catch((error) => {
-        console.error('Error updating item quantity:', error);
-      });
+      }).catch(() => {});
 
       calculateSubtotal(updatedItems);
     },
@@ -76,9 +72,7 @@ function Cart() {
 
       fetch(`http://localhost:3001/cart/${id}`, {
         method: 'DELETE',
-      }).catch((error) => {
-        console.error('Error removing item from cart:', error);
-      });
+      }).catch(() => {});
 
       calculateSubtotal(updatedItems);
     },
@@ -185,7 +179,7 @@ function Cart() {
           </div>
         </div>
 
-        <div className="bg-warm-cream mx-auto w-[393px] h-[390px] px-20 font-medium xl:mx-0">
+        <div className="mt-10 xl:mt-0 bg-warm-cream mx-auto w-[393px] h-[390px] px-20 font-medium xl:mx-0">
           <h3 className="font-semibold text-3xl text-center mb-20 pt-4">
             Cart Totals
           </h3>

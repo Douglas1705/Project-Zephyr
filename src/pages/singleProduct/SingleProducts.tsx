@@ -54,9 +54,9 @@ function SingleProducts() {
   return (
     <section>
       <div className="h-24 bg-warm-cream flex gap-4 items-center justify-center xl:justify-start xl:pl-28">
-        <p className="border-r-2 border-gray-300 py-1 flex gap-2 text-gray-400">
-          Home <span className="text-black xl:pl-4 xl:pr-5">&gt;</span> Shop{' '}
-          <span className="text-black xl:pl-4 xl:pr-5">&gt;</span>
+        <p className="md:border-r-2 md:border-gray-400 py-1 flex gap-2 text-gray-400">
+          Home <span className="text-black md:pl-4 md:pr-5">&gt;</span> Shop{' '}
+          <span className="text-black md:pl-4 md:pr-5">&gt;</span>
         </p>
         <span>{product.name}</span>
       </div>
