@@ -15,8 +15,7 @@ interface Product {
   discountedPrice: number;
   discount: number;
   imageUrl: string;
-  price: number;
-  new: boolean;
+  new: string;
 }
 
 function SingleProducts() {

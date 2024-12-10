@@ -63,9 +63,9 @@ function Contact() {
     [validate],
   );
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setShowModal(false);
-  };
+  }, []);
 
   const divFormInput = 'flex flex-col gap-4';
   const labelCustom = 'font-bold text-base';

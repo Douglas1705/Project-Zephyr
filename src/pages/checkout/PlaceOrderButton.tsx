@@ -3,6 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import { useUser } from '@clerk/clerk-react';
 
+interface CartItem {
+  id: number;
+  [key: string]: any;
+}
+
 interface PlaceOrderButtonProps {
   validateForm: () => boolean;
 }
@@ -16,7 +21,7 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
   useEffect(() => {
     fetch('http://localhost:3001/cart')
       .then((response) => response.json())
-      .then((cartItems) => setCartIsEmpty(cartItems.length === 0));
+      .then((cartItems: CartItem[]) => setCartIsEmpty(cartItems.length === 0));
   }, []);
 
   const handlePlaceOrder = useCallback(() => {
@@ -28,17 +33,16 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
   const clearCart = useCallback(() => {
     fetch('http://localhost:3001/cart')
       .then((response) => response.json())
-      .then((cartItems) => {
+      .then((cartItems: CartItem[]) => {
         if (cartItems.length > 0) {
-          const deleteRequests = cartItems.map((item) =>
+          const deleteRequests = cartItems.map((item: CartItem) =>
             fetch(`http://localhost:3001/cart/${item.id}`, {
               method: 'DELETE',
             }),
           );
           return Promise.all(deleteRequests);
         }
-      })
-      .catch(() => {});
+      });
   }, []);
 
   const closeModal = useCallback(() => {

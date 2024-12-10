@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 
 interface CounterCardsProps {
   initialCount: number;
@@ -13,12 +13,19 @@ function CounterCards({
 }: CounterCardsProps) {
   const [count, setCount] = useState(initialCount);
   const [error, setError] = useState('');
+  const previousCount = useRef(initialCount);
+
+  useEffect(() => {
+    if (previousCount.current !== count) {
+      onCountChange(count);
+      previousCount.current = count;
+    }
+  }, [count, onCountChange]);
 
   const handleIncrement = useCallback(() => {
     setCount((prevCount) => {
       const newCount = prevCount + 1;
       if (newCount <= 10) {
-        onCountChange(newCount);
         setError('');
         return newCount;
       } else {
@@ -26,13 +33,12 @@ function CounterCards({
         return prevCount;
       }
     });
-  }, [onCountChange]);
+  }, []);
 
   const handleDecrement = useCallback(() => {
     setCount((prevCount) => {
       const newCount = prevCount - 1;
       if (newCount >= 1) {
-        onCountChange(newCount);
         setError('');
         return newCount;
       } else {
@@ -40,38 +46,36 @@ function CounterCards({
         return prevCount;
       }
     });
-  }, [onCountChange]);
+  }, []);
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = parseInt(e.target.value, 10);
       if (!isNaN(value) && value >= 1 && value <= 10) {
         setCount(value);
-        onCountChange(value);
         setError('');
       } else if (isNaN(value) || value < 1) {
         setError('O valor deve ser entre 1 e 10.');
       } else if (value > 10) {
         setCount(10);
-        onCountChange(10);
         setError('O valor deve ser entre 1 e 10.');
       }
     },
-    [onCountChange],
+    [],
   );
 
   return (
     <div
       className={`w-auto ${className} py-4 border-2 border-gray-400 rounded-xl`}
     >
-      <div className="flex w-36 px-3 text-center justify-between gap-4  text-base mx-auto">
+      <div className="flex w-36 px-3 text-center justify-between gap-4 text-base mx-auto">
         <button onClick={handleDecrement}>-</button>
         <input
           type="text"
           value={count}
           onChange={handleInputChange}
           placeholder="1"
-          className=" w-6 py-2 px-0 text-center"
+          className="w-6 py-2 px-0 text-center"
         />
         <button onClick={handleIncrement}>+</button>
       </div>

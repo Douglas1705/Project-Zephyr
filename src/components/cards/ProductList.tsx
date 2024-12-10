@@ -25,14 +25,10 @@ function ProductList({ products, limit }: ProductListProps) {
     let isMounted = true;
 
     const fetchProducts = async () => {
-      try {
-        const response = await fetch('http://localhost:3001/products');
-        const data = await response.json();
-        if (isMounted) {
-          setLocalProducts(data);
-        }
-      } catch (error) {
-        console.error('Error fetching products:', error);
+      const response = await fetch('http://localhost:3001/products');
+      const data = await response.json();
+      if (isMounted) {
+        setLocalProducts(data);
       }
     };
 

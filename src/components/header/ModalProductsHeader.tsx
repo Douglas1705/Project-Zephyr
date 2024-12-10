@@ -32,9 +32,7 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
         dispatch(setCartItems(items));
         calculateSubtotal(items);
       })
-      .catch((error) => {
-        console.error('Error loading cart items:', error);
-      });
+      .catch(() => {});
   }, [dispatch, calculateSubtotal]);
 
   const handleRemoveItem = useCallback(
@@ -47,9 +45,7 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
           const updatedItems = cartItems.filter((item) => item.id !== id);
           calculateSubtotal(updatedItems);
         })
-        .catch((error) => {
-          console.error('Error removing item from cart:', error);
-        });
+        .catch(() => {});
     },
     [cartItems, calculateSubtotal, dispatch],
   );

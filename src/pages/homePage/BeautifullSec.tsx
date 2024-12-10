@@ -123,8 +123,8 @@ function BeautifullSec() {
             }}
             aria-label="Beautiful Room Inspirations"
           >
-            {images.map((src, index) => (
-              <CustomSlide key={`slide-${index}`} src={src} />
+            {images.map((src) => (
+              <CustomSlide key={src} src={src} />
             ))}
           </Splide>
         </div>

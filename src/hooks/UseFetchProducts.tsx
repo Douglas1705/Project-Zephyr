@@ -14,7 +14,7 @@ const useFetchProducts = () => {
         } else {
         }
       })
-      .catch((error) => console.error('Erro ao buscar produtos:', error));
+      .catch(() => {});
   }, [dispatch]);
 };
 

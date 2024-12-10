@@ -13,7 +13,7 @@ interface Product {
   discountedPrice: number;
   discount: number;
   imageUrl: string;
-  new: boolean;
+  new: string;
 }
 
 interface ProductDescriptionProps {
@@ -60,18 +60,11 @@ function ProductDescription({ product }: ProductDescriptionProps) {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(updatedItem),
-          })
-            .then(() => {
-              setConfirmationMessage('Product quantity updated in cart!');
-              setShowConfirmation(true);
-              setTimeout(() => setShowConfirmation(false), 3000);
-            })
-            .catch((error) => {
-              console.error(
-                'Error updating product in cart on JSON server:',
-                error,
-              );
-            });
+          }).then(() => {
+            setConfirmationMessage('Product quantity updated in cart!');
+            setShowConfirmation(true);
+            setTimeout(() => setShowConfirmation(false), 3000);
+          });
         } else {
           const cartItem = {
             ...product,
@@ -84,22 +77,12 @@ function ProductDescription({ product }: ProductDescriptionProps) {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(cartItem),
-          })
-            .then(() => {
-              setConfirmationMessage('Product added to cart!');
-              setShowConfirmation(true);
-              setTimeout(() => setShowConfirmation(false), 3000);
-            })
-            .catch((error) => {
-              console.error(
-                'Error adding product to cart on JSON server:',
-                error,
-              );
-            });
+          }).then(() => {
+            setConfirmationMessage('Product added to cart!');
+            setShowConfirmation(true);
+            setTimeout(() => setShowConfirmation(false), 3000);
+          });
         }
-      })
-      .catch((error) => {
-        console.error('Error fetching cart items from JSON server:', error);
       });
   }, [product, quantity]);
 

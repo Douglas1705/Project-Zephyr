@@ -51,26 +51,18 @@ Siga os passos abaixo para configurar e executar o projeto localmente:
 
 2. Instale Npm dentro da pasta do projeto:
     ```bash
-   npm ..
-   
-3. Para json.server:
-    ```bash
-   cd C:../public
+   npm ..  
 
-4. Para rodar o db.json:
-    ```bash
-    json-server --watch db.json --port 3001
-
-5. Se necessário instalar o Json server:
+3. Se necessário instalar o Json server:
     ```bash
     npm install json-server --save-dev
 
-6. Se necessário instalar o Clerck:
+4. Se necessário instalar o Clerck:
     ```bash
     npm install @clerk/clerk-react
 
-7. Se necessário instalar React-Modal:
+5. Se necessário instalar React-Modal:
     ```bash
     npm install react-modal
 
-   
+
