@@ -83,7 +83,7 @@ function Header() {
 
         <nav
           className={`lg:flex ${isMenuOpen && !isModalActive ? 'block' : 'hidden'} 
-            absolute top-14 left-0 w-full bg-white z-10 lg:static lg:w-auto lg:bg-transparent`}
+            absolute top-14 left-0 w-full bg-white  z-10 lg:static lg:w-auto lg:bg-transparent`}
         >
           <ul
             className={`flex flex-col gap-4 text-base font-medium p-4 border-2 items-center lg:flex-row lg:gap-20 lg:p-0 lg:border-0 xl:gap-24 xl:text-lg ${isModalActive ? 'hidden' : ''}`}

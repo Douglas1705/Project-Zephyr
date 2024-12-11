@@ -36,6 +36,14 @@ export default [
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       'no-multi-spaces': 'error',
       'no-trailing-spaces': 'error',
+      'no-warning-comments': [
+        'warn', // ou 'error' conforme necessário
+        {
+          'terms': ['todo', 'fixme', 'casa'], // Incluindo "casa" na lista de termos
+          'location': 'start',
+          'decoration': ['*'],
+        },
+      ],
       'react/jsx-uses-react': 'error',
       'react/no-deprecated': 'warn',
       'react/no-direct-mutation-state': 'error',
@@ -44,7 +52,7 @@ export default [
       'react/jsx-no-bind': 'warn',
       'semi': ['error', 'always'],
       'semi-style': ['error', 'last'],
-      'comma-dangle': ['error', 'always-multiline'],      
+      'comma-dangle': ['error', 'always-multiline'],
       'quotes': ['error', 'single'],
       'no-console': 'warn',
       'no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],

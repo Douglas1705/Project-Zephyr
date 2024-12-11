@@ -147,7 +147,7 @@ function Cart() {
                     {item.name}
                   </p>
 
-                  <div className="flex flex-wrap items-center justify-between space-y-5 md:gap-5 lg:w-[450px] md:space-y-0 ">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center justify-between space-y-5 md:gap-5 lg:w-[450px] md:space-y-0 ">
                     <p className="w-auto h-auto text-2xl text-gray-500 pb-10 md:text-base md:pb-0 md:w-[145px]">
                       RS.{' '}
                       {formatCurrency(

@@ -5,7 +5,7 @@ function BrowseSec() {
   const figcaptionCustom = 'mt-4 text-2xl font-semibold';
 
   return (
-    <section className="py-10 text-center">
+    <section className="py-10 text-center relative">
       <h2 className="text-2xl font-bold mb-2 lg:text-3xl">Browse The Range</h2>
       <p className="text-gray-400 mb-10">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.

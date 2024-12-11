@@ -2,7 +2,7 @@ import AppButton from '../../components/buttons/AppButton';
 
 function CapaSec() {
   return (
-    <section className="md:bg-living-room md:bg-cover md:bg-center md:flex md:items-center min-h-[716px]">
+    <section className="md:bg-living-room md:bg-cover md:bg-center md:flex md:items-center md:min-h-[716px]">
       {/* figure */}
       <figure className="md:hidden">
         <img
@@ -14,7 +14,7 @@ function CapaSec() {
       </figure>
 
       {/* container article > text button */}
-      <article className="p-10 text-center flex flex-col gap-6 bg-warm-cream rounded-2xl  w-11/12 mx-auto mt-5 md:h-[443px] md:w-[643px] md:items-start md:justify-center md:text-start md:pt-20 md:mr-10">
+      <article className="relative p-10 text-center flex flex-col gap-6 bg-warm-cream rounded-2xl  w-11/12 mx-auto mt-5 md:h-[443px] md:w-[603px] md:items-start md:justify-center md:text-start md:pt-20 md:mr-10">
         {/* container text */}
         <div className="flex flex-col gap-4 xl:pr-4">
           <p className="text-gray-700 font-semibold tracking-widest">

@@ -7,7 +7,7 @@ function SectionQuality() {
   const imgCustom = 'mx-auto lg:mx-0';
 
   return (
-    <article className="bg-warm-cream flex justify-between gap-10 py-10 flex-wrap px-10 h-auto items-center lg:gap-4 lg:space-y-4 lg:justify-around xl:h-[270px] xl:gap-0 xl:py-0 xl:px-0">
+    <article className="bg-warm-cream flex flex-col md:flex-row justify-between gap-10 py-10 flex-wrap px-10 h-auto items-center lg:gap-4 lg:space-y-4 lg:justify-around xl:h-[270px] xl:gap-0 xl:py-0 xl:px-0">
       <figure className={`${figureCustom} lg:pt-6`}>
         <img
           src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/trophy.svg"

@@ -30,7 +30,11 @@ function App() {
   if (loading) {
     return (
       <div className="fixed inset-0 flex flex-col items-center justify-center bg-white">
-        <img src="/1474.gif" alt="Loading..." className="w-20 h-20" />
+        <img
+          src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/1474.gif"
+          alt="Loading..."
+          className="w-20 h-20"
+        />
         <h3 className="font-bold text-4xl">Furniro.</h3>
       </div>
     );
@@ -42,7 +46,11 @@ function App() {
       <Suspense
         fallback={
           <div className="fixed inset-0 flex items-center justify-center bg-white">
-            <img src="/1474.gif" alt="Loading..." className="w-20 h-20" />
+            <img
+              src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/1474.gif"
+              alt="Loading..."
+              className="w-20 h-20"
+            />
             <h3 className="font-bold text-4xl">Furniro.</h3>
           </div>
         }

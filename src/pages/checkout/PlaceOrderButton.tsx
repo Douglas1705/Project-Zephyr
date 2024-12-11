@@ -75,24 +75,22 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
           },
           content: {
             color: 'black',
-            maxWidth: '500px',
-            height: '400px',
+            maxWidth: '31.25rem',
+            height: '30rem',
             margin: 'auto',
             textAlign: 'center',
-            background:
-              'linear-gradient(225deg, rgba(255,243,227,1) 0%, rgba(184,142,47,1) 49%, rgba(236,237,237,0.9847161572052402) 100%)',
             borderRadius: '10px',
           },
         }}
       >
-        <div className="bg-white rounded-xl">
-          <h2 className="text-4xl mb-4 font-bold xl:text-4xl text-rose-800">
+        <div className="bg-white rounded-xl py-10">
+          <h2 className="text-xl mb-4 font-bold xl:text-4xl text-rose-800">
             Congratulations
           </h2>
-          <p className="text-4xl mb-4 text-black font-semibold ">
+          <p className="text-2xl mb-4 text-black font-semibold ">
             {user ? user.firstName : 'Guest'}
           </p>
-          <p className="text-blac text-2xl mb-10">
+          <p className="text-black text-sm md:text-2xl mb-10">
             We are happy to know that we left your space with more style and
             refinement.
           </p>
