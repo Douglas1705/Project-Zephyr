@@ -2,5 +2,12 @@
   "singleQuote": true,
   "trailingComma": "all",
   "printWidth": 80,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "semi": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "arrowParens": "always",
+  "proseWrap": "preserve"
 }
