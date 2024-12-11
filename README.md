@@ -1,68 +1,101 @@
-# Projeto Funiro
+# Furniro Project
 
-## Visão Geral
-Este é um projeto de e-commerce desenvolvido em React e TypeScript, com integração de Redux para gerenciamento de estado, e Clerk para autenticação. O objetivo do projeto é criar uma plataforma de e-commerce funcional e responsiva.
+## Overview
+This is an e-commerce project developed in React and TypeScript, with Redux for state management, and Clerk for authentication. The goal of the project is to create a functional and responsive e-commerce platform.
 
-## Objetivos alcançados
+## Table of Contents
 
-- **Links**: Todos os links obrigatórios foram colocados e emcaminham para seus respectivos lugares.
-- **Ferramentas**: Foi utilizado no projeto todas ferramentas obrigatórias.
-- **Renderização**: O site foi todo otimizado para atender com agilidade e em tempo real as requisições.
-- **Paginação e Filtragem**: Foi realizada a paginação e filtragem de produtos na pagina Shop, com uso de Redux e Json.server.
-- **Loading**: Como as imagens e as páginas são carregada rapidamente, para esse requisito usei o carregamento das páginas para mostrar o loading.
-- **Clerck**: Foi implementado para autenticação de usuário, assim como mante-lo logado.
-- **Rotas**: A rota foram criadas com React Router, sendo protegida a página de Checkout.
-- **ViaCep**: foi implementada a requisicao da ViaCep para o formulário de endereço do Checkout.
-- **EC2 AWS**: Para fim de comprir com os requisitos, gravei um video da instancia funcionando e atraves do link da instancia rodando o meu projeto, a maquina usada foi o Linux Server, segue link do video: https://youtu.be/sp_3i4331Lw.
-- **Organização**: As pastas foram organizadas de forma intuitiva e de fácil localização dos componentes, divida em Component e Pages como suas principais, Components tem o objetivo de usar componentens que aparece em mais de uma página, Pages são as paginas do site, tambem encontra-se as pastas Redux Public (onde esta o db.json).
-- **Codigo**: Foi tentado ao máximo seguir a padronização do código,  respeitando as regras de tipagem do Typescript. A componetização teve como propósito o principio da modularização.
+1. [Installation and Execution](#installation-and-execution)
+2. [Features](#features)
+3. [Achieved Objectives](#achieved-objectives)
+4. [Technologies Used](#technologies-used)
 
-## Tecnologias Utilizadas
-- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
-- **TypeScript**: Superset do JavaScript que adiciona tipagem estática.
-- **Redux**: Biblioteca para gerenciamento de estado.
-- **Clerk**: Plataforma de autenticação de usuários.
-- **React Router**: Biblioteca para gerenciamento de rotas.
-- **Tailwind CSS**: Framework de CSS para estilização.
-- **Giphy API**: Para exibição de GIFs de carregamento.
-- **EsLint**: 
-- **Prettier**:
-- **Json Server**: 
-- **Splide**:
-- **React Modal**:
-- **Icones Externos**:
+## Installation and Execution
+Follow the steps below to set up and run the project locally:
 
-## Funcionalidades
-- **Autenticação de Usuário**: Implementada com Clerk.
-- **Gerenciamento de Produtos**: Com Redux para manter o estado global.
-- **Carregamento de Páginas**: Indicador de carregamento para a página inicial.
-- **Carrinho de Compras e Checkout**: Funcionalidade completa de carrinho de compras.
-- **Página de Contato**: Formulário de contato com validação e modal de confirmação.
-- **Sistema de Filtros e Paginação**: Na página de loja.
-- **Carrousel de imagems**: para a pagina da Home;
-- **Calculo em tempo de execução**: para todos items que envolvem os cards;
-
-## Instalação e Execução
-Siga os passos abaixo para configurar e executar o projeto localmente:
-
-1. Clone este repositório:
+1. Clone this repository:
    ```bash
    https://github.com/Douglas1705/CompassUOL-Challenge3-Furniro.git
 
-2. Instale Npm dentro da pasta do projeto:
+2. Install Npm within the project folder:
     ```bash
-   npm ..  
+   npm install
 
-3. Se necessário instalar o Json server:
+3. Run the project:
     ```bash
-    npm install json-server --save-dev
+    npm run dev
 
-4. Se necessário instalar o Clerck:
-    ```bash
-    npm install @clerk/clerk-react
+## Features
 
-5. Se necessário instalar React-Modal:
-    ```bash
-    npm install react-modal
+### 1. Product Catalog Navigation
+- Browse through a variety of available products.
+- Use filters to refine your search by category, price, etc.
+
+### 2. Product Details
+- Click on a product to see more details, including descriptions, prices, and reviews.
+- Add products to the shopping cart.
+
+### 3. Shopping Cart
+- View items added to the cart.
+- Update quantities or remove items as needed.
+
+### 4. Checkout
+- Process payment and complete the purchase securely.
+
+### 5. Contact
+- Fill out a contact form to send questions or feedback.
 
 
+## Achieved Objectives
+
+- **Links**: All required links have been included and redirect to their respective places.
+
+- **Tools**: All required tools have been used in the project.
+
+- **Rendering**: The site has been optimized to handle requests swiftly and in real-time.
+
+- **Pagination and Filtering**: Pagination and filtering of products have been implemented on the Shop page using Redux and Json.server.
+
+- **Loading**: Given the fast loading of images and pages, a loading indicator was used during page transitions.
+
+- **Clerk**: Implemented for user authentication and session management.
+
+- **Routes**: Routes were created using React Router, with the Checkout page being protected.
+
+- **ViaCep**: Integrated ViaCep API to fetch address data in the Checkout form.
+
+- **EC2 AWS**: To meet the requirements, I recorded a video of the instance running and accessed my project via the instance link. The machine used was a Linux Server. Here's the video link: [https://youtu.be/sp_3i4331Lw](https://youtu.be/sp_3i4331Lw).
+
+- **S3**: All images are hosted on AWS S3.
+
+- **Organization**: The folders have been organized intuitively for easy component location, divided mainly into Components and Pages. Components are used across multiple pages, while Pages are the site's individual pages. The Redux and Public folders (where db.json is located) are also included.
+
+- **Code**: Efforts were made to follow code standardization as much as possible, adhering to TypeScript typing rules. Componentization was aimed at following the principle of modularization.
+
+- **Tests**: Tests have been conducted.
+
+
+## Technologies Used
+
+### Frontend
+
+- React
+- TypeScript
+- React Router
+- Tailwind CSS
+- Redux
+
+### Backend Simulation 
+
+- Json Server
+
+### Testing Tools
+
+- Jest
+- React Testing Library
+
+### Other Tools
+
+- ESLint
+- Prettier
+- Babel
