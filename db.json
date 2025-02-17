@@ -7,7 +7,7 @@
       "originalPrice": 3500000,
       "discountedPrice": 2450000,
       "discount": 30,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-1.webp",
+      "imageUrl": "https://i.ibb.co/p6WCtccp/image-1.webp",
       "new": "none"
     },
     {
@@ -17,7 +17,7 @@
       "originalPrice": 2500000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-2.webp",
+      "imageUrl": "https://i.ibb.co/1YZCg8zp/image-2.webp",
       "new": "none"
     },
     {
@@ -27,7 +27,7 @@
       "originalPrice": 14000000,
       "discountedPrice": 7000000,
       "discount": 50,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-3.webp",
+      "imageUrl": "https://i.ibb.co/GfgPsydJ/image-3.webp",
       "new": "none"
     },
     {
@@ -37,7 +37,7 @@
       "originalPrice": 500000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-4.webp",
+      "imageUrl": "https://i.ibb.co/DDw8LDJ2/image-4.webp",
       "new": "New"
     },
     {
@@ -47,7 +47,7 @@
       "originalPrice": 15000000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-5.webp",
+      "imageUrl": "https://i.ibb.co/JWgWFhf6/Image-5.webp",
       "new": "none"
     },
     {
@@ -57,7 +57,7 @@
       "originalPrice": 150000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-6.webp",
+      "imageUrl": "https://i.ibb.co/pr3CVL8V/image-6.webp",
       "new": "New"
     },
     {
@@ -67,7 +67,7 @@
       "originalPrice": 14000000,
       "discountedPrice": 7000000,
       "discount": 50,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-7.webp",
+      "imageUrl": "https://i.ibb.co/0V61Q4kd/image-7.webp",
       "new": "none"
     },
     {
@@ -77,7 +77,7 @@
       "originalPrice": 500000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-8.webp",
+      "imageUrl": "https://i.ibb.co/35b2nBWg/image-8.webp",
       "new": "New"
     },
     {
@@ -483,13 +483,24 @@
   ],
   "cart": [
     {
-      "id": "4",
-      "name": "Respira",
-      "description": "Outdoor bar table and stool",
-      "originalPrice": 500000,
+      "id": "1",
+      "name": "Syltherine",
+      "description": "Stylish cafe chair",
+      "originalPrice": 3500000,
+      "discountedPrice": 2450000,
+      "discount": 30,
+      "imageUrl": "https://i.ibb.co/p6WCtccp/image-1.webp",
+      "new": "none",
+      "quantity": 1
+    },
+    {
+      "id": "6",
+      "name": "Muggo",
+      "description": "Small mug",
+      "originalPrice": 150000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-4.webp",
+      "imageUrl": "https://i.ibb.co/pr3CVL8V/image-6.webp",
       "new": "New",
       "quantity": 1
     },
@@ -500,18 +511,7 @@
       "originalPrice": 14000000,
       "discountedPrice": 7000000,
       "discount": 50,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-3.webp",
-      "new": "none",
-      "quantity": 1
-    },
-    {
-      "id": "5",
-      "name": "Grifo",
-      "description": "Night lamp",
-      "originalPrice": 15000000,
-      "discountedPrice": 0,
-      "discount": 0,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-5.webp",
+      "imageUrl": "https://i.ibb.co/GfgPsydJ/image-3.webp",
       "new": "none",
       "quantity": 1
     }

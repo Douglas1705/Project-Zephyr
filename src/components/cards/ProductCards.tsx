@@ -27,8 +27,15 @@ function ProductCard({ product }: Props) {
 
   return (
     <article className="relative mb-10">
-      <figure className="relative bg-gray-100" onClick={handleOpenModal}>
-        <img src={product.imageUrl} alt={product.name} />
+      <figure
+        className="relative bg-gray-100 border-4 w-72 "
+        onClick={handleOpenModal}
+      >
+        <img
+          src={product.imageUrl}
+          alt={product.name}
+          className="h-80 w-full"
+        />
         {product.discount > 0 && (
           <span className="absolute top-5 right-5 bg-red-400 px-2 py-4 rounded-full text-white">
             -{product.discount}%

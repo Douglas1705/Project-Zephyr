@@ -9,10 +9,10 @@ function BeautifullSec() {
   const splideRef = useRef<any>(null);
 
   const images = [
-    'https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/image-static-1.webp',
-    'https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/image-static-2.webp',
-    'https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/image-static-3.webp',
-    'https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/image-static-4.webp',
+    'https://i.ibb.co/SDP02zX5/beauiy-1.webp',
+    'https://i.ibb.co/5hH1ghfX/beauiy-2.webp',
+    'https://i.ibb.co/FkqmbS8D/beauiy-3.webp',
+    'https://i.ibb.co/YFrDkdpT/beauty-4.webp',
   ];
 
   const handleSlideChange = useCallback(() => {
