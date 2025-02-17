@@ -216,7 +216,7 @@ function Contact() {
             />
             <p className="text-center text-2xl font-bold mb-10">Furniro.</p>
             <h3 className="text-2xl font-bold mb-4">
-              Thank You for Subscribing!
+              Thank you for your contact!
             </h3>
             <p className="mb-4">Your subscription has been confirmed.</p>
             <button

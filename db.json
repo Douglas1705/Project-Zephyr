@@ -483,15 +483,37 @@
   ],
   "cart": [
     {
-      "id": "2",
-      "name": "Leviosa",
-      "description": "Stylish cafe chair",
-      "originalPrice": 2500000,
+      "id": "4",
+      "name": "Respira",
+      "description": "Outdoor bar table and stool",
+      "originalPrice": 500000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-2.webp",
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-4.webp",
+      "new": "New",
+      "quantity": 1
+    },
+    {
+      "id": "3",
+      "name": "Lolito",
+      "description": "Luxury big sofa",
+      "originalPrice": 14000000,
+      "discountedPrice": 7000000,
+      "discount": 50,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/image-3.webp",
       "new": "none",
-      "quantity": 6
+      "quantity": 1
+    },
+    {
+      "id": "5",
+      "name": "Grifo",
+      "description": "Night lamp",
+      "originalPrice": 15000000,
+      "discountedPrice": 0,
+      "discount": 0,
+      "imageUrl": "https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/products/Image-5.webp",
+      "new": "none",
+      "quantity": 1
     }
   ]
 }

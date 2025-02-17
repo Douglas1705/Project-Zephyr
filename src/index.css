@@ -172,4 +172,37 @@ input[type="radio"]:checked {
   }  
 }
 
+/* Capé */
+
+.parallax {
+  background-attachment: fixed;
   
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 1586px) {
+  .parallax {
+    background-attachment: scroll;
+    width: 1586px;
+    margin: auto;
+  }
+}
+
+.text-shadow-cape{
+  text-shadow: 2px 2px 4px #000000;
+}
+
+/* navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: top 0.3s;
+  z-index: 10;
+}
+
+.navbar-hidden {
+  top: -100px;
+}
+

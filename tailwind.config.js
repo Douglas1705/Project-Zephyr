@@ -8,7 +8,7 @@ module.exports = {
     extend: {
 
       backgroundImage: {
-        'living-room': "url('https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/section-Cape/scandinavian-interior-mockup-wall-decal-background-1_1_.webp')",
+        'living-room': "url('https://i.ibb.co/QjDpnS8B/cape2.webp')",
         
         'capePages' : "url('https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/image-static-cape.webp')"       
       },      
@@ -16,7 +16,8 @@ module.exports = {
       colors: { 
         'warm-cream': '#FFF3E3',
         'Goldenrod' : '#B88E2F',
-        'WhisperWhite' : '#FCF8F3'
+        'WhisperWhite' : '#FCF8F3',
+        'deep-space-blue': '#19324F',
     },
 
     boxShadow: { 

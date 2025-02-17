@@ -61,9 +61,14 @@ function App() {
           <Route
             path="/checkout"
             element={
-              <SignedIn>
-                <CheckoutPage />
-              </SignedIn>
+              <>
+                <SignedIn>
+                  <CheckoutPage />
+                </SignedIn>
+                <SignedOut>
+                  <RedirectToSignIn />
+                </SignedOut>
+              </>
             }
           />
           <Route

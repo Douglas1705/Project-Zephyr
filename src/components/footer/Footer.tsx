@@ -37,11 +37,11 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="border-t-2 border-gray-300 xl:pl-12">
+    <footer className="border-t-2 border-gray-300 xl:pl-12 w-full xl:flex xl:flex-col xl:items-center max-w-screen-2xl mx-auto">
       <div
         id="containter-footer"
         className="
-        text-center px-4 py-10 border-b-2 border-gray-300 flex flex-col gap-10 xl:flex-row xl:text-start xl:w-10/12 xl:mt-10 xl:ml-14 xl:items-start xl:py-0 xl:px-0 xl:justify-start xl:gap-20 xl:pb-10"
+        text-center px-4 py-10 border-b-2 border-gray-300 flex flex-col gap-10 xl:flex-row xl:text-start xl:w-10/12 xl:mt-10 xl:ml-0 xl:items-start xl:py-0 xl:px-0 xl:justify-start xl:gap-20 xl:pb-10"
       >
         <div
           id="container-Funiro"
@@ -181,8 +181,11 @@ function Footer() {
           </div>
         </div>
       )}
-
-      <p className="pl-16 py-8 text-base">2023 furino. All rights reserved</p>
+      <div className="xl:w-10/12">
+        <p className="md:pl-0 xl:text-left py-8 text-base text-center pl-0">
+          2023 furino. All rights reserved
+        </p>
+      </div>
     </footer>
   );
 }

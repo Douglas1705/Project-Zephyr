@@ -35,31 +35,34 @@ function BrowseSec() {
           }}
         >
           <SplideSlide>
-            <figure>
+            <figure className="flex flex-col items-center h-full">
               <img
-                src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/browse-the-range/Mask-Group.webp"
+                src="https://i.ibb.co/nNm32jh8/browse-3.webp"
                 alt="image of a table, with sewing items on top, in a room."
                 title="table"
+                className="w-full h-full object-cover"
               />
               <figcaption className={`${figcaptionCustom}`}>Dining</figcaption>
             </figure>
           </SplideSlide>
           <SplideSlide>
-            <figure>
+            <figure className="flex flex-col items-center h-full">
               <img
-                src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/browse-the-range/Image-living-room.webp"
+                src="https://i.ibb.co/ynzHm6jZ/browse-1.webp"
                 alt="image of a room with a sofa and table covered in crocheted cloths"
-                title="crochet room "
+                title="crochet room"
+                className="w-full h-full object-cover"
               />
               <figcaption className={`${figcaptionCustom}`}>Living</figcaption>
             </figure>
           </SplideSlide>
           <SplideSlide>
-            <figure>
+            <figure className="flex flex-col items-center h-full">
               <img
-                src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/browse-the-range/Mask-Group_1.webp"
+                src="https://i.ibb.co/qF5k8WGG/browse-4.webp"
                 alt="image of a bedroom, showing the wardrobe door in the background with a wire vase"
                 title="bedromm"
+                className="w-full h-full object-cover"
               />
               <figcaption className={`${figcaptionCustom}`}>Bedroom</figcaption>
             </figure>
