@@ -216,3 +216,14 @@ input[type="radio"]:checked {
   object-fit: contain;
   
 }
+
+.ol-tooltip {
+  position: absolute;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  white-space: nowrap;
+  display: none;
+  pointer-events: none;
+}
