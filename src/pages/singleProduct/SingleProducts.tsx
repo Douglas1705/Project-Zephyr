@@ -51,7 +51,7 @@ function SingleProducts() {
   }
 
   return (
-    <section>
+    <section className="mt-24 max-w-screen-2xl mx-auto">
       <div className="h-24 bg-warm-cream flex gap-4 items-center justify-center xl:justify-start xl:pl-28">
         <p className="md:border-r-2 md:border-gray-400 py-1 flex gap-2 text-gray-400">
           Home <span className="text-black md:pl-4 md:pr-5">&gt;</span> Shop{' '}

@@ -98,28 +98,22 @@ function ProductDescription({ product }: ProductDescriptionProps) {
     <article className="px-5 py-10 lg:py-0">
       <section
         id="subcontainer-single-first"
-        className="flex flex-col lg:flex-row lg:gap-10 lg:py-8 xl:gap-24"
+        className="flex flex-col lg:flex-row xl:justify-center lg:py-8 xl:gap-14"
       >
         <div
           id="container-single-images"
-          className="flex justify-center lg:w-auto xl:pl-20 xl:gap-10"
+          className="flex justify-center lg:w-auto xl:w-7/12 overflow-hidden"
         >
-          <img
-            src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/Group+99.webp"
-            alt=""
-            className="hidden xl:block xl:w-20 xl:h-[416px]"
-          />
-
-          <figure className="lg:w-[400px] xl:w-[481px] xl:h-[500px]">
+          <figure className="w-11/12 xl:w-[650px] h-auto overflow-hidden ">
             <img
               src={product.imageUrl}
               alt={product.name}
-              className="bg-warm-cream py-10 px-10 xl:px-0 cover w-full"
+              className=" cover w-full border-4 rounded-3xl shadow-md shadow-black"
             />
           </figure>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col text-center xl:text-start xl:w-5/12">
           <div
             id="container-single-descriptions"
             className="flex flex-col gap-3 py-5"
@@ -131,7 +125,7 @@ function ProductDescription({ product }: ProductDescriptionProps) {
               </p>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex justify-center xl:justify-start gap-4">
               <div className="flex gap-1 items-center border-r-2 border-gray-400 pr-4 py-1">
                 <FaStar className="text-yellow-400 text-lg" />
                 <FaStar className="text-yellow-400 text-lg" />
@@ -142,7 +136,7 @@ function ProductDescription({ product }: ProductDescriptionProps) {
               <p className="text-gray-400 text-lg">5 Customer Review</p>
             </div>
 
-            <p className="text-sm text-justify lg:w-9/12 xl:text-sm xl:w-[424px] xl:text-left">
+            <p className="text-sm text-center lg:w-9/12 xl:text-sm xl:w-[424px] xl:text-left">
               Setting the bar as one of the loudest speakers in its class, the
               Kilburn is a compact, stout-hearted hero with a well-balanced
               audio which boasts a clear midrange and extended highs for a
@@ -193,7 +187,7 @@ function ProductDescription({ product }: ProductDescriptionProps) {
 
           <section
             id="subcontainer-single-2"
-            className="flex gap-4 text-gray-500 lg:justify-start border-t-2 border-gray-400 py-10"
+            className="flex mx-auto xl:mx-0 gap-4 text-gray-500 lg:justify-start border-t-2 border-gray-400 py-10"
           >
             <div className="space-y-3">
               <p>SKU</p>
@@ -216,7 +210,7 @@ function ProductDescription({ product }: ProductDescriptionProps) {
                 <p>Sofa, Chair, Home, Shop</p>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center xl:justify-start">
                 <a
                   href="https://web.facebook.com/?locale=pt_BR&_rdc=1&_rdr"
                   target="_blank"

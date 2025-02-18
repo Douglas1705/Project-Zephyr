@@ -7,7 +7,7 @@
       "originalPrice": 3500000,
       "discountedPrice": 2450000,
       "discount": 30,
-      "imageUrl": "https://i.ibb.co/p6WCtccp/image-1.webp",
+      "imageUrl": "https://images.pexels.com/photos/8135263/pexels-photo-8135263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "new": "none"
     },
     {
@@ -27,7 +27,7 @@
       "originalPrice": 14000000,
       "discountedPrice": 7000000,
       "discount": 50,
-      "imageUrl": "https://i.ibb.co/GfgPsydJ/image-3.webp",
+      "imageUrl": "https://images.pexels.com/photos/5998030/pexels-photo-5998030.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "new": "none"
     },
     {
@@ -37,7 +37,7 @@
       "originalPrice": 500000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://i.ibb.co/DDw8LDJ2/image-4.webp",
+      "imageUrl": "https://images.pexels.com/photos/7546319/pexels-photo-7546319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "new": "New"
     },
     {
@@ -47,7 +47,7 @@
       "originalPrice": 15000000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://i.ibb.co/JWgWFhf6/Image-5.webp",
+      "imageUrl": "https://images.pexels.com/photos/6312016/pexels-photo-6312016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "new": "none"
     },
     {
@@ -77,7 +77,7 @@
       "originalPrice": 500000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://i.ibb.co/35b2nBWg/image-8.webp",
+      "imageUrl": "https://images.pexels.com/photos/28247932/pexels-photo-28247932/free-photo-of-hotel-cama-leito-quarto.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "new": "New"
     },
     {
@@ -97,7 +97,7 @@
       "originalPrice": 2600000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://cdn.pixabay.com/photo/2017/03/20/19/57/chairs-2160184_1280.jpg",
+      "imageUrl": "https://images.pexels.com/photos/11701115/pexels-photo-11701115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "new": "none"
     },
     {
@@ -107,7 +107,7 @@
       "originalPrice": 14500000,
       "discountedPrice": 7300000,
       "discount": 50,
-      "imageUrl": "https://cdn.pixabay.com/photo/2014/10/08/23/24/chair-481002_1280.jpg",
+      "imageUrl": "https://images.pexels.com/photos/30759436/pexels-photo-30759436/free-photo-of-sala-de-estar-elegante-com-capa-de-sofa-moderna.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "new": "none"
     },
     {
@@ -187,7 +187,7 @@
       "originalPrice": 13800000,
       "discountedPrice": 6900000,
       "discount": 50,
-      "imageUrl": "https://cdn.pixabay.com/photo/2023/11/17/12/26/chair-8394200_1280.png",
+      "imageUrl": "https://images.pexels.com/photos/13201481/pexels-photo-13201481.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "new": "none"
     },
     {
@@ -197,7 +197,7 @@
       "originalPrice": 510000,
       "discountedPrice": 0,
       "discount": 0,
-      "imageUrl": "https://cdn.pixabay.com/photo/2018/02/07/22/09/contemporary-3138132_1280.jpg",
+      "imageUrl": "https://images.pexels.com/photos/11438372/pexels-photo-11438372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "new": "New"
     },
     {
@@ -323,37 +323,15 @@
   ],
   "cart": [
     {
-      "id": "1",
-      "name": "Syltherine",
-      "description": "Stylish cafe chair",
-      "originalPrice": 3500000,
-      "discountedPrice": 2450000,
-      "discount": 30,
-      "imageUrl": "https://i.ibb.co/p6WCtccp/image-1.webp",
-      "new": "none",
-      "quantity": 1
-    },
-    {
-      "id": "2",
-      "name": "Leviosa",
-      "description": "Stylish cafe chair",
-      "originalPrice": 2500000,
-      "discountedPrice": 0,
-      "discount": 0,
-      "imageUrl": "https://i.ibb.co/1YZCg8zp/image-2.webp",
-      "new": "none",
-      "quantity": 1
-    },
-    {
       "id": "3",
       "name": "Lolito",
       "description": "Luxury big sofa",
       "originalPrice": 14000000,
       "discountedPrice": 7000000,
       "discount": 50,
-      "imageUrl": "https://i.ibb.co/GfgPsydJ/image-3.webp",
+      "imageUrl": "https://images.pexels.com/photos/5998030/pexels-photo-5998030.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "new": "none",
-      "quantity": 1
+      "quantity": 3
     }
   ]
 }
