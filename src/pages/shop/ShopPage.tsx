@@ -1,10 +1,6 @@
-import { useState, ChangeEvent, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import CapePages from '../../components/capePages/PagesCape';
-import {
-  AdjustmentsHorizontalIcon,
-  Squares2X2Icon,
-} from '@heroicons/react/24/solid';
-import { CgDisplayFullwidth } from 'react-icons/cg';
+import { AdjustmentsHorizontalIcon } from '@heroicons/react/24/solid';
 import ProductList from '../../components/cards/ProductList';
 import FilterModal from './FilterModal';
 import SectionQuality from '../../components/SectionQuality/SectionQuality';
@@ -26,7 +22,6 @@ function ShopPage() {
   const buttonClasses = 'px-5 py-3 rounded-lg text-base';
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showCount, setShowCount] = useState<number>(16);
   const [filters, setFilters] = useState<Filters>({
     price: false,
     discount: false,
@@ -81,7 +76,7 @@ function ShopPage() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [showCount, products]);
+  }, [products]);
 
   useEffect(() => {
     function updateDisplayedProducts() {
@@ -92,26 +87,11 @@ function ShopPage() {
       }
 
       const currentProducts = paginatedProducts[currentPage - 1] || [];
-      setDisplayedProducts(
-        currentProducts.slice(0, showCount - (currentPage - 1) * 16),
-      );
+      setDisplayedProducts(currentProducts);
     }
 
     updateDisplayedProducts();
-  }, [currentPage, products, showCount, filters, applyFilters]);
-
-  const handleShowCountChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      let value = Number(event.target.value);
-      if (value < 1) value = 1;
-      if (value > 48) value = 48;
-      setShowCount(value);
-      setCurrentPage(1);
-      const orderedProducts = [...products].sort((a, b) => a.id - b.id);
-      setDisplayedProducts(orderedProducts.slice(0, value));
-    },
-    [products],
-  );
+  }, [currentPage, products, filters, applyFilters]);
 
   const handlePageChange = useCallback(
     (pageNumber: number) => () => {
@@ -139,43 +119,24 @@ function ShopPage() {
         <article className="flex flex-col bg-WhisperWhite mb-12 lg:flex-row lg:h-28 lg:gap-4 lg:mb-10 lg:justify-between lg:px-2 xl:px-28">
           <div className="flex flex-col items-center py-5 gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex gap-5 items-center border-b-4 border-gray-400 pb-5 lg:border-b-0 lg:border-r-2 lg:h-10 lg:overflow-hidden lg:pr-7 lg:pb-0">
-              <AdjustmentsHorizontalIcon className={iconClasses} />
               <button
                 onClick={openModal}
-                className="text-2xl font-medium hover:text-Goldenrod"
+                className="text-2xl font-medium hover:text-Goldenrod flex flex-row gap-4"
               >
+                <AdjustmentsHorizontalIcon className={iconClasses} />
                 Filter
               </button>
-              <Squares2X2Icon className={iconClasses} />
-              <CgDisplayFullwidth className="w-14 h-9 xl:w-7" />
             </div>
             <div className="flex">
               <p>
-                Showing <span>1 - {Number(showCount) || 0}</span> of{' '}
-                <span>48</span> results
+                Showing{' '}
+                <span>
+                  {(currentPage - 1) * 16 + 1} -{' '}
+                  {Math.min(currentPage * 16, products.length)}
+                </span>{' '}
+                of <span>{products.length}</span> results
               </p>
             </div>
-          </div>
-
-          <div className="flex flex-col text-center items-center gap-6 pt-2 pb-7 lg:flex-row lg:pt-5">
-            <div className="flex items-center gap-6">
-              <p className="text-2xl lg:text-xl">Show</p>
-              <input
-                type="number"
-                placeholder="16"
-                value={showCount}
-                onChange={handleShowCountChange}
-                min="1"
-                max="48"
-                className="bg-white px-1 py-3 text-center text-gray-500"
-              />
-            </div>
-            <p className="text-2xl lg:text-xl">Sort by</p>
-            <input
-              type="text"
-              placeholder="Default"
-              className="py-4 px-4 w-52"
-            />
           </div>
         </article>
         <ProductList products={displayedProducts} />
@@ -187,7 +148,7 @@ function ShopPage() {
         />
       </main>
       <div className="flex justify-center gap-6 pb-10">
-        {[1, 2, 3].map((label) => (
+        {[1, 2].map((label) => (
           <button
             key={label}
             onClick={handlePageChange(label)}
@@ -196,19 +157,10 @@ function ShopPage() {
                 ? 'bg-Goldenrod text-white hover:bg-yellow-400'
                 : 'bg-warm-cream text-black hover:bg-amber-400'
             }`}
-            disabled={
-              (label === 2 && showCount < 17) || (label === 3 && showCount < 25)
-            }
           >
             {label}
           </button>
         ))}
-        <button
-          className={`${buttonClasses} bg-warm-cream text-black hover:bg-amber-400`}
-          disabled
-        >
-          Next
-        </button>
       </div>
       <SectionQuality />
     </section>

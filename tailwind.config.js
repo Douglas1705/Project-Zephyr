@@ -10,7 +10,7 @@ module.exports = {
       backgroundImage: {
         'living-room': "url('https://i.ibb.co/QjDpnS8B/cape2.webp')",
         
-        'capePages' : "url('https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/image-static-cape.webp')"       
+        'capePages' : "url('https://i.ibb.co/7xMc8d6c/Rectangle-1.webp')"       
       },      
 
       colors: { 

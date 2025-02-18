@@ -62,9 +62,9 @@ function FilterModal({ isOpen, onClose, onApply, filters }: FilterModalProps) {
       <div className="bg-white bg-opacity-80 p-8 rounded-xl shadow-2xl max-w-lg w-10/12 mx-auto my-8 md:w-full">
         <div className="flex justify-center mb-0">
           <img
-            src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/logo-furniro.svg"
+            src="https://i.ibb.co/PGhMLmtL/Zephyr-1.png"
             alt="Logo"
-            className="w-24 h-24"
+            className="w-44 h-24"
           />
         </div>
         <h2 className="text-3xl text-center font-bold mb-10 text-Goldenrod">

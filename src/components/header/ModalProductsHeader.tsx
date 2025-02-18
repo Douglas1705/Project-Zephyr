@@ -74,13 +74,13 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
         </h3>
         <div className="flex gap-2">
           {cartItems.length === 0 ? (
-            <RxLockClosed className="" />
+            <RxLockClosed className="text-base text-gray-400 md:text-4xl" />
           ) : (
-            <RxLockOpen2 className="text-base text-gray-400" />
+            <RxLockOpen2 className="text-base text-yellow-400 md:text-4xl" />
           )}
           <MdOutlineClose
             onClick={onClose}
-            className="cursor-pointer text-red-600"
+            className="cursor-pointer text-red-600 md:text-4xl"
           />
         </div>
       </div>

@@ -168,7 +168,7 @@ function Header() {
         isOpen={isCartModalOpen}
         onRequestClose={handleCloseCartModal}
         contentLabel="Cart Modal"
-        className="fixed inset-0 flex items-center justify-center p-4 rounded-XL shadow-lg z-50 outline-none bg-white text-black w-auto max-w-lg mx-auto"
+        className="fixed inset-0 flex items-center justify-center p-4 rounded-XL shadow-lg z-50 outline-none  text-black w-auto max-w-lg mx-auto"
         overlayClassName="fixed inset-0 bg-black bg-opacity-50 z-40"
       >
         <ModalProductsHeader onClose={handleCloseCartModal} />

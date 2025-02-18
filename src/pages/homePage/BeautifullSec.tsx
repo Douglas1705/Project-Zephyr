@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import AppButton from '../../components/buttons/AppButton';
+import { Link } from 'react-router-dom';
 
 function BeautifullSec() {
   const [largeImageIndex, setLargeImageIndex] = useState(0);
@@ -50,9 +51,11 @@ function BeautifullSec() {
           Our designer already made a lot of beautiful prototipe of rooms that
           inspire you
         </p>
-        <AppButton className="bg-Goldenrod text-white w-10/12 mx-auto lg:w-44 lg:ml-0 py-4 hover-gold-custom">
-          Explore More
-        </AppButton>
+        <Link to="/shop">
+          <AppButton className="bg-Goldenrod text-white w-10/12 mx-auto lg:w-44 lg:ml-0 py-4 hover-gold-custom">
+            Explore More
+          </AppButton>
+        </Link>
       </article>
 
       <div className="flex flex-col lg:flex-row lg:gap-4 h-auto xl:h-[520px] lg:w-full overflow-hidden xl:w-7/12">

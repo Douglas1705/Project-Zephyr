@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { addItemToCart } from '../../redux/cartSlice';
 import ConfirmationMessage from './ConfirmationMessage';
+import { IoShareSocialSharp } from 'react-icons/io5';
+import { MdCompareArrows } from 'react-icons/md';
+import { IoMdHeartEmpty } from 'react-icons/io';
 
 interface Props {
   product: {
@@ -107,29 +110,20 @@ function ModalCard({ product, isOpen, onClose }: Props) {
           >
             View Product
           </button>
-          <div className="flex gap-4">
+          <div className="flex item gap-4">
             <div className="flex items-center gap-1 hover:border-b-2 hover:border-white">
-              <img
-                src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/gridicons_share.svg"
-                alt="Share icon"
-                width={16}
-              />
+              <IoShareSocialSharp className="text-white" />
+
               <p className="text-white cursor-pointer">Share</p>
             </div>
-            <div className="flex gap-1 hover:border-b-2 hover:border-white">
-              <img
-                src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/Vector-compare.svg"
-                alt="Compare icon"
-                width={16}
-              />
+            <div className="flex items-center gap-1 hover:border-b-2 hover:border-white">
+              <MdCompareArrows className="text-white text-2xl" />
+
               <p className="text-white">Compare</p>
             </div>
-            <div className="flex gap-1 hover:border-b-2 hover:border-white">
-              <img
-                src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/Heart.svg"
-                alt="Like icon"
-                width={16}
-              />
+            <div className="flex items-center gap-1 hover:border-b-2 hover:border-white">
+              <IoMdHeartEmpty className="text-white text-xl" />
+
               <p className="text-white">Like</p>
             </div>
           </div>
