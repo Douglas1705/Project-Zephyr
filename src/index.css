@@ -160,7 +160,7 @@ input[type="radio"]:checked {
 @layer utilities {
   .hover-gold-custom:hover {
     background-color: #f9c748; 
-    color: white; 
+    color: black; 
   }
   .hover-white-custom:hover {
     background-color: black; 
@@ -206,3 +206,13 @@ input[type="radio"]:checked {
   top: -100px;
 }
 
+/* user images */
+
+.border-radius{
+  border-radius: 50%;
+  overflow: hidden;
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+  
+}

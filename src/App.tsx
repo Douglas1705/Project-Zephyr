@@ -31,7 +31,7 @@ function App() {
     return (
       <div className="fixed inset-0 flex flex-col items-center justify-center bg-white">
         <img
-          src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/1474.gif"
+          src="https://i.ibb.co/WvdvGJtd/1474.gif"
           alt="Loading..."
           className="w-20 h-20"
         />

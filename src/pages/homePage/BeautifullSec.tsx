@@ -2,7 +2,6 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import AppButton from '../../components/buttons/AppButton';
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
 function BeautifullSec() {
   const [largeImageIndex, setLargeImageIndex] = useState(0);
@@ -42,7 +41,7 @@ function BeautifullSec() {
   );
 
   return (
-    <section className="bg-WhisperWhite gap-10 flex flex-col mt-10 lg:min-h-[670px] lg:flex-row lg:items-center xl:justify-between">
+    <section className="bg-WhisperWhite gap-10 flex flex-col mt-10 lg:min-h-[670px] lg:flex-row lg:items-center xl:justify-between py-10">
       <article className="text-center flex flex-col gap-5 lg:max-w-[422px] lg:text-start lg:mx-auto lg:ml-10 xl:ml-28">
         <h2 className="text-2xl md:text-3xl font-bold lg:text-4xl">
           50+ Beautiful rooms inspiration
@@ -63,15 +62,11 @@ function BeautifullSec() {
             alt="Current Room"
             className="w-full h-full"
           />
-          <div className="bg-white bg-opacity-85 absolute z-10 bottom-5 left-5 px-4 py-6">
-            <p className="text-lg font-medium text-gray-700 mb-4 flex items-center">
-              01 <span className="w-7 h-1 bg-gray-600 mx-2"></span> Bed Room
+          <div className="bg-black bg-opacity-50 absolute z-10 bottom-5 w-full px-4 py-6 rounded-xl backdrop-blur-sm">
+            <p className="text-xl text-shadow-cape text-center font-ligth text-white tracking-wider opacity-100 blur-none">
+              Environments for your well-being{' '}
             </p>
-            <h3 className="text-3xl font-semibold">Inner Peace</h3>
           </div>
-          <button>
-            <ArrowRightIcon className="absolute bottom-5 right-16 bg-Goldenrod p-4 z-20 w-14 text-white" />
-          </button>
         </div>
         <div className="w-full md:w-10/12 md:mx-auto xl:mr-0 xl:w-[450px]">
           <Splide
