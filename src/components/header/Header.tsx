@@ -70,7 +70,7 @@ function Header() {
       <div className={`navbar ${!isNavVisible ? 'navbar-hidden' : ''}`}>
         <header className="flex justify-between items-center max-h-20 px-5 lg:min-h-24 lg:px-4 xl:px-16 xl:max-w-screen-2xl xl:mx-auto w-full bg-white overflow-hidden">
           <div className="flex items-center gap-2">
-            <a href="/Project-Zephyr">
+            <a href="/">
               <img
                 src="https://i.ibb.co/PGhMLmtL/Zephyr-1.png"
                 alt="Image of two lines representing the Ovenmaker"
