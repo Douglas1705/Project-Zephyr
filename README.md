@@ -1,4 +1,4 @@
-# Furniro Project
+# Zephyr Project
 
 ## Overview
 This is an e-commerce project developed in React and TypeScript, with Redux for state management, and Clerk for authentication. The goal of the project is to create a functional and responsive e-commerce platform.
@@ -15,7 +15,7 @@ Follow the steps below to set up and run the project locally:
 
 1. Clone this repository:
    ```bash
-   https://github.com/Douglas1705/CompassUOL-Challenge3-Furniro.git
+   https://github.com/Douglas1705/Project-Zephyr.git
 
 2. Install Npm within the project folder:
     ```bash
