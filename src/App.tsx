@@ -6,6 +6,7 @@ import Header from './components/header/Header';
 import useFetchProducts from './hooks/UseFetchProducts';
 import useScrollToTop from './hooks/useScrollToTop';
 import About from './pages/about/About';
+import SetCookies from './components/SetCookies/SetCookies'; // Importe o componente
 
 const HomePage = lazy(() => import('./pages/homePage/HomePage'));
 const Cart = lazy(() => import('./pages/cart/Cart'));
@@ -43,9 +44,11 @@ function App() {
   }
 
   return (
-    <Router basename="/Project-Zephyr">
+    <Router basename={process.env.NODE_ENV === 'production' ? '/Project-Zephyr' : '/'}>
+
       <ScrollToTop />
       <Header />
+      <SetCookies /> {/* Inclua o componente aqui */}
       <Suspense
         fallback={
           <div className="fixed inset-0 flex items-center justify-center bg-white">
