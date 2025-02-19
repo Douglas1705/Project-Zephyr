@@ -32,7 +32,11 @@ function App() {
   if (loading) {
     return (
       <div className="fixed inset-0 flex flex-col items-center justify-center bg-white">
-        <img src="../public/1474.gif" alt="Loading..." className="w-20 h-20" />
+        <img
+          src="https://i.ibb.co/WvdvGJtd/1474.gif"
+          alt="Loading..."
+          className="w-20 h-20"
+        />
         <h3 className="font-bold text-4xl">Zephyr</h3>
       </div>
     );
@@ -46,7 +50,7 @@ function App() {
         fallback={
           <div className="fixed inset-0 flex items-center justify-center bg-white">
             <img
-              src="../public/1474.gif"
+              src="https://i.ibb.co/WvdvGJtd/1474.gif"
               alt="Loading..."
               className="w-20 h-20"
             />
