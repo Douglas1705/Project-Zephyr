@@ -1,3 +1,4 @@
+import SlideIN from '../../components/SlideIn/SlideInLeft';
 import BeautifullSec from './BeautifullSec';
 import BrowseSec from './BrowseSec';
 import CapaSec from './CapaSec';
@@ -9,11 +10,19 @@ function HomePage() {
     <>
       <CapaSec />
       <main className="max-w-screen-2xl xl:mx-auto">
-        <BrowseSec />
-        <ProductHomePage />
-        <BeautifullSec />
+        <SlideIN>
+          <BrowseSec />
+        </SlideIN>
+        <SlideIN>
+          <ProductHomePage />
+        </SlideIN>
+        <SlideIN>
+          <BeautifullSec />
+        </SlideIN>
       </main>
-      <FurnitureSec />
+      <SlideIN>
+        <FurnitureSec />
+      </SlideIN>
     </>
   );
 }

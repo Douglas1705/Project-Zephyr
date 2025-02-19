@@ -13,6 +13,7 @@ import OlStyle from 'ol/style/Style';
 import OlIcon from 'ol/style/Icon';
 
 interface Testimonial {
+  id: string;
   name: string;
   image: string;
   text: string;
@@ -20,25 +21,27 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
+    id: '1',
     name: 'John Smith',
     image:
       'https://cdn.pixabay.com/photo/2021/01/25/19/08/man-5949295_1280.jpg',
     text: '"I loved shopping with you! The experience was amazing and the service was impeccable."',
   },
   {
+    id: '2',
     name: 'Emily Johnson',
     image:
       'https://cdn.pixabay.com/photo/2015/03/03/18/58/woman-657753_1280.jpg',
     text: '"The products are of excellent quality and the delivery was super fast. Highly recommend!"',
   },
   {
+    id: '3',
     name: 'Sophia Williams',
     image:
       'https://cdn.pixabay.com/photo/2022/05/05/01/13/woman-7175038_1280.jpg',
     text: '"The variety of products is amazing and the prices are very competitive. I will definitely be coming back for more!"',
   },
 ];
-
 const storeLocations = [
   { coords: [-74.006, 40.7128], address: 'New York, USA' },
   { coords: [-118.2437, 34.0522], address: 'Los Angeles, USA' },
@@ -145,13 +148,13 @@ function FurnitureSec() {
           What do our customers say about Zephyr furniture?
         </h1>
         <div className="flex flex-col space-y-6 px-10 py-5">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <div
-              key={index}
+              key={testimonial.id}
               className="flex flex-col justify-center md:flex-row text-center space-y-4 space-x-4 py-2 px-4 items-center md:bg-slate-100 rounded-full md:shadow-lg shadow-slate-400"
             >
               <figure className="border-radius border-4 ">
-                <img src={testimonial.image} alt={`User ${index + 1}`} />
+                <img src={testimonial.image} alt={`User ${testimonial.id}`} />
               </figure>
               <div className="w-full md:w-4/6">
                 <p className="text-xl font-semibold ">{testimonial.name}</p>

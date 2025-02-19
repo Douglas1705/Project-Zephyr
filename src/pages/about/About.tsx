@@ -43,7 +43,7 @@ function About() {
             />
           </a>
         </div>
-      </article>      
+      </article>
     </section>
   );
 }
