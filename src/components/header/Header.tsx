@@ -70,12 +70,12 @@ function Header() {
       <div className={`navbar ${!isNavVisible ? 'navbar-hidden' : ''}`}>
         <header className="flex justify-between items-center max-h-20 px-5 lg:min-h-24 lg:px-4 xl:px-16 xl:max-w-screen-2xl xl:mx-auto w-full bg-white overflow-hidden">
           <div className="flex items-center gap-2">
-            <a href="/">
+            <a href="/Project-Zephyr">
               <img
                 src="https://i.ibb.co/PGhMLmtL/Zephyr-1.png"
                 alt="Image of two lines representing the Ovenmaker"
                 title="Logotipo ZPhyr"
-                className="w-10/12 h-16 md:w-10/12 md:h-16 lg:w-52 lg:h-36 "
+                className="w-10/12 h-16 md:w-10/12 md:h-16 lg:w-52 lg:h-36"
               />
             </a>
           </div>
