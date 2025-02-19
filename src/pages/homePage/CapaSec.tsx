@@ -15,7 +15,7 @@ function CapaSec() {
       </figure>
 
       {/* container article > text button */}
-      <article className="relative p-10 text-center flex flex-col gap-6 bg-deep-space-blue bg-opacity-90 rounded-2xl  w-11/12 mx-auto mt-5 md:h-[443px] md:w-[603px] md:items-start md:justify-center md:text-start md:pt-20 md:mr-10">
+      <article className="relative p-10 text-center flex flex-col gap-6 bg-deep-space-blue bg-opacity-90 rounded-2xl  w-11/12 mx-auto mt-5 md:h-[443px] md:w-[603px] md:items-start md:justify-center md:text-start md:pt-20 md:mr-10 xl:mt-36">
         {/* container text */}
         <div className="flex flex-col gap-4 xl:pr-4">
           <p className="text-white font-semibold tracking-widest">

@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import ProductDescription from './ProductDescription';
 import { useEffect, useState, useCallback } from 'react';
-import DescriptionArticle from './DescriptionArticle';
 import ProductList from '../../components/cards/ProductList';
 import AppButton from '../../components/buttons/AppButton';
 
@@ -51,7 +50,7 @@ function SingleProducts() {
   }
 
   return (
-    <section className="mt-24 max-w-screen-2xl mx-auto">
+    <section className="mt-24 max-w-screen-2xl mx-auto w-full">
       <div className="h-24 bg-warm-cream flex gap-4 items-center justify-center xl:justify-start xl:pl-28">
         <p className="md:border-r-2 md:border-gray-400 py-1 flex gap-2 text-gray-400">
           Home <span className="text-black md:pl-4 md:pr-5">&gt;</span> Shop{' '}
@@ -60,7 +59,6 @@ function SingleProducts() {
         <span>{product.name}</span>
       </div>
       <ProductDescription product={product} />
-      <DescriptionArticle />
       <article>
         <h3 className="text-center font-medium text-4xl py-10">
           Related Products

@@ -15,6 +15,8 @@ function Contact() {
   const [errors, setErrors] = useState({
     firstName: '',
     email: '',
+    addOnAddress: '',
+    additionalInfo: '',
   });
   const [showModal, setShowModal] = useState(false);
 
@@ -33,6 +35,8 @@ function Contact() {
     const newErrors = {
       firstName: '',
       email: '',
+      addOnAddress: '',
+      additionalInfo: '',
     };
     let isValid = true;
 
@@ -46,6 +50,16 @@ function Contact() {
 
     if (!emailRegex.test(formValues.email)) {
       newErrors.email = 'Invalid email';
+      isValid = false;
+    }
+
+    if (!formValues.addOnAddress.trim()) {
+      newErrors.addOnAddress = 'Subject cannot be empty';
+      isValid = false;
+    }
+
+    if (!formValues.additionalInfo.trim()) {
+      newErrors.additionalInfo = 'Message cannot be empty';
       isValid = false;
     }
 
@@ -143,28 +157,38 @@ function Contact() {
               <label htmlFor="addOnAddress" className={labelCustom}>
                 Subject
               </label>
-              <input
-                type="text"
-                id="addOnAddress"
-                name="addOnAddress"
-                value={formValues.addOnAddress}
-                onChange={handleChange}
-                className={inputCustom}
-              />
+              <div id="container-warning" className="flex flex-col">
+                <input
+                  type="text"
+                  id="addOnAddress"
+                  name="addOnAddress"
+                  value={formValues.addOnAddress}
+                  onChange={handleChange}
+                  className={inputCustom}
+                />
+                {errors.addOnAddress && (
+                  <span className="text-red-500">{errors.addOnAddress}</span>
+                )}
+              </div>
             </div>
 
             <div className={divFormInput}>
               <label htmlFor="additionalInfo" className={labelCustom}>
                 Message
               </label>
-              <textarea
-                id="additionalInfo"
-                name="additionalInfo"
-                value={formValues.additionalInfo}
-                onChange={handleChange}
-                className={`${inputCustom} min-h-40 flex pt-5`}
-                placeholder="Hi! I’d like to ask about"
-              ></textarea>
+              <div id="container-warning" className="flex flex-col">
+                <textarea
+                  id="additionalInfo"
+                  name="additionalInfo"
+                  value={formValues.additionalInfo}
+                  onChange={handleChange}
+                  className={`${inputCustom} min-h-40 flex pt-5`}
+                  placeholder="Hi! I’d like to ask about"
+                ></textarea>
+                {errors.additionalInfo && (
+                  <span className="text-red-500">{errors.additionalInfo}</span>
+                )}
+              </div>
             </div>
 
             <AppButton

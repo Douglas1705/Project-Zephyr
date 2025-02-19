@@ -14,7 +14,7 @@ function SectionQuality() {
   return (
     <article className="bg-warm-cream flex flex-col md:flex-row justify-between gap-10 py-10 flex-wrap px-10 h-auto items-center lg:gap-4 lg:space-y-4 lg:justify-around xl:h-[270px] xl:gap-0 xl:py-0 xl:px-0">
       <figure className={`${figureCustom} lg:pt-6`}>
-        <GiTrophyCup className={`${imgCustom} text-6xl`} />
+        <GiTrophyCup className={`${imgCustom} text-6xl mt-1`} />
         <div className="space-y-2 ml-4 xl:ml-0">
           <h3 className="text-2xl">High Quality</h3>
           <p className={pCustom}>crafted from top materials</p>
@@ -30,7 +30,7 @@ function SectionQuality() {
       </figure>
 
       <figure className={figureCustom}>
-        <LiaShippingFastSolid className={`${imgCustom} text-7xl `} />
+        <LiaShippingFastSolid className={`${imgCustom} text-7xl pb-2`} />
         <div className="space-y-2 ml-4 xl:ml-0">
           <h3 className="text-2xl">Free Shipping</h3>
           <p className={pCustom}>Over 2 years</p>
@@ -38,7 +38,7 @@ function SectionQuality() {
       </figure>
 
       <figure className={figureCustom}>
-        <BiSupport className={`${imgCustom} text-7xl`} />
+        <BiSupport className={`${imgCustom} text-6xl`} />
         <div className="space-y-2 ml-4 xl:ml-0">
           <h3 className="text-2xl">24 / 7 Support</h3>
           <p className={pCustom}>Dedicated support</p>

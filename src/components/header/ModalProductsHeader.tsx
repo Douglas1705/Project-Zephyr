@@ -98,7 +98,7 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
                 <img
                   src={item.imageUrl}
                   alt={item.name}
-                  className="h-10 md:w-24 md:h-24 md:mr-10 rounded-xl xl:w-28 xl:mr-4"
+                  className="h-10 md:w-24 md:h-24 md:mr-10 rounded-xl xl:w-6/12 xl:mr-4 border-4"
                 />
                 <div className="flex flex-row items-center gap-16 md:justify-between md:w-full">
                   <div className="flex flex-col border-y-2 py-2 lg:flex-col lg:gap-3 xl:border-none">
