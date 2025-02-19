@@ -32,7 +32,7 @@ function App() {
   if (loading) {
     return (
       <div className="fixed inset-0 flex flex-col items-center justify-center bg-white">
-        <img src="/1474.gif" alt="Loading..." className="w-20 h-20" />
+        <img src="../public/1474.gif" alt="Loading..." className="w-20 h-20" />
         <h3 className="font-bold text-4xl">Zephyr</h3>
       </div>
     );

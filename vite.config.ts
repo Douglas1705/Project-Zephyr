@@ -5,5 +5,6 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     base: mode === 'development' ? '/' : './',
+    publicDir: 'public',
   };
 });
