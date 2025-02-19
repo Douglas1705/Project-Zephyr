@@ -4,6 +4,7 @@ import { RedirectToSignIn, SignedIn, SignedOut } from '@clerk/clerk-react';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import useFetchProducts from './hooks/UseFetchProducts';
+import About from './pages/about/About';
 
 const HomePage = lazy(() => import('./pages/homePage/HomePage'));
 const Cart = lazy(() => import('./pages/cart/Cart'));
@@ -81,6 +82,7 @@ function App() {
           />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop" element={<ShopPage />} />
+          <Route path="/about" element={<About />} />
           <Route path="/single-product/:id" element={<SingleProduct />} />
           <Route path="*" element={<NotFound404 />} />
         </Routes>

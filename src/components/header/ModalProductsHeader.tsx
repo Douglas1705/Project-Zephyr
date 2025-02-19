@@ -67,7 +67,7 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
   };
 
   return (
-    <div className="px-6 r-52 bg-white">
+    <div className="px-6 r-52 bg-white min-w-full">
       <div className="flex items-center border-b-2 border-gray-300 justify-between py-6">
         <h3 className="text-base md:text-2xl font-semibold bg-white">
           Shopping Cart
@@ -86,7 +86,7 @@ function ModalProductsHeader({ onClose }: ModalProductsHeaderProps) {
       </div>
 
       <div className="flex flex-col gap-5 pt-10">
-        <div className="max-h-[175px] md:max-h-72 lg:max-h-60 overflow-y-auto overflow-x-hidden no-scrollbar">
+        <div className="max-h-[175px] md:max-h-72 lg:max-h-60 overflow-y-auto overflow-x-hidden no-scrollbar w-auto">
           {cartItems.length === 0 ? (
             <p className="text-center text-gray-500">Affection without items</p>
           ) : (

@@ -70,14 +70,15 @@ function Header() {
       <div className={`navbar ${!isNavVisible ? 'navbar-hidden' : ''}`}>
         <header className="flex justify-between items-center max-h-20 px-5 lg:min-h-24 lg:px-4 xl:px-16 xl:max-w-screen-2xl xl:mx-auto w-full bg-white overflow-hidden">
           <div className="flex items-center gap-2">
-            <img
-              src="https://i.ibb.co/PGhMLmtL/Zephyr-1.png"
-              alt="Image of two lines representing the Ovenmaker"
-              title="Logotipo ZPhyr"
-              className="w-10/12 h-16 md:w-10/12 md:h-16 lg:w-52 lg:h-36 "
-            />
+            <a href="/">
+              <img
+                src="https://i.ibb.co/PGhMLmtL/Zephyr-1.png"
+                alt="Image of two lines representing the Ovenmaker"
+                title="Logotipo ZPhyr"
+                className="w-10/12 h-16 md:w-10/12 md:h-16 lg:w-52 lg:h-36 "
+              />
+            </a>
           </div>
-
           <div className="flex gap-5 md:justify-between lg:w-9/12 xl:w-8/12">
             <button className="block lg:hidden" onClick={handleMenuToggle}>
               <div className="w-6 h-0.5 bg-black mb-1"></div>
@@ -105,7 +106,11 @@ function Header() {
                   </Link>
                 </li>
                 <li className={`${liCustom}`}>
-                  <Link to="#" aria-label="About Us Page" title="About Us Page">
+                  <Link
+                    to="/about"
+                    aria-label="About Us Page"
+                    title="About Us Page"
+                  >
                     About
                   </Link>
                 </li>

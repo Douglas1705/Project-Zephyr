@@ -8,13 +8,14 @@ body, html {
     padding: 0;
     box-sizing: border-box;
     height: 100%;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; 
+    scroll-behavior: smooth;   
 }
 
 #root {
     display: flex;
     flex-direction: column;
-    height: 100vh;    
+    height: 100vh;      
 }
 
 /* Custom Checkbox Style */
@@ -215,4 +216,22 @@ input[type="radio"]:checked {
   height: 8rem;
   object-fit: contain;
   
+}
+
+
+/* effect */
+
+@keyframes slideIn {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.section-slide-in {
+  animation: slideIn 1s ease-out;
 }
