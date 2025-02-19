@@ -1,1 +1,0 @@
-import{j as e}from"./index-yUB4W44B.js";function n(){return e.jsx("section",{className:"h-screen flex text-center justify-center",children:e.jsx("h2",{className:"text-base lg:text-4xl text-red-500",children:"Pagina não encontrada:("})})}export{n as default};
