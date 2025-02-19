@@ -321,5 +321,17 @@
       "new": "New"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "3",
+      "name": "Lolito",
+      "description": "Luxury big sofa",
+      "originalPrice": 14000000,
+      "discountedPrice": 7000000,
+      "discount": 50,
+      "imageUrl": "https://images.pexels.com/photos/5998030/pexels-photo-5998030.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "new": "none",
+      "quantity": 1
+    }
+  ]
 }

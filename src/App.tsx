@@ -4,6 +4,7 @@ import { RedirectToSignIn, SignedIn, SignedOut } from '@clerk/clerk-react';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import useFetchProducts from './hooks/UseFetchProducts';
+import useScrollToTop from './hooks/useScrollToTop';
 import About from './pages/about/About';
 
 const HomePage = lazy(() => import('./pages/homePage/HomePage'));
@@ -31,24 +32,21 @@ function App() {
   if (loading) {
     return (
       <div className="fixed inset-0 flex flex-col items-center justify-center bg-white">
-        <img
-          src="https://i.ibb.co/WvdvGJtd/1474.gif"
-          alt="Loading..."
-          className="w-20 h-20"
-        />
-        <h3 className="font-bold text-4xl">Furniro.</h3>
+        <img src="../public/1474.gif" alt="Loading..." className="w-20 h-20" />
+        <h3 className="font-bold text-4xl">Zephyr</h3>
       </div>
     );
   }
 
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Suspense
         fallback={
           <div className="fixed inset-0 flex items-center justify-center bg-white">
             <img
-              src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/1474.gif"
+              src="../public/1474.gif"
               alt="Loading..."
               className="w-20 h-20"
             />
@@ -90,6 +88,11 @@ function App() {
       <Footer />
     </Router>
   );
+}
+
+function ScrollToTop() {
+  useScrollToTop();
+  return null;
 }
 
 export default App;
