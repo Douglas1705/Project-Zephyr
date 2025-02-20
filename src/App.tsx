@@ -54,7 +54,7 @@ function App() {
               alt="Loading..."
               className="w-20 h-20"
             />
-            <h3 className="font-bold text-4xl">Furniro.</h3>
+            <h3 className="font-bold text-4xl">Zephyr</h3>
           </div>
         }
       >

@@ -71,31 +71,36 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
         contentLabel="Validation Success"
         style={{
           overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.75)',
+            backgroundColor: 'rgba(0, 0, 0, 0.35)',
           },
           content: {
-            color: 'black',
-            maxWidth: '31.25rem',
+            maxWidth: '25.25rem',
             height: '30rem',
             margin: 'auto',
-            textAlign: 'center',
-            borderRadius: '10px',
+            borderRadius: '30px',
+            padding: '0px',
           },
         }}
       >
-        <div className="bg-white rounded-xl py-10">
-          <h2 className="text-xl mb-4 font-bold xl:text-4xl text-rose-800">
+        <div className="flex flex-col items-center justify-center bg-modalCongratulations border-4  h-full rounded-3xl text-center">
+          <h2 className="text-xl font-bold xl:text-2xl text-white tracking-wider text-shadow-cape">
             Congratulations
           </h2>
-          <p className="text-2xl mb-4 text-black font-semibold ">
+          <img
+            src="https://media.tenor.com/0EflySmYSuAAAAAi/check-mark-button-joypixels.gif"
+            alt=""
+            className="w-3/12 pr-5"
+          />
+
+          <p className="text-2xl my-8 text-black font-semibold tracking-wider ">
             {user ? user.firstName : 'Guest'}
           </p>
-          <p className="text-black text-sm md:text-2xl mb-10">
+          <p className="text-slate-800 px-10 text-sm md:text-lg mb-10 tracking-wide">
             We are happy to know that we left your space with more style and
             refinement.
           </p>
           <button
-            className="bg-white text-black py-4 px-4 w-8/12 mb-10 text-2xl rounded-lg hover:bg-black hover:text-white border-2 border-black"
+            className="bg-orange-400 text-white py-1 px-4 w-6/12 mb-10 text-xl rounded-3xl hover:bg-black hover:text-white "
             onClick={closeModal}
           >
             Close

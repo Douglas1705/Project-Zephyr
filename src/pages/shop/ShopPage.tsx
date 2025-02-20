@@ -113,7 +113,7 @@ function ShopPage() {
   }, []);
 
   return (
-    <section>
+    <section className="max-w-screen-2xl mx-auto">
       <CapePages title="Shop" />
       <main>
         <article className="flex flex-col bg-WhisperWhite mb-12 lg:flex-row lg:h-28 lg:gap-4 lg:mb-10 lg:justify-between lg:px-2 xl:px-28">

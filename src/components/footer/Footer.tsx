@@ -104,7 +104,7 @@ function Footer() {
             <Link className="hover:text-Goldenrod" to="/shop">
               Shop
             </Link>
-            <Link className="hover:text-Goldenrod" to="#">
+            <Link className="hover:text-Goldenrod" to="/about">
               About
             </Link>
             <Link className="hover:text-Goldenrod" to="/contact">
@@ -167,7 +167,7 @@ function Footer() {
               alt=""
               className="mx-auto"
             />
-            <p className="text-center text-2xl font-bold mb-10">Furniro.</p>
+            <p className="text-center text-2xl font-bold mb-10">Zephyr</p>
             <h3 className="text-2xl font-bold mb-4">
               Thank You for Subscribing!
             </h3>

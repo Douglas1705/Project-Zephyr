@@ -10,8 +10,11 @@ module.exports = {
       backgroundImage: {
         'living-room': "url('https://i.ibb.co/QjDpnS8B/cape2.webp')",
         
-        'capePages' : "url('https://i.ibb.co/7xMc8d6c/Rectangle-1.webp')"       
-      },      
+        'capePages' : "url('https://i.ibb.co/7xMc8d6c/Rectangle-1.webp')",
+
+        'modalCongratulations' : "url('https://i.ytimg.com/vi/UoJ2egwV84Y/maxresdefault.jpg')",
+
+      },            
 
       colors: { 
         'warm-cream': '#FFF3E3',

@@ -21,7 +21,7 @@ function CheckoutPage() {
   }, []);
 
   return (
-    <section>
+    <section className="max-w-screen-2xl mx-auto">
       <CapePages title="Checkout" />
       <main>
         <article className="flex flex-col pt-5 max-w-screen-2xl xl:mx-auto">

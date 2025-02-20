@@ -92,7 +92,7 @@ function Contact() {
   const pAdress = 'text-gray-700';
 
   return (
-    <section id="container-title">
+    <section id="container-title" className="max-w-screen-2xl mx-auto">
       <CapePages title="Contact" />
 
       <main className="flex flex-col gap-10 py-10 px-5">
@@ -238,7 +238,7 @@ function Contact() {
               alt=""
               className="mx-auto"
             />
-            <p className="text-center text-2xl font-bold mb-10">Furniro.</p>
+            <p className="text-center text-2xl font-bold mb-10">Zephyr</p>
             <h3 className="text-2xl font-bold mb-4">
               Thank you for your contact!
             </h3>

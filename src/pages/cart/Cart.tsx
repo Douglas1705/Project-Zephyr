@@ -116,7 +116,7 @@ function Cart() {
   );
 
   return (
-    <section>
+    <section className="max-w-screen-2xl mx-auto">
       <CapePages title="Cart" />
 
       <article className="xl:flex xl py-10 xl:px-20 xl:gap-10 max-w-screen-2xl xl:mx-auto">
