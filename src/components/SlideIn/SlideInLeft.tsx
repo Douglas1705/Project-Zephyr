@@ -9,7 +9,7 @@ interface SlideInProps {
 function SlideIn({ children }: SlideInProps) {
   return (
     <Reveal
-      className="animate__animated animate__fadeInLeft animate__delay-10s"
+      className="animate__animated animate__fadeInLeft animate__delay-30s"
       triggerOnce
     >
       {children}

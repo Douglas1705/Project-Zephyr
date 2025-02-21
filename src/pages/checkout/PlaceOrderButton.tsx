@@ -71,14 +71,16 @@ function PlaceOrderButton({ validateForm }: PlaceOrderButtonProps) {
         contentLabel="Validation Success"
         style={{
           overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.35)',
+            background: 'rgba(0, 0, 0, 0.35)',
           },
           content: {
             maxWidth: '25.25rem',
             height: '30rem',
             margin: 'auto',
-            borderRadius: '30px',
+            borderRadius: '33px',
             padding: '0px',
+            backgroundImage:
+              'url(https://i.ytimg.com/vi/UoJ2egwV84Y/maxresdefault.jpg)',
           },
         }}
       >
