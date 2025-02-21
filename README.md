@@ -1,7 +1,9 @@
 # Zephyr Project
 
 ## Overview
-This is an e-commerce project developed in React and TypeScript, with Redux for state management, and Clerk for authentication. The goal of the project is to create a functional and responsive e-commerce platform.
+This is an e-commerce project developed in React and TypeScript, with Redux for state management and Clerk for authentication. The goal of the project is to create a functional and responsive e-commerce platform.
+
+**Link to view the project:** [YouTube](https://www.youtube.com/watch?v=MEcidf9ScaM)
 
 ## Table of Contents
 
