@@ -190,18 +190,7 @@
 <a name='L125'></a><a href='#L125'>125</a>
 <a name='L126'></a><a href='#L126'>126</a>
 <a name='L127'></a><a href='#L127'>127</a>
-<a name='L128'></a><a href='#L128'>128</a>
-<a name='L129'></a><a href='#L129'>129</a>
-<a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a>
-<a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a>
-<a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L128'></a><a href='#L128'>128</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -243,13 +232,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -338,18 +320,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useRef, useState, useCallback } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import AppButton from '../../components/buttons/AppButton';
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
 &nbsp;
 function <span class="fstat-no" title="function not covered" >BeautifullSec(</span>) {
   const [largeImageIndex, setLargeImageIndex] = <span class="cstat-no" title="statement not covered" >useState(0);</span>
   const splideRef = <span class="cstat-no" title="statement not covered" >useRef&lt;any&gt;(null);</span>
 &nbsp;
   const images = <span class="cstat-no" title="statement not covered" >[</span>
-    'https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/image-static-1.webp',
-    'https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/image-static-2.webp',
-    'https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/image-static-3.webp',
-    'https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/image-static-4.webp',
+    'https://i.ibb.co/SDP02zX5/beauiy-1.webp',
+    'https://i.ibb.co/5hH1ghfX/beauiy-2.webp',
+    'https://i.ibb.co/FkqmbS8D/beauiy-3.webp',
+    'https://i.ibb.co/YFrDkdpT/beauty-4.webp',
   ];
 &nbsp;
   const handleSlideChange = <span class="cstat-no" title="statement not covered" >useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
@@ -379,7 +359,7 @@ function <span class="fstat-no" title="function not covered" >BeautifullSec(</sp
   );
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;section className="bg-WhisperWhite gap-10 flex flex-col mt-10 lg:min-h-[670px] lg:flex-row lg:items-center xl:justify-between"&gt;
+    &lt;section className="bg-WhisperWhite gap-10 flex flex-col mt-10 lg:min-h-[670px] lg:flex-row lg:items-center xl:justify-between py-10"&gt;
       &lt;article className="text-center flex flex-col gap-5 lg:max-w-[422px] lg:text-start lg:mx-auto lg:ml-10 xl:ml-28"&gt;
         &lt;h2 className="text-2xl md:text-3xl font-bold lg:text-4xl"&gt;
           50+ Beautiful rooms inspiration
@@ -388,9 +368,6 @@ function <span class="fstat-no" title="function not covered" >BeautifullSec(</sp
           Our designer already made a lot of beautiful prototipe of rooms that
           inspire you
         &lt;/p&gt;
-        &lt;AppButton className="bg-Goldenrod text-white w-10/12 mx-auto lg:w-44 lg:ml-0 py-4 hover-gold-custom"&gt;
-          Explore More
-        &lt;/AppButton&gt;
       &lt;/article&gt;
 &nbsp;
       &lt;div className="flex flex-col lg:flex-row lg:gap-4 h-auto xl:h-[520px] lg:w-full overflow-hidden xl:w-7/12"&gt;
@@ -400,15 +377,11 @@ function <span class="fstat-no" title="function not covered" >BeautifullSec(</sp
             alt="Current Room"
             className="w-full h-full"
           /&gt;
-          &lt;div className="bg-white bg-opacity-85 absolute z-10 bottom-5 left-5 px-4 py-6"&gt;
-            &lt;p className="text-lg font-medium text-gray-700 mb-4 flex items-center"&gt;
-              01 &lt;span className="w-7 h-1 bg-gray-600 mx-2"&gt;&lt;/span&gt; Bed Room
+          &lt;div className="bg-black bg-opacity-50 absolute z-10 bottom-5 w-full px-4 py-6 rounded-xl backdrop-blur-sm"&gt;
+            &lt;p className="text-xl text-shadow-cape text-center font-ligth text-white tracking-wider opacity-100 blur-none"&gt;
+              Environments for your well-being{' '}
             &lt;/p&gt;
-            &lt;h3 className="text-3xl font-semibold"&gt;Inner Peace&lt;/h3&gt;
           &lt;/div&gt;
-          &lt;button&gt;
-            &lt;ArrowRightIcon className="absolute bottom-5 right-16 bg-Goldenrod p-4 z-20 w-14 text-white" /&gt;
-          &lt;/button&gt;
         &lt;/div&gt;
         &lt;div className="w-full md:w-10/12 md:mx-auto xl:mr-0 xl:w-[450px]"&gt;
           &lt;Splide
@@ -478,7 +451,7 @@ export default BeautifullSec;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-11T11:26:03.669Z
+                at 2025-02-25T19:22:14.910Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

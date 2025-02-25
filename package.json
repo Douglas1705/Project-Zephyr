@@ -17,7 +17,7 @@
         "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist"
-        },
+    },
     "dependencies": {
         "@clerk/clerk-react": "^5.19.0",
         "@heroicons/react": "^2.2.0",
@@ -26,6 +26,7 @@
         "@splidejs/splide": "^4.1.4",
         "animate.css": "^4.1.1",
         "locomotive-scroll": "^4.1.4",
+        "node-fetch": "^3.3.2",
         "ol": "^10.4.0",
         "react": "^18.3.1",
         "react-awesome-reveal": "^4.3.1",
@@ -79,6 +80,7 @@
         "typescript": "^5.5.3",
         "typescript-eslint": "^8.7.0",
         "util": "^0.12.5",
-        "vite": "^5.4.8"
+        "vite": "^5.4.8",
+        "whatwg-fetch": "^3.6.20"
     }
 }

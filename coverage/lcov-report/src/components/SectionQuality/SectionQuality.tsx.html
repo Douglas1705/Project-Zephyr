@@ -114,18 +114,12 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -171,23 +165,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">function <span class="fstat-no" title="function not covered" >SectionQuality(</span>) {
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { GiTrophyCup } from 'react-icons/gi';
+import { MdOutlinePlaylistAddCheckCircle } from 'react-icons/md';
+import { LiaShippingFastSolid } from 'react-icons/lia';
+import { BiSupport } from 'react-icons/bi';
+&nbsp;
+function <span class="fstat-no" title="function not covered" >SectionQuality(</span>) {
   const figureCustom =
 <span class="cstat-no" title="statement not covered" >    'flex flex-col text-center mx-auto gap-2 text-2xl font-semibold lg:w-4/12 lg:text-start lg:text-start lg:flex-row lg:text-start md:w-5/12 lg:w-[455px] lg:gap-0 lg:mx-0 xl:w-auto xl:gap-2 ';</span>
 &nbsp;
@@ -198,23 +181,15 @@
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;article className="bg-warm-cream flex flex-col md:flex-row justify-between gap-10 py-10 flex-wrap px-10 h-auto items-center lg:gap-4 lg:space-y-4 lg:justify-around xl:h-[270px] xl:gap-0 xl:py-0 xl:px-0"&gt;
       &lt;figure className={`${figureCustom} lg:pt-6`}&gt;
-        &lt;img
-          src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/trophy.svg"
-          alt=""
-          className={`${imgCustom} w-14`}
-        /&gt;
+        &lt;GiTrophyCup className={`${imgCustom} text-6xl mt-1`} /&gt;
         &lt;div className="space-y-2 ml-4 xl:ml-0"&gt;
-          &lt;h3 className="text-2xl text-"&gt;High Quality&lt;/h3&gt;
+          &lt;h3 className="text-2xl"&gt;High Quality&lt;/h3&gt;
           &lt;p className={pCustom}&gt;crafted from top materials&lt;/p&gt;
         &lt;/div&gt;
       &lt;/figure&gt;
 &nbsp;
       &lt;figure className={figureCustom}&gt;
-        &lt;img
-          src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/guarantee.svg"
-          alt=""
-          className={`${imgCustom} w-14`}
-        /&gt;
+        &lt;MdOutlinePlaylistAddCheckCircle className={`${imgCustom}  text-7xl`} /&gt;
         &lt;div className="space-y-2 ml-4 xl:ml-0"&gt;
           &lt;h3 className="text-2xl"&gt;Warranty Protection&lt;/h3&gt;
           &lt;p className={pCustom}&gt;Over 2 years&lt;/p&gt;
@@ -222,11 +197,7 @@
       &lt;/figure&gt;
 &nbsp;
       &lt;figure className={figureCustom}&gt;
-        &lt;img
-          src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/shipping.svg"
-          alt=""
-          className={`${imgCustom} w-14 `}
-        /&gt;
+        &lt;LiaShippingFastSolid className={`${imgCustom} text-7xl pb-2`} /&gt;
         &lt;div className="space-y-2 ml-4 xl:ml-0"&gt;
           &lt;h3 className="text-2xl"&gt;Free Shipping&lt;/h3&gt;
           &lt;p className={pCustom}&gt;Over 2 years&lt;/p&gt;
@@ -234,11 +205,7 @@
       &lt;/figure&gt;
 &nbsp;
       &lt;figure className={figureCustom}&gt;
-        &lt;img
-          src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/icons-globals/customer-support.svg"
-          alt=""
-          className={`${imgCustom} w-14`}
-        /&gt;
+        &lt;BiSupport className={`${imgCustom} text-6xl`} /&gt;
         &lt;div className="space-y-2 ml-4 xl:ml-0"&gt;
           &lt;h3 className="text-2xl"&gt;24 / 7 Support&lt;/h3&gt;
           &lt;p className={pCustom}&gt;Dedicated support&lt;/p&gt;
@@ -256,7 +223,7 @@ export default SectionQuality;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-11T11:26:03.669Z
+                at 2025-02-25T19:22:14.910Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

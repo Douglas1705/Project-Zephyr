@@ -298,13 +298,7 @@
 <a name='L233'></a><a href='#L233'>233</a>
 <a name='L234'></a><a href='#L234'>234</a>
 <a name='L235'></a><a href='#L235'>235</a>
-<a name='L236'></a><a href='#L236'>236</a>
-<a name='L237'></a><a href='#L237'>237</a>
-<a name='L238'></a><a href='#L238'>238</a>
-<a name='L239'></a><a href='#L239'>239</a>
-<a name='L240'></a><a href='#L240'>240</a>
-<a name='L241'></a><a href='#L241'>241</a>
-<a name='L242'></a><a href='#L242'>242</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L236'></a><a href='#L236'>236</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -401,12 +395,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -645,28 +633,22 @@ function <span class="fstat-no" title="function not covered" >ProductDescription
     &lt;article className="px-5 py-10 lg:py-0"&gt;
       &lt;section
         id="subcontainer-single-first"
-        className="flex flex-col lg:flex-row lg:gap-10 lg:py-8 xl:gap-24"
+        className="flex flex-col lg:flex-row xl:justify-center lg:py-8 xl:gap-14"
       &gt;
         &lt;div
           id="container-single-images"
-          className="flex justify-center lg:w-auto xl:pl-20 xl:gap-10"
+          className="flex justify-center lg:w-auto xl:w-7/12 overflow-hidden"
         &gt;
-          &lt;img
-            src="https://compasschallenge-furniro-images.s3.us-east-2.amazonaws.com/images/static/Group+99.webp"
-            alt=""
-            className="hidden xl:block xl:w-20 xl:h-[416px]"
-          /&gt;
-&nbsp;
-          &lt;figure className="lg:w-[400px] xl:w-[481px] xl:h-[500px]"&gt;
+          &lt;figure className="w-11/12 xl:w-[650px] h-auto overflow-hidden "&gt;
             &lt;img
               src={product.imageUrl}
               alt={product.name}
-              className="bg-warm-cream py-10 px-10 xl:px-0 cover w-full"
+              className=" cover w-full border-4 rounded-3xl shadow-md shadow-black"
             /&gt;
           &lt;/figure&gt;
         &lt;/div&gt;
 &nbsp;
-        &lt;div className="flex flex-col"&gt;
+        &lt;div className="flex flex-col text-center xl:text-start xl:w-5/12"&gt;
           &lt;div
             id="container-single-descriptions"
             className="flex flex-col gap-3 py-5"
@@ -678,7 +660,7 @@ function <span class="fstat-no" title="function not covered" >ProductDescription
               &lt;/p&gt;
             &lt;/div&gt;
 &nbsp;
-            &lt;div className="flex gap-4"&gt;
+            &lt;div className="flex justify-center xl:justify-start gap-4"&gt;
               &lt;div className="flex gap-1 items-center border-r-2 border-gray-400 pr-4 py-1"&gt;
                 &lt;FaStar className="text-yellow-400 text-lg" /&gt;
                 &lt;FaStar className="text-yellow-400 text-lg" /&gt;
@@ -689,7 +671,7 @@ function <span class="fstat-no" title="function not covered" >ProductDescription
               &lt;p className="text-gray-400 text-lg"&gt;5 Customer Review&lt;/p&gt;
             &lt;/div&gt;
 &nbsp;
-            &lt;p className="text-sm text-justify lg:w-9/12 xl:text-sm xl:w-[424px] xl:text-left"&gt;
+            &lt;p className="text-sm text-center lg:w-9/12 xl:text-sm xl:w-[424px] xl:text-left"&gt;
               Setting the bar as one of the loudest speakers in its class, the
               Kilburn is a compact, stout-hearted hero with a well-balanced
               audio which boasts a clear midrange and extended highs for a
@@ -740,7 +722,7 @@ function <span class="fstat-no" title="function not covered" >ProductDescription
 &nbsp;
           &lt;section
             id="subcontainer-single-2"
-            className="flex gap-4 text-gray-500 lg:justify-start border-t-2 border-gray-400 py-10"
+            className="flex mx-auto xl:mx-0 gap-4 text-gray-500 lg:justify-start border-t-2 border-gray-400 py-10"
           &gt;
             &lt;div className="space-y-3"&gt;
               &lt;p&gt;SKU&lt;/p&gt;
@@ -763,7 +745,7 @@ function <span class="fstat-no" title="function not covered" >ProductDescription
                 &lt;p&gt;Sofa, Chair, Home, Shop&lt;/p&gt;
               &lt;/div&gt;
 &nbsp;
-              &lt;div className="flex gap-4"&gt;
+              &lt;div className="flex gap-4 justify-center xl:justify-start"&gt;
                 &lt;a
                   href="https://web.facebook.com/?locale=pt_BR&amp;_rdc=1&amp;_rdr"
                   target="_blank"
@@ -793,7 +775,7 @@ export default ProductDescription;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-11T11:26:03.669Z
+                at 2025-02-25T19:22:14.910Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
